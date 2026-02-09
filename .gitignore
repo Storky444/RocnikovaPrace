@@ -1,0 +1,14 @@
+#Godot 4
+.godot/
+.import/
+
+#Exports
+export.cfg
+export_presets.cfg
+
+#OS files
+Thumbs.db
+.DS_Store
+
+#Mono (C#)
+.mono/
