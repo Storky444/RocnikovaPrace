@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqri0d3x2hej"]
+
+[ext_resource type="Texture2D" uid="uid://bj6yyjfrblpdx" path="res://textures/pixil-frame-0 (3).png" id="1_8a836"]
+[ext_resource type="PackedScene" uid="uid://c7r006uem5qok" path="res://World/Player/player.tscn" id="2_j8job"]
+
+[node name="World" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, -10)
+scale = Vector2(0.75103736, 0.64698166)
+texture = ExtResource("1_8a836")
+region_enabled = true
+region_rect = Rect2(0, 0, 4000, 4000)
+
+[node name="Player" parent="." instance=ExtResource("2_j8job")]
+texture_filter = 1
