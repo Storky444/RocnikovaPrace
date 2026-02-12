@@ -1,7 +1,63 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqri0d3x2hej"]
+[gd_scene load_steps=16 format=3 uid="uid://bqri0d3x2hej"]
 
-[ext_resource type="Texture2D" uid="uid://bj6yyjfrblpdx" path="res://textures/pixil-frame-0 (3).png" id="1_8a836"]
+[ext_resource type="Texture2D" uid="uid://bk3qrq0qmbf2g" path="res://textures/pixil-frame-0 (5).png" id="1_8a836"]
 [ext_resource type="PackedScene" uid="uid://c7r006uem5qok" path="res://World/Player/player.tscn" id="2_j8job"]
+[ext_resource type="Texture2D" uid="uid://ci70227xna37k" path="res://Animations/CowboyIddleAnimation/cowboy_animation0000.png" id="3_awrha"]
+[ext_resource type="Texture2D" uid="uid://b2fgsb45vn5ml" path="res://Animations/CowboyIddleAnimation/cowboy_animation0001.png" id="4_f23eu"]
+[ext_resource type="Texture2D" uid="uid://by2isix62fw2d" path="res://Animations/CowboyIddleAnimation/cowboy_animation0002.png" id="5_oeat8"]
+[ext_resource type="Texture2D" uid="uid://d1f5av8t0exj7" path="res://Animations/CowboyIddleAnimation/cowboy_animation0003.png" id="6_5xkvv"]
+[ext_resource type="Texture2D" uid="uid://bkhoajrgpow4c" path="res://Animations/CowboyIddleAnimation/cowboy_animation0004.png" id="7_kcyjf"]
+[ext_resource type="Texture2D" uid="uid://svjui1vf1wv" path="res://Animations/CowboyIddleAnimation/cowboy_animation0005.png" id="8_xw5lg"]
+[ext_resource type="Texture2D" uid="uid://dmy77erxkaurf" path="res://Animations/CowboyIddleAnimation/cowboy_animation0006.png" id="9_0lysu"]
+[ext_resource type="Texture2D" uid="uid://bclg8vxpyvy6w" path="res://Animations/CowboyIddleAnimation/cowboy_animation0007.png" id="10_26uyv"]
+[ext_resource type="Texture2D" uid="uid://b8dykqhs5cgpw" path="res://Animations/CowboyIddleAnimation/cowboy_animation0008.png" id="11_dqu5g"]
+[ext_resource type="Texture2D" uid="uid://buoso3x6dkxkn" path="res://Animations/CowboyIddleAnimation/cowboy_animation0009.png" id="12_o6lw0"]
+[ext_resource type="Texture2D" uid="uid://2ugj4axwa1pn" path="res://Animations/CowboyIddleAnimation/cowboy_animation0010.png" id="13_x0pyu"]
+[ext_resource type="Texture2D" uid="uid://3vlfcpl2ldyd" path="res://Animations/CowboyIddleAnimation/cowboy_animation0011.png" id="14_dg1ng"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yfuda"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_awrha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f23eu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oeat8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5xkvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kcyjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xw5lg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0lysu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_26uyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dqu5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_o6lw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_x0pyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dg1ng")
+}],
+"loop": true,
+"name": &"Iddle",
+"speed": 5.0
+}]
 
 [node name="World" type="Node2D"]
 
@@ -16,3 +72,9 @@ region_rect = Rect2(0, 0, 4000, 4000)
 
 [node name="Player" parent="." instance=ExtResource("2_j8job")]
 texture_filter = 1
+position = Vector2(1, 8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(0, -9)
+sprite_frames = SubResource("SpriteFrames_yfuda")
+animation = &"Iddle"

@@ -1,16 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7r006uem5qok"]
+[gd_scene load_steps=2 format=3 uid="uid://c7r006uem5qok"]
 
 [ext_resource type="Script" uid="uid://bko6ltek2f8l0" path="res://World/Player/player.gd" id="1_1s8kg"]
-[ext_resource type="Texture2D" uid="uid://17ljfsxs1yt5" path="res://textures/cowboy.png" id="1_u54fa"]
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_1s8kg")
 
-[node name="Cowboy" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(3, -15)
-texture = ExtResource("1_u54fa")
-
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
