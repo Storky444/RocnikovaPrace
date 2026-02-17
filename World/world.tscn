@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bqri0d3x2hej"]
+[gd_scene load_steps=20 format=3 uid="uid://bqri0d3x2hej"]
 
-[ext_resource type="Texture2D" uid="uid://bk3qrq0qmbf2g" path="res://textures/pixil-frame-0 (5).png" id="1_8a836"]
+[ext_resource type="Script" uid="uid://cfoi4npyi2rg6" path="res://World/world.gd" id="1_5xkvv"]
+[ext_resource type="Texture2D" uid="uid://d0aj5vm2njgwj" path="res://textures/New Piskel (6).png" id="1_awrha"]
 [ext_resource type="PackedScene" uid="uid://c7r006uem5qok" path="res://World/Player/player.tscn" id="2_j8job"]
 [ext_resource type="Texture2D" uid="uid://ci70227xna37k" path="res://Animations/CowboyIddleAnimation/cowboy_animation0000.png" id="3_awrha"]
 [ext_resource type="Texture2D" uid="uid://b2fgsb45vn5ml" path="res://Animations/CowboyIddleAnimation/cowboy_animation0001.png" id="4_f23eu"]
@@ -14,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://buoso3x6dkxkn" path="res://Animations/CowboyIddleAnimation/cowboy_animation0009.png" id="12_o6lw0"]
 [ext_resource type="Texture2D" uid="uid://2ugj4axwa1pn" path="res://Animations/CowboyIddleAnimation/cowboy_animation0010.png" id="13_x0pyu"]
 [ext_resource type="Texture2D" uid="uid://3vlfcpl2ldyd" path="res://Animations/CowboyIddleAnimation/cowboy_animation0011.png" id="14_dg1ng"]
+[ext_resource type="PackedScene" uid="uid://d2vbgllcsn517" path="res://World/medium_rock.tscn" id="15_f23eu"]
+[ext_resource type="PackedScene" uid="uid://bihdknu747xb8" path="res://World/small_rock.tscn" id="17_5xkvv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yfuda"]
 animations = [{
@@ -59,22 +62,46 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oeat8"]
+radius = 5.0
+height = 18.0
+
 [node name="World" type="Node2D"]
+script = ExtResource("1_5xkvv")
+object_scenes = Array[PackedScene]([ExtResource("17_5xkvv"), ExtResource("15_f23eu")])
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(0, -10)
-scale = Vector2(0.75103736, 0.64698166)
-texture = ExtResource("1_8a836")
+scale = Vector2(1.5, 1)
+texture = ExtResource("1_awrha")
 region_enabled = true
 region_rect = Rect2(0, 0, 4000, 4000)
 
-[node name="Player" parent="." instance=ExtResource("2_j8job")]
+[node name="Content" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="Content" instance=ExtResource("2_j8job")]
+y_sort_enabled = true
 texture_filter = 1
 position = Vector2(1, 8)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/Player"]
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_yfuda")
 animation = &"Iddle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player"]
+position = Vector2(-0.99999994, 2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_oeat8")
+
+[node name="Object_Rocks" type="Node2D" parent="Content"]
+y_sort_enabled = true
+
+[node name="Medium_Rock" parent="Content/Object_Rocks" instance=ExtResource("15_f23eu")]
+position = Vector2(-3213, -906)
+
+[node name="Big_Rock" parent="Content/Object_Rocks" instance=ExtResource("17_5xkvv")]
+position = Vector2(4140, -278)

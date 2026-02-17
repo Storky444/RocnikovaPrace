@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://3npgwmy8h1ve"]
+
+[ext_resource type="Script" uid="uid://7sa3bs6y6b3m" path="res://World/rocks.gd" id="1_q2qba"]
+[ext_resource type="Texture2D" uid="uid://q05xilqmx5fe" path="res://textures/Medium_Rock1.png" id="2_a0wxb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5xkvv"]
+radius = 4.0
+height = 28.0
+
+[node name="Rocks" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_q2qba")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-116, -11)
+texture = ExtResource("2_a0wxb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-116, 1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_5xkvv")
