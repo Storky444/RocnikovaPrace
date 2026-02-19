@@ -5,6 +5,3 @@
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_1s8kg")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)

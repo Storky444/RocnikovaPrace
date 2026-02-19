@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bqri0d3x2hej"]
+[gd_scene load_steps=46 format=3 uid="uid://bqri0d3x2hej"]
 
 [ext_resource type="Script" uid="uid://cfoi4npyi2rg6" path="res://World/world.gd" id="1_5xkvv"]
 [ext_resource type="Texture2D" uid="uid://d0aj5vm2njgwj" path="res://textures/New Piskel (6).png" id="1_awrha"]
@@ -204,50 +204,87 @@ animations = [{
 radius = 5.0
 height = 18.0
 
-[node name="World" type="Node2D" unique_id=664812759]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6lw0"]
+size = Vector2(73, 4050)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0pyu"]
+size = Vector2(74, 4255)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg1ng"]
+size = Vector2(6061, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfuda"]
+size = Vector2(6053, 101)
+
+[node name="World" type="Node2D"]
 script = ExtResource("1_5xkvv")
 object_scenes = Array[PackedScene]([ExtResource("17_5xkvv"), ExtResource("15_f23eu"), ExtResource("4_kcyjf"), ExtResource("5_o6lw0")])
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1301973434]
+[node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(1351, -185)
-scale = Vector2(1.5, 1)
+position = Vector2(2508, -185)
+scale = Vector2(1.7529999, 1.1659999)
 texture = ExtResource("1_awrha")
 region_enabled = true
 region_rect = Rect2(0, 0, 4000, 4000)
 
-[node name="Content" type="Node2D" parent="." unique_id=49454044]
+[node name="Content" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Player" parent="Content" unique_id=1010230874 instance=ExtResource("2_j8job")]
+[node name="Player" parent="Content" instance=ExtResource("2_j8job")]
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(1, 8)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/Player" unique_id=1179412475]
-position = Vector2(0, -9)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/Player"]
+position = Vector2(1239, -136)
 sprite_frames = SubResource("SpriteFrames_yfuda")
-animation = &"Run_Left"
+animation = &"Run_Up"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player" unique_id=1712387656]
-position = Vector2(-0.99999994, 2)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player"]
+position = Vector2(1237, -125)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_oeat8")
 
-[node name="Object_Rocks" type="Node2D" parent="Content" unique_id=81831261]
+[node name="Camera2D2" type="Camera2D" parent="Content/Player"]
+position = Vector2(1237, -125)
+zoom = Vector2(2, 2)
+
+[node name="Object_Rocks" type="Node2D" parent="Content"]
 y_sort_enabled = true
 
-[node name="Medium_Rock" parent="Content/Object_Rocks" unique_id=1884934546 instance=ExtResource("15_f23eu")]
+[node name="Medium_Rock" parent="Content/Object_Rocks" instance=ExtResource("15_f23eu")]
 position = Vector2(-3213, -906)
 
-[node name="Big_Rock" parent="Content/Object_Rocks" unique_id=191272232 instance=ExtResource("17_5xkvv")]
+[node name="Big_Rock" parent="Content/Object_Rocks" instance=ExtResource("17_5xkvv")]
 position = Vector2(4734, -325)
 
-[node name="Object_Cactuses" type="Node2D" parent="Content" unique_id=241206374]
+[node name="Object_Cactuses" type="Node2D" parent="Content"]
 
-[node name="Cactus_Normal" parent="Content/Object_Cactuses" unique_id=827075423 instance=ExtResource("4_kcyjf")]
+[node name="Cactus_Normal" parent="Content/Object_Cactuses" instance=ExtResource("4_kcyjf")]
 position = Vector2(-2049, -265)
 
-[node name="Cactus_Flower" parent="Content/Object_Cactuses" unique_id=1322274325 instance=ExtResource("5_o6lw0")]
+[node name="Cactus_Flower" parent="Content/Object_Cactuses" instance=ExtResource("5_o6lw0")]
 position = Vector2(-2143, -223)
+
+[node name="Border" type="Node2D" parent="Content"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/Border"]
+position = Vector2(1238, -115)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/StaticBody2D"]
+position = Vector2(-1489.5, -196)
+shape = SubResource("RectangleShape2D_o6lw0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/Border/StaticBody2D"]
+position = Vector2(4186, -217.5)
+shape = SubResource("RectangleShape2D_x0pyu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/Border/StaticBody2D"]
+position = Vector2(1356, 1641)
+shape = SubResource("RectangleShape2D_dg1ng")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/Border/StaticBody2D"]
+position = Vector2(1403, -2020)
+shape = SubResource("RectangleShape2D_yfuda")

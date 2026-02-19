@@ -5,7 +5,7 @@ var speed = 150.0
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _ready():
-	position = Vector2(900, 900)
+	position = Vector2(1800, 900)
 
 func _physics_process(delta):
 	var direction = Input.get_vector("left", "right", "up", "down")

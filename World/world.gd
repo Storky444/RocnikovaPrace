@@ -2,8 +2,8 @@ extends Node2D
 
 @export var object_scenes: Array[PackedScene]
 @export var object_count: int = 400
-@export var spawn_area_position: Vector2 = Vector2(-2800, -2000)
-@export var spawn_area_size: Vector2 = Vector2(5700, 3900)
+@export var spawn_area_position: Vector2 = Vector2(-2000, -2200)
+@export var spawn_area_size: Vector2 = Vector2(6800, 4500)
 @export var min_distance_between_objects: float = 120.0
 
 
@@ -13,14 +13,12 @@ func _ready():
 
 
 func spawn_objects():
-	# Safety check
 	if object_scenes.is_empty():
 		print("No object scenes assigned!")
 		return
 
 	var objects_node = $Content/Object_Rocks
 	var objects_node2 = $Content/Object_Cactuses
-	var Player = $Content/Player
 	var placed_positions: Array[Vector2] = []
 
 	for i in range(object_count):
