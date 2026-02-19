@@ -326,33 +326,37 @@ script = ExtResource("25_yfuda")
 [node name="Visual" type="Node2D" parent="Content/Border"]
 
 [node name="Border1" type="AnimatedSprite2D" parent="Content/Border/Visual"]
+z_index = 1
 texture_filter = 1
-position = Vector2(2369.9998, -2635.5)
-scale = Vector2(13.406668, 2.3283331)
+position = Vector2(2353.5, -2635.5)
+scale = Vector2(13.425, 2.3283331)
 sprite_frames = SubResource("SpriteFrames_yxuth")
 animation = &"BorderAnimation"
 
 [node name="Border2" type="AnimatedSprite2D" parent="Content/Border/Visual"]
+z_index = 1
 texture_filter = 1
-position = Vector2(2320.998, 2176.7092)
+position = Vector2(2348.085, 2176.7092)
 rotation = 3.1415927
-scale = Vector2(13.273329, 2.0909688)
+scale = Vector2(13.435849, 2.0909688)
 sprite_frames = SubResource("SpriteFrames_yxuth")
 animation = &"BorderAnimation"
 
 [node name="Border3" type="AnimatedSprite2D" parent="Content/Border/Visual"]
+z_index = 1
 texture_filter = 1
-position = Vector2(5465.688, -193.86649)
+position = Vector2(5622.7915, -193.86649)
 rotation = 1.5707964
-scale = Vector2(5.810955, 1.991243)
+scale = Vector2(5.810955, 2.5149214)
 sprite_frames = SubResource("SpriteFrames_yxuth")
 animation = &"BorderAnimation"
 
 [node name="Border4" type="AnimatedSprite2D" parent="Content/Border/Visual"]
+z_index = 1
 texture_filter = 1
-position = Vector2(-1000.9165, -193.78357)
+position = Vector2(-1006.334, -193.78357)
 rotation = 4.712389
-scale = Vector2(5.8106174, 2.225654)
+scale = Vector2(5.8106174, 2.243712)
 sprite_frames = SubResource("SpriteFrames_yxuth")
 animation = &"BorderAnimation"
 
