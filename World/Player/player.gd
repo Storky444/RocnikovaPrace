@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-var speed = 150.0  
+var speed = 2000.0  
 @onready var Object_Cactus = $"../Content/Object_Cactuses"
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _ready():
-	position = Vector2(1800, 900)
+	position = Vector2(1200, 900)
 
 func _physics_process(delta):
 	var direction = Input.get_vector("left", "right", "up", "down")

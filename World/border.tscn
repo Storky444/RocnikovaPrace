@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://dic2se2v87g40"]
+
+[ext_resource type="Texture2D" uid="uid://dan38vryn76d3" path="res://textures/New Piskel (1).png" id="1_7wkbp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6lw0"]
+size = Vector2(73, 4050)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0pyu"]
+size = Vector2(74, 4255)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg1ng"]
+size = Vector2(6061, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfuda"]
+size = Vector2(6053, 101)
+
+[node name="Border" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1238, -115)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1489.5, -196)
+shape = SubResource("RectangleShape2D_o6lw0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4186, -217.5)
+shape = SubResource("RectangleShape2D_x0pyu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1356, 1641)
+shape = SubResource("RectangleShape2D_dg1ng")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1403, -2020)
+shape = SubResource("RectangleShape2D_yfuda")
+
+[node name="Border1" type="Sprite2D" parent="."]
+light_mask = 0
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(2588, 1961)
+scale = Vector2(1, 4.735)
+texture = ExtResource("1_7wkbp")
+region_enabled = true
+region_rect = Rect2(0, 0, 5616, 200)
+
+[node name="Border2" type="Sprite2D" parent="."]
+light_mask = 2
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-615, -308)
+rotation = 1.5707964
+scale = Vector2(1, 3.9497507)
+texture = ExtResource("1_7wkbp")
+region_enabled = true
+region_rect = Rect2(0, 0, 6000, 200)
+
+[node name="Border3" type="Sprite2D" parent="."]
+light_mask = 4
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(5837, -99)
+rotation = 1.5707964
+scale = Vector2(1, 4.4086013)
+texture = ExtResource("1_7wkbp")
+region_enabled = true
+region_rect = Rect2(0, 0, 6000, 200)
+
+[node name="Border4" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(2588, -2571)
+scale = Vector2(1, 4.645)
+texture = ExtResource("1_7wkbp")
+region_enabled = true
+region_rect = Rect2(0, 0, 5616, 200)

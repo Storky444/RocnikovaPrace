@@ -3,7 +3,7 @@ extends Node2D
 @export var object_scenes: Array[PackedScene]
 @export var object_count: int = 400
 @export var spawn_area_position: Vector2 = Vector2(-2000, -2200)
-@export var spawn_area_size: Vector2 = Vector2(6800, 4500)
+@export var spawn_area_size: Vector2 = Vector2(7200, 4800)
 @export var min_distance_between_objects: float = 120.0
 
 

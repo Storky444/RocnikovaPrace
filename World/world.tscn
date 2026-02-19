@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bqri0d3x2hej"]
+[gd_scene load_steps=55 format=3 uid="uid://bqri0d3x2hej"]
 
 [ext_resource type="Script" uid="uid://cfoi4npyi2rg6" path="res://World/world.gd" id="1_5xkvv"]
 [ext_resource type="Texture2D" uid="uid://d0aj5vm2njgwj" path="res://textures/New Piskel (6).png" id="1_awrha"]
@@ -23,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://cpna5pt7mln7s" path="res://Animations/CowboyUpAnimation/cowboy_animation0000 (2).png" id="19_xw5lg"]
 [ext_resource type="Texture2D" uid="uid://d1ks7ncngto0j" path="res://Animations/CowboyRightAnimation/cowboy_animation0000 (4) (1).png" id="20_26uyv"]
 [ext_resource type="Texture2D" uid="uid://bgygxb7j4f7ag" path="res://Animations/CowboyLeftAnimation/cowboy_animation0000 (4) (2).png" id="20_dqu5g"]
+[ext_resource type="Texture2D" uid="uid://b1aal44o1rowq" path="res://Animations/BorderAnimation/New Piskel (3).png" id="25_dg1ng"]
+[ext_resource type="Script" uid="uid://b0rvstxta8p3r" path="res://World/border.gd" id="25_yfuda"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0pyu"]
 atlas = ExtResource("19_0lysu")
@@ -204,17 +206,67 @@ animations = [{
 radius = 5.0
 height = 18.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6lw0"]
-size = Vector2(73, 4050)
+[sub_resource type="AtlasTexture" id="AtlasTexture_or3hn"]
+atlas = ExtResource("25_dg1ng")
+region = Rect2(0, 0, 600, 600)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0pyu"]
-size = Vector2(74, 4255)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gebr"]
+atlas = ExtResource("25_dg1ng")
+region = Rect2(600, 0, 600, 600)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg1ng"]
-size = Vector2(6061, 81)
+[sub_resource type="AtlasTexture" id="AtlasTexture_84yts"]
+atlas = ExtResource("25_dg1ng")
+region = Rect2(1200, 0, 600, 600)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfuda"]
-size = Vector2(6053, 101)
+[sub_resource type="AtlasTexture" id="AtlasTexture_15i7j"]
+atlas = ExtResource("25_dg1ng")
+region = Rect2(1800, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxuth"]
+atlas = ExtResource("25_dg1ng")
+region = Rect2(2400, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05jqx"]
+atlas = ExtResource("25_dg1ng")
+region = Rect2(3000, 0, 600, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yxuth"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_or3hn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gebr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84yts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15i7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxuth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05jqx")
+}],
+"loop": true,
+"name": &"BorderAnimation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05jqx"]
+size = Vector2(5188, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5cut"]
+size = Vector2(5188, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_it66m"]
+size = Vector2(5616, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wm6hh"]
+size = Vector2(5616, 600)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_5xkvv")
@@ -223,8 +275,8 @@ object_scenes = Array[PackedScene]([ExtResource("17_5xkvv"), ExtResource("15_f23
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(2508, -185)
-scale = Vector2(1.7529999, 1.1659999)
+position = Vector2(2479, -185)
+scale = Vector2(1.704, 1.1659999)
 texture = ExtResource("1_awrha")
 region_enabled = true
 region_rect = Rect2(0, 0, 4000, 4000)
@@ -258,7 +310,7 @@ y_sort_enabled = true
 position = Vector2(-3213, -906)
 
 [node name="Big_Rock" parent="Content/Object_Rocks" instance=ExtResource("17_5xkvv")]
-position = Vector2(4734, -325)
+position = Vector2(6382, -444)
 
 [node name="Object_Cactuses" type="Node2D" parent="Content"]
 
@@ -269,22 +321,66 @@ position = Vector2(-2049, -265)
 position = Vector2(-2143, -223)
 
 [node name="Border" type="Node2D" parent="Content"]
+script = ExtResource("25_yfuda")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/Border"]
-position = Vector2(1238, -115)
+[node name="Visual" type="Node2D" parent="Content/Border"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/StaticBody2D"]
-position = Vector2(-1489.5, -196)
-shape = SubResource("RectangleShape2D_o6lw0")
+[node name="Border1" type="AnimatedSprite2D" parent="Content/Border/Visual"]
+texture_filter = 1
+position = Vector2(2369.9998, -2635.5)
+scale = Vector2(13.406668, 2.3283331)
+sprite_frames = SubResource("SpriteFrames_yxuth")
+animation = &"BorderAnimation"
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/Border/StaticBody2D"]
-position = Vector2(4186, -217.5)
-shape = SubResource("RectangleShape2D_x0pyu")
+[node name="Border2" type="AnimatedSprite2D" parent="Content/Border/Visual"]
+texture_filter = 1
+position = Vector2(2320.998, 2176.7092)
+rotation = 3.1415927
+scale = Vector2(13.273329, 2.0909688)
+sprite_frames = SubResource("SpriteFrames_yxuth")
+animation = &"BorderAnimation"
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/Border/StaticBody2D"]
-position = Vector2(1356, 1641)
-shape = SubResource("RectangleShape2D_dg1ng")
+[node name="Border3" type="AnimatedSprite2D" parent="Content/Border/Visual"]
+texture_filter = 1
+position = Vector2(5465.688, -193.86649)
+rotation = 1.5707964
+scale = Vector2(5.810955, 1.991243)
+sprite_frames = SubResource("SpriteFrames_yxuth")
+animation = &"BorderAnimation"
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/Border/StaticBody2D"]
-position = Vector2(1403, -2020)
-shape = SubResource("RectangleShape2D_yfuda")
+[node name="Border4" type="AnimatedSprite2D" parent="Content/Border/Visual"]
+texture_filter = 1
+position = Vector2(-1000.9165, -193.78357)
+rotation = 4.712389
+scale = Vector2(5.8106174, 2.225654)
+sprite_frames = SubResource("SpriteFrames_yxuth")
+animation = &"BorderAnimation"
+
+[node name="Collision" type="Node2D" parent="Content/Border"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/Border/Collision"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D"]
+texture_filter = 1
+position = Vector2(2265, -2216)
+shape = SubResource("RectangleShape2D_05jqx")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Content/Border/Collision"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D2"]
+position = Vector2(2265, 1849)
+shape = SubResource("RectangleShape2D_s5cut")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Content/Border/Collision"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D3"]
+position = Vector2(-629, -162)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_it66m")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Content/Border/Collision"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D4"]
+position = Vector2(5159, -275)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_wm6hh")
