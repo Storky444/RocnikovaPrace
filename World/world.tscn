@@ -1,22 +1,92 @@
-[gd_scene load_steps=20 format=3 uid="uid://bqri0d3x2hej"]
+[gd_scene format=3 uid="uid://bqri0d3x2hej"]
 
 [ext_resource type="Script" uid="uid://cfoi4npyi2rg6" path="res://World/world.gd" id="1_5xkvv"]
 [ext_resource type="Texture2D" uid="uid://d0aj5vm2njgwj" path="res://textures/New Piskel (6).png" id="1_awrha"]
 [ext_resource type="PackedScene" uid="uid://c7r006uem5qok" path="res://World/Player/player.tscn" id="2_j8job"]
-[ext_resource type="Texture2D" uid="uid://ci70227xna37k" path="res://Animations/CowboyIddleAnimation/cowboy_animation0000.png" id="3_awrha"]
-[ext_resource type="Texture2D" uid="uid://b2fgsb45vn5ml" path="res://Animations/CowboyIddleAnimation/cowboy_animation0001.png" id="4_f23eu"]
-[ext_resource type="Texture2D" uid="uid://by2isix62fw2d" path="res://Animations/CowboyIddleAnimation/cowboy_animation0002.png" id="5_oeat8"]
-[ext_resource type="Texture2D" uid="uid://d1f5av8t0exj7" path="res://Animations/CowboyIddleAnimation/cowboy_animation0003.png" id="6_5xkvv"]
-[ext_resource type="Texture2D" uid="uid://bkhoajrgpow4c" path="res://Animations/CowboyIddleAnimation/cowboy_animation0004.png" id="7_kcyjf"]
-[ext_resource type="Texture2D" uid="uid://svjui1vf1wv" path="res://Animations/CowboyIddleAnimation/cowboy_animation0005.png" id="8_xw5lg"]
-[ext_resource type="Texture2D" uid="uid://dmy77erxkaurf" path="res://Animations/CowboyIddleAnimation/cowboy_animation0006.png" id="9_0lysu"]
-[ext_resource type="Texture2D" uid="uid://bclg8vxpyvy6w" path="res://Animations/CowboyIddleAnimation/cowboy_animation0007.png" id="10_26uyv"]
-[ext_resource type="Texture2D" uid="uid://b8dykqhs5cgpw" path="res://Animations/CowboyIddleAnimation/cowboy_animation0008.png" id="11_dqu5g"]
-[ext_resource type="Texture2D" uid="uid://buoso3x6dkxkn" path="res://Animations/CowboyIddleAnimation/cowboy_animation0009.png" id="12_o6lw0"]
-[ext_resource type="Texture2D" uid="uid://2ugj4axwa1pn" path="res://Animations/CowboyIddleAnimation/cowboy_animation0010.png" id="13_x0pyu"]
-[ext_resource type="Texture2D" uid="uid://3vlfcpl2ldyd" path="res://Animations/CowboyIddleAnimation/cowboy_animation0011.png" id="14_dg1ng"]
+[ext_resource type="Texture2D" uid="uid://ci70227xna37k" path="res://Animations/CowboyIdleAnimation/cowboy_animation0000.png" id="3_awrha"]
+[ext_resource type="Texture2D" uid="uid://b2fgsb45vn5ml" path="res://Animations/CowboyIdleAnimation/cowboy_animation0001.png" id="4_f23eu"]
+[ext_resource type="PackedScene" uid="uid://dc7kmnmbw1xaw" path="res://World/cactus_normal.tscn" id="4_kcyjf"]
+[ext_resource type="PackedScene" uid="uid://brgr8cooqo2o2" path="res://World/cactus_flower.tscn" id="5_o6lw0"]
+[ext_resource type="Texture2D" uid="uid://by2isix62fw2d" path="res://Animations/CowboyIdleAnimation/cowboy_animation0002.png" id="5_oeat8"]
+[ext_resource type="Texture2D" uid="uid://d1f5av8t0exj7" path="res://Animations/CowboyIdleAnimation/cowboy_animation0003.png" id="6_5xkvv"]
+[ext_resource type="Texture2D" uid="uid://bkhoajrgpow4c" path="res://Animations/CowboyIdleAnimation/cowboy_animation0004.png" id="7_kcyjf"]
+[ext_resource type="Texture2D" uid="uid://svjui1vf1wv" path="res://Animations/CowboyIdleAnimation/cowboy_animation0005.png" id="8_xw5lg"]
+[ext_resource type="Texture2D" uid="uid://dmy77erxkaurf" path="res://Animations/CowboyIdleAnimation/cowboy_animation0006.png" id="9_0lysu"]
+[ext_resource type="Texture2D" uid="uid://bclg8vxpyvy6w" path="res://Animations/CowboyIdleAnimation/cowboy_animation0007.png" id="10_26uyv"]
+[ext_resource type="Texture2D" uid="uid://b8dykqhs5cgpw" path="res://Animations/CowboyIdleAnimation/cowboy_animation0008.png" id="11_dqu5g"]
+[ext_resource type="Texture2D" uid="uid://buoso3x6dkxkn" path="res://Animations/CowboyIdleAnimation/cowboy_animation0009.png" id="12_o6lw0"]
+[ext_resource type="Texture2D" uid="uid://2ugj4axwa1pn" path="res://Animations/CowboyIdleAnimation/cowboy_animation0010.png" id="13_x0pyu"]
+[ext_resource type="Texture2D" uid="uid://3vlfcpl2ldyd" path="res://Animations/CowboyIdleAnimation/cowboy_animation0011.png" id="14_dg1ng"]
 [ext_resource type="PackedScene" uid="uid://d2vbgllcsn517" path="res://World/medium_rock.tscn" id="15_f23eu"]
 [ext_resource type="PackedScene" uid="uid://bihdknu747xb8" path="res://World/small_rock.tscn" id="17_5xkvv"]
+[ext_resource type="Texture2D" uid="uid://bmftv41jc2goy" path="res://Animations/CowboyDownAnimation/cowboy_animation0000 (3).png" id="19_0lysu"]
+[ext_resource type="Texture2D" uid="uid://cpna5pt7mln7s" path="res://Animations/CowboyUpAnimation/cowboy_animation0000 (2).png" id="19_xw5lg"]
+[ext_resource type="Texture2D" uid="uid://d1ks7ncngto0j" path="res://Animations/CowboyRightAnimation/cowboy_animation0000 (4) (1).png" id="20_26uyv"]
+[ext_resource type="Texture2D" uid="uid://bgygxb7j4f7ag" path="res://Animations/CowboyLeftAnimation/cowboy_animation0000 (4) (2).png" id="20_dqu5g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0pyu"]
+atlas = ExtResource("19_0lysu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg1ng"]
+atlas = ExtResource("19_0lysu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfuda"]
+atlas = ExtResource("19_0lysu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8dl0"]
+atlas = ExtResource("19_0lysu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koyeq"]
+atlas = ExtResource("20_dqu5g")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ql07"]
+atlas = ExtResource("20_dqu5g")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w08tj"]
+atlas = ExtResource("20_dqu5g")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spf4h"]
+atlas = ExtResource("20_dqu5g")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jf64p"]
+atlas = ExtResource("20_26uyv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw02v"]
+atlas = ExtResource("20_26uyv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sd22"]
+atlas = ExtResource("20_26uyv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5a7k"]
+atlas = ExtResource("20_26uyv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lysu"]
+atlas = ExtResource("19_xw5lg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26uyv"]
+atlas = ExtResource("19_xw5lg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqu5g"]
+atlas = ExtResource("19_xw5lg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6lw0"]
+atlas = ExtResource("19_xw5lg")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yfuda"]
 animations = [{
@@ -58,7 +128,75 @@ animations = [{
 "texture": ExtResource("14_dg1ng")
 }],
 "loop": true,
-"name": &"Iddle",
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0pyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg1ng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfuda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8dl0")
+}],
+"loop": true,
+"name": &"Run_Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koyeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ql07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w08tj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spf4h")
+}],
+"loop": true,
+"name": &"Run_Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jf64p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw02v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sd22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5a7k")
+}],
+"loop": true,
+"name": &"Run_Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lysu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26uyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqu5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6lw0")
+}],
+"loop": true,
+"name": &"Run_Up",
 "speed": 5.0
 }]
 
@@ -66,42 +204,50 @@ animations = [{
 radius = 5.0
 height = 18.0
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" unique_id=664812759]
 script = ExtResource("1_5xkvv")
-object_scenes = Array[PackedScene]([ExtResource("17_5xkvv"), ExtResource("15_f23eu")])
+object_scenes = Array[PackedScene]([ExtResource("17_5xkvv"), ExtResource("15_f23eu"), ExtResource("4_kcyjf"), ExtResource("5_o6lw0")])
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=1301973434]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(0, -10)
+position = Vector2(1351, -185)
 scale = Vector2(1.5, 1)
 texture = ExtResource("1_awrha")
 region_enabled = true
 region_rect = Rect2(0, 0, 4000, 4000)
 
-[node name="Content" type="Node2D" parent="."]
+[node name="Content" type="Node2D" parent="." unique_id=49454044]
 y_sort_enabled = true
 
-[node name="Player" parent="Content" instance=ExtResource("2_j8job")]
+[node name="Player" parent="Content" unique_id=1010230874 instance=ExtResource("2_j8job")]
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(1, 8)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/Player"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/Player" unique_id=1179412475]
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_yfuda")
-animation = &"Iddle"
+animation = &"Run_Left"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player" unique_id=1712387656]
 position = Vector2(-0.99999994, 2)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_oeat8")
 
-[node name="Object_Rocks" type="Node2D" parent="Content"]
+[node name="Object_Rocks" type="Node2D" parent="Content" unique_id=81831261]
 y_sort_enabled = true
 
-[node name="Medium_Rock" parent="Content/Object_Rocks" instance=ExtResource("15_f23eu")]
+[node name="Medium_Rock" parent="Content/Object_Rocks" unique_id=1884934546 instance=ExtResource("15_f23eu")]
 position = Vector2(-3213, -906)
 
-[node name="Big_Rock" parent="Content/Object_Rocks" instance=ExtResource("17_5xkvv")]
-position = Vector2(4140, -278)
+[node name="Big_Rock" parent="Content/Object_Rocks" unique_id=191272232 instance=ExtResource("17_5xkvv")]
+position = Vector2(4734, -325)
+
+[node name="Object_Cactuses" type="Node2D" parent="Content" unique_id=241206374]
+
+[node name="Cactus_Normal" parent="Content/Object_Cactuses" unique_id=827075423 instance=ExtResource("4_kcyjf")]
+position = Vector2(-2049, -265)
+
+[node name="Cactus_Flower" parent="Content/Object_Cactuses" unique_id=1322274325 instance=ExtResource("5_o6lw0")]
+position = Vector2(-2143, -223)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3vlfcpl2ldyd"
-path="res://.godot/imported/cowboy_animation0011.png-47daacd861d545739b25a524b5b6c619.ctex"
+uid="uid://dqxna5tvdqbct"
+path="res://.godot/imported/cactus3.png-97ec635277e4681325a3e0b09c3b686b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Animations/CowboyIddleAnimation/cowboy_animation0011.png"
-dest_files=["res://.godot/imported/cowboy_animation0011.png-47daacd861d545739b25a524b5b6c619.ctex"]
+source_file="res://textures/cactus3.png"
+dest_files=["res://.godot/imported/cactus3.png-97ec635277e4681325a3e0b09c3b686b.ctex"]
 
 [params]
 
