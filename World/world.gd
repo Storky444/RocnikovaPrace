@@ -19,6 +19,7 @@ func spawn_objects():
 
 	var objects_node = $Content/Object_Rocks
 	var objects_node2 = $Content/Object_Cactuses
+	var objects_node3 = $Content/Object_Skulls
 	var placed_positions: Array[Vector2] = []
 
 	for i in range(object_count):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bqri0d3x2hej"]
+[gd_scene format=3 uid="uid://bqri0d3x2hej"]
 
 [ext_resource type="Script" uid="uid://cfoi4npyi2rg6" path="res://World/world.gd" id="1_5xkvv"]
 [ext_resource type="Texture2D" uid="uid://d0aj5vm2njgwj" path="res://textures/New Piskel (6).png" id="1_awrha"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://brgr8cooqo2o2" path="res://World/cactus_flower.tscn" id="5_o6lw0"]
 [ext_resource type="Texture2D" uid="uid://by2isix62fw2d" path="res://Animations/CowboyIdleAnimation/cowboy_animation0002.png" id="5_oeat8"]
 [ext_resource type="Texture2D" uid="uid://d1f5av8t0exj7" path="res://Animations/CowboyIdleAnimation/cowboy_animation0003.png" id="6_5xkvv"]
+[ext_resource type="PackedScene" uid="uid://crshrd7d6px3" path="res://World/skull_normal.tscn" id="6_yfuda"]
 [ext_resource type="Texture2D" uid="uid://bkhoajrgpow4c" path="res://Animations/CowboyIdleAnimation/cowboy_animation0004.png" id="7_kcyjf"]
 [ext_resource type="Texture2D" uid="uid://svjui1vf1wv" path="res://Animations/CowboyIdleAnimation/cowboy_animation0005.png" id="8_xw5lg"]
 [ext_resource type="Texture2D" uid="uid://dmy77erxkaurf" path="res://Animations/CowboyIdleAnimation/cowboy_animation0006.png" id="9_0lysu"]
@@ -268,11 +269,11 @@ size = Vector2(5616, 600)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wm6hh"]
 size = Vector2(5616, 600)
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" unique_id=1318307303]
 script = ExtResource("1_5xkvv")
-object_scenes = Array[PackedScene]([ExtResource("17_5xkvv"), ExtResource("15_f23eu"), ExtResource("4_kcyjf"), ExtResource("5_o6lw0")])
+object_scenes = Array[PackedScene]([ExtResource("17_5xkvv"), ExtResource("15_f23eu"), ExtResource("4_kcyjf"), ExtResource("5_o6lw0"), ExtResource("6_yfuda")])
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=1532918460]
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(2479, -185)
@@ -281,51 +282,55 @@ texture = ExtResource("1_awrha")
 region_enabled = true
 region_rect = Rect2(0, 0, 4000, 4000)
 
-[node name="Content" type="Node2D" parent="."]
+[node name="Content" type="Node2D" parent="." unique_id=1075392855]
 y_sort_enabled = true
 
-[node name="Player" parent="Content" instance=ExtResource("2_j8job")]
+[node name="Player" parent="Content" unique_id=594388496 instance=ExtResource("2_j8job")]
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(1, 8)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/Player"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/Player" unique_id=1287278256]
 position = Vector2(1239, -136)
 sprite_frames = SubResource("SpriteFrames_yfuda")
 animation = &"Run_Up"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player" unique_id=1538382182]
 position = Vector2(1237, -125)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_oeat8")
 
-[node name="Camera2D2" type="Camera2D" parent="Content/Player"]
+[node name="Camera2D2" type="Camera2D" parent="Content/Player" unique_id=750845171]
 position = Vector2(1237, -125)
 zoom = Vector2(2, 2)
 
-[node name="Object_Rocks" type="Node2D" parent="Content"]
+[node name="Object_Rocks" type="Node2D" parent="Content" unique_id=1922452738]
 y_sort_enabled = true
 
-[node name="Medium_Rock" parent="Content/Object_Rocks" instance=ExtResource("15_f23eu")]
+[node name="Medium_Rock" parent="Content/Object_Rocks" unique_id=1700992861 instance=ExtResource("15_f23eu")]
 position = Vector2(-3213, -906)
 
-[node name="Big_Rock" parent="Content/Object_Rocks" instance=ExtResource("17_5xkvv")]
+[node name="Big_Rock" parent="Content/Object_Rocks" unique_id=729743223 instance=ExtResource("17_5xkvv")]
 position = Vector2(6382, -444)
 
-[node name="Object_Cactuses" type="Node2D" parent="Content"]
+[node name="Object_Cactuses" type="Node2D" parent="Content" unique_id=496952463]
 
-[node name="Cactus_Normal" parent="Content/Object_Cactuses" instance=ExtResource("4_kcyjf")]
+[node name="Cactus_Normal" parent="Content/Object_Cactuses" unique_id=1141653290 instance=ExtResource("4_kcyjf")]
 position = Vector2(-2049, -265)
 
-[node name="Cactus_Flower" parent="Content/Object_Cactuses" instance=ExtResource("5_o6lw0")]
+[node name="Cactus_Flower" parent="Content/Object_Cactuses" unique_id=1465603193 instance=ExtResource("5_o6lw0")]
 position = Vector2(-2143, -223)
 
-[node name="Border" type="Node2D" parent="Content"]
+[node name="Object_Skulls" type="Node2D" parent="Content" unique_id=349473816]
+
+[node name="Skull_Normal" parent="Content/Object_Skulls" unique_id=1524459601 instance=ExtResource("6_yfuda")]
+
+[node name="Border" type="Node2D" parent="Content" unique_id=1504449795]
 script = ExtResource("25_yfuda")
 
-[node name="Visual" type="Node2D" parent="Content/Border"]
+[node name="Visual" type="Node2D" parent="Content/Border" unique_id=452001112]
 
-[node name="Border1" type="AnimatedSprite2D" parent="Content/Border/Visual"]
+[node name="Border1" type="AnimatedSprite2D" parent="Content/Border/Visual" unique_id=666703439]
 z_index = 1
 texture_filter = 1
 position = Vector2(2353.5, -2635.5)
@@ -333,7 +338,7 @@ scale = Vector2(13.425, 2.3283331)
 sprite_frames = SubResource("SpriteFrames_yxuth")
 animation = &"BorderAnimation"
 
-[node name="Border2" type="AnimatedSprite2D" parent="Content/Border/Visual"]
+[node name="Border2" type="AnimatedSprite2D" parent="Content/Border/Visual" unique_id=576818418]
 z_index = 1
 texture_filter = 1
 position = Vector2(2348.085, 2176.7092)
@@ -342,7 +347,7 @@ scale = Vector2(13.435849, 2.0909688)
 sprite_frames = SubResource("SpriteFrames_yxuth")
 animation = &"BorderAnimation"
 
-[node name="Border3" type="AnimatedSprite2D" parent="Content/Border/Visual"]
+[node name="Border3" type="AnimatedSprite2D" parent="Content/Border/Visual" unique_id=259209160]
 z_index = 1
 texture_filter = 1
 position = Vector2(5622.7915, -193.86649)
@@ -351,7 +356,7 @@ scale = Vector2(5.810955, 2.5149214)
 sprite_frames = SubResource("SpriteFrames_yxuth")
 animation = &"BorderAnimation"
 
-[node name="Border4" type="AnimatedSprite2D" parent="Content/Border/Visual"]
+[node name="Border4" type="AnimatedSprite2D" parent="Content/Border/Visual" unique_id=1912866747]
 z_index = 1
 texture_filter = 1
 position = Vector2(-1006.334, -193.78357)
@@ -360,31 +365,31 @@ scale = Vector2(5.8106174, 2.243712)
 sprite_frames = SubResource("SpriteFrames_yxuth")
 animation = &"BorderAnimation"
 
-[node name="Collision" type="Node2D" parent="Content/Border"]
+[node name="Collision" type="Node2D" parent="Content/Border" unique_id=258446837]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/Border/Collision"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/Border/Collision" unique_id=489181629]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D" unique_id=283030122]
 texture_filter = 1
 position = Vector2(2265, -2216)
 shape = SubResource("RectangleShape2D_05jqx")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Content/Border/Collision"]
+[node name="StaticBody2D2" type="StaticBody2D" parent="Content/Border/Collision" unique_id=2019273544]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D2" unique_id=738290284]
 position = Vector2(2265, 1849)
 shape = SubResource("RectangleShape2D_s5cut")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Content/Border/Collision"]
+[node name="StaticBody2D3" type="StaticBody2D" parent="Content/Border/Collision" unique_id=783619884]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D3" unique_id=1786543983]
 position = Vector2(-629, -162)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_it66m")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="Content/Border/Collision"]
+[node name="StaticBody2D4" type="StaticBody2D" parent="Content/Border/Collision" unique_id=563396041]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D4" unique_id=1286680111]
 position = Vector2(5159, -275)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_wm6hh")

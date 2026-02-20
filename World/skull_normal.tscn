@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://crshrd7d6px3"]
+
+[ext_resource type="Texture2D" uid="uid://bjj8eqkxylcul" path="res://textures/New Piskel.png" id="1_wstid"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i8dl0"]
+radius = 3.604609
+height = 9.994676
+
+[node name="Skull_Normal" type="Node2D" unique_id=1524459601]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=925544623]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_wstid")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1140253926]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=915207676]
+position = Vector2(0, 3)
+rotation = -0.61086524
+shape = SubResource("CapsuleShape2D_i8dl0")
