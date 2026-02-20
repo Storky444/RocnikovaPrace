@@ -272,6 +272,7 @@ size = Vector2(5616, 600)
 [node name="World" type="Node2D" unique_id=1318307303]
 script = ExtResource("1_5xkvv")
 object_scenes = Array[PackedScene]([ExtResource("17_5xkvv"), ExtResource("15_f23eu"), ExtResource("4_kcyjf"), ExtResource("5_o6lw0"), ExtResource("6_yfuda")])
+min_distance_per_scene = Array[float]([20.0, 20.0, 10.0])
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1532918460]
 texture_filter = 1

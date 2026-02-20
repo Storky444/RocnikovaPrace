@@ -1,10 +1,11 @@
 extends Node2D
 
 @export var object_scenes: Array[PackedScene]
-@export var object_count: int = 400
+@export var object_count: int = 500
 @export var spawn_area_position: Vector2 = Vector2(-2000, -2200)
 @export var spawn_area_size: Vector2 = Vector2(7200, 4800)
-@export var min_distance_between_objects: float = 120.0
+@export var min_distance_between_objects: float = 80.0
+@export var min_distance_per_scene: Array[float] = [] 
 
 
 func _ready():
@@ -38,23 +39,29 @@ func spawn_objects():
 					spawn_area_position.y + spawn_area_size.y
 				)
 			)
-			
-				
+
+			var random_scene = object_scenes.pick_random()
+			var scene_index = object_scenes.find(random_scene)
+
+			var min_distance = min_distance_between_objects
+			if scene_index != -1 and scene_index < min_distance_per_scene.size():
+				min_distance = min_distance_per_scene[scene_index]
+
 			var overlapping = false
 
 			for pos in placed_positions:
-				if random_position.distance_to(pos) < min_distance_between_objects:
+				if random_position.distance_to(pos) < min_distance:
 					overlapping = true
 					break
 
 			if not overlapping:
-				var random_scene = object_scenes.pick_random()
 				var object = random_scene.instantiate()
-
 				object.position = random_position
 
 				objects_node.add_child(object)
 				placed_positions.append(random_position)
 				break
-
+	
 			attempts += 1
+			
+			
