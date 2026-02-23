@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://bqri0d3x2hej"]
+[gd_scene load_steps=86 format=3 uid="uid://bqri0d3x2hej"]
 
 [ext_resource type="Script" uid="uid://cfoi4npyi2rg6" path="res://World/world.gd" id="1_5xkvv"]
 [ext_resource type="Texture2D" uid="uid://d0aj5vm2njgwj" path="res://textures/New Piskel (6).png" id="1_awrha"]
@@ -273,9 +273,9 @@ size = Vector2(5616, 600)
 
 [sub_resource type="Curve2D" id="Curve2D_i8dl0"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1228, -1866, 0, 0, 0, 0, 5766, -906, 0, 0, 0, 0, -780, -328, 0, 0, 0, 0, 5436, 217, 0, 0, 0, 0, -787, 937, 0, 0, 0, 0, 5584, 1576, 0, 0, 0, 0, -659, -1182, 0, 0, 0, 0, 4192, -2285, 0, 0, 0, 0, 5207, -301, 0, 0, 0, 0, -565, 433, 0, 0, 0, 0, 3452, 1671, 0, 0, 0, 0, -666, -1559, 0, 0, 0, 0, 3115, -2198)
+"points": PackedVector2Array(0, 0, 0, 0, -470, -335, 0, 0, 0, 0, 5094, -119, 0, 0, 0, 0, -605, 29, 0, 0, 0, 0, 5053, -476)
 }
-point_count = 13
+point_count = 4
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s5cut"]
 atlas = ExtResource("28_jf64p")
@@ -318,99 +318,129 @@ radius = 9.055248
 
 [sub_resource type="Curve2D" id="Curve2D_jf64p"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -638, 590, 0, 0, 0, 0, 5053, -668, 0, 0, 0, 0, 3380, 1626, 0, 0, 0, 0, -912, 1042, 0, 0, 0, 0, 3884, -2266, 0, 0, 0, 0, 5445, -1401, 0, 0, 0, 0, -1208, -912, 0, 0, 0, 0, 1271, -2444, 0, 0, 0, 0, 3787, 1671, 0, 0, 0, 0, -1600, -579, 0, 0, 0, 0, 5697, -1016)
+"points": PackedVector2Array(0, 0, 0, 0, 4912, -673, 0, 0, 0, 0, -463, -518, 0, 0, 0, 0, 4932, -1003, 0, 0, 0, 0, -618, -390, 0, 0, 0, 0, 5047, -498, 0, 0, 0, 0, -544, 67, 0, 0, 0, 0, 4993, 188, 0, 0, 0, 0, -598, 390, 0, 0, 0, 0, 5188, -7)
 }
-point_count = 11
+point_count = 9
 
 [sub_resource type="Curve2D" id="Curve2D_rw02v"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 4927, 213, 0, 0, 0, 0, 1471, 1678, 0, 0, 0, 0, -586, 420, 0, 0, 0, 0, 2707, -2022, 0, 0, 0, 0, 5726, -1142, 0, 0, 0, 0, -1156, -971, 0, 0, 0, 0, 813, 1967, 0, 0, 0, 0, 5223, -1216, 0, 0, 0, 0, -675, -1674)
+"points": PackedVector2Array(0, 0, 0, 0, -403, -814, 0, 0, 0, 0, 4932, -848, 0, 0, 0, 0, -477, -1164, 0, 0, 0, 0, -497, -653)
 }
-point_count = 9
+point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_3sd22"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 5223, -1208, 0, 0, 0, 0, 3943, 1796, 0, 0, 0, 0, -771, -786, 0, 0, 0, 0, 5497, -727, 0, 0, 0, 0, 1597, 1885, 0, 0, 0, 0, -1015, -1282, 0, 0, 0, 0, 2877, -2059, 0, 0, 0, 0, 5845, -1290, 0, 0, 0, 0, -1393, -402, 0, 0, 0, 0, 6082, 1012)
+"points": PackedVector2Array(0, 0, 0, 0, 4937, 348, 0, 0, 0, 0, -540, 247, 0, 0, 0, 0, 4990, 590, 0, 0, 0, 0, -499, 678)
 }
-point_count = 10
+point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_s5a7k"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2722, 1826, 0, 0, 0, 0, 435, -2311, 0, 0, 0, 0, -978, -860, 0, 0, 0, 0, 5630, -350, 0, 0, 0, 0, 1686, 1863, 0, 0, 0, 0, -838, 886, 0, 0, 0, 0, 1952, -2488, 0, 0, 0, 0, 5741, -557)
+"points": PackedVector2Array(0, 0, 0, 0, -522, 804, 0, 0, 0, 0, 4925, 870, 0, 0, 0, 0, 100, 1751, 0, 0, 0, 0, -655, 981, 0, 0, 0, 0, 5117, -1475, 0, 0, 0, 0, -574, -1801)
 }
-point_count = 8
+point_count = 6
 
 [sub_resource type="Curve2D" id="Curve2D_koyeq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 5139, 1102, 0, 0, 0, 0, -906, 233, 0, 0, 0, 0, 5398, -644, 0, 0, 0, 0, -825, -1495, 0, 0, 0, 0, 5228, -2211, 0, 0, 0, 0, -834, 1559, 0, 0, 0, 0, 4772, 1684, 0, 0, 0, 0, 5613, -1074, 0, 0, 0, 0, -1031, -662)
+"points": PackedVector2Array(0, 0, 0, 0, -544, -1801, 0, 0, 0, 0, 5006, -1364, 0, 0, 0, 0, -500, -1135, 0, 0, 0, 0, 4643, -2171, 0, 0, 0, 0, 2520, 1647, 0, 0, 0, 0, -1040, -203)
 }
-point_count = 9
+point_count = 6
 
 [sub_resource type="Curve2D" id="Curve2D_3ql07"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -762, 1326, 0, 0, 0, 0, 5273, 959, 0, 0, 0, 0, -726, 216, 0, 0, 0, 0, 5470, -537, 0, 0, 0, 0, 1091, 1729, 0, 0, 0, 0, 1620, -2381, 0, 0, 0, 0, 5121, -805, 0, 0, 0, 0, -1282, -349, 0, 0, 0, 0, 5739, 529, 0, 0, 0, 0, 447, 1827, 0, 0, 0, 0, 3151, -2677)
+"points": PackedVector2Array(0, 0, 0, 0, -522, -1683, 0, 0, 0, 0, 5058, -1431, 0, 0, 0, 0, -589, -1202, 0, 0, 0, 0, 4421, -2119)
 }
-point_count = 11
+point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_w08tj"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1111, -1790, 0, 0, 0, 0, 5515, -1790, 0, 0, 0, 0, -646, 833, 0, 0, 0, 0, 3975, 1738, 0, 0, 0, 0, 3052, -2417, 0, 0, 0, 0, 661, 1863, 0, 0, 0, 0, -986, -1280, 0, 0, 0, 0, 5622, 99, 0, 0, 0, 0, -897, -1763, 0, 0, 0, 0, 1817, 1783)
+"points": PackedVector2Array(0, 0, 0, 0, -528, 1061, 0, 0, 0, 0, 5301, 1232, 0, 0, 0, 0, 636, 1728, 0, 0, 0, 0, -862, 1240, 0, 0, 0, 0, 5235, 939)
 }
-point_count = 10
+point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_spf4h"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 3831, 144, 0, 0, 0, 0, 214, -2157, 0, 0, 0, 0, -1040, -528, 0, 0, 0, 0, 3151, 1693, 0, 0, 0, 0, 5533, 287, 0, 0, 0, 0, 2864, -2721, 0, 0, 0, 0, 3169, -107, 0, 0, 0, 0, 5864, 681, 0, 0, 0, 0, 3822, 153)
+"points": PackedVector2Array(0, 0, 0, 0, 587, -2163, 0, 0, 0, 0, 3957, 1801, 0, 0, 0, 0, -756, 222, 0, 0, 0, 0, 5187, -1422)
 }
-point_count = 9
+point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_or3hn"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 223, -554, 0, 0, 0, 0, 5139, 708, 0, 0, 0, 0, 214, 1711, 0, 0, 0, 0, 1611, -2408, 0, 0, 0, 0, -1049, 305, 0, 0, 0, 0, 5497, -689, 0, 0, 0, 0, 778, -2435, 0, 0, 0, 0, 1306, 1800, 0, 0, 0, 0, -709, -1020, 0, 0, 0, 0, 5219, -1692)
+"points": PackedVector2Array(0, 0, 0, 0, 5121, -1845, 0, 0, 0, 0, -886, -1438, 0, 0, 0, 0, 5097, 1158, 0, 0, 0, 0, 937, 1679, 0, 0, 0, 0, -821, -576, 0, 0, 0, 0, 4014, -2244)
 }
-point_count = 10
+point_count = 6
 
 [sub_resource type="Curve2D" id="Curve2D_6gebr"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -717, -1826, 0, 0, 0, 0, 5174, -1638, 0, 0, 0, 0, -762, -680, 0, 0, 0, 0, 5067, -429, 0, 0, 0, 0, -700, 171, 0, 0, 0, 0, 5219, 484, 0, 0, 0, 0, -700, 923, 0, 0, 0, 0, 5389, 1398, 0, 0, 0, 0, -422, 1568)
-}
-point_count = 9
-
-[sub_resource type="Curve2D" id="Curve2D_84yts"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 2748, -366, 0, 0, 0, 0, -520, 359, 0, 0, 0, 0, 1073, -2274, 0, 0, 0, 0, 1252, 1729, 0, 0, 0, 0, 5434, 592, 0, 0, 0, 0, -1031, 1183, 0, 0, 0, 0, 4028, -2829, 0, 0, 0, 0, 3966, 1863)
+"points": PackedVector2Array(0, 0, 0, 0, -935, -1691, 0, 0, 0, 0, 5227, -1007, 0, 0, 0, 0, -674, -714, 0, 0, 0, 0, 5301, -103, 0, 0, 0, 0, -788, 328, 0, 0, 0, 0, 5203, 637, 0, 0, 0, 0, -902, 1305, 0, 0, 0, 0, 5667, 979)
 }
 point_count = 8
 
+[sub_resource type="Curve2D" id="Curve2D_84yts"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5357, 1305, 0, 0, 0, 0, -821, 662, 0, 0, 0, 0, 4967, 263, 0, 0, 0, 0, -626, -486, 0, 0, 0, 0, 1352, -2114, 0, 0, 0, 0, 5219, -1243, 0, 0, 0, 0, -699, -1145)
+}
+point_count = 7
+
 [sub_resource type="Curve2D" id="Curve2D_15i7j"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 688, -152, 0, 0, 0, 0, 5452, -268, 0, 0, 0, 0, -512, -152, 0, 0, 0, 0, 5246, 126, 0, 0, 0, 0, -655, -590)
+"points": PackedVector2Array(0, 0, 0, 0, 1019, -2204, 0, 0, 0, 0, 2411, 1687, 0, 0, 0, 0, 3217, -2155, 0, 0, 0, 0, 4039, 1622, 0, 0, 0, 0, 4666, -2147)
 }
 point_count = 5
 
 [sub_resource type="Curve2D" id="Curve2D_yxuth"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -476, -1226, 0, 0, 0, 0, 5049, -1038, 0, 0, 0, 0, -520, -787, 0, 0, 0, 0, 5076, -1539, 0, 0, 0, 0, -583, -1808)
+"points": PackedVector2Array(0, 0, 0, 0, -210, -2090, 0, 0, 0, 0, 172, 1679, 0, 0, 0, 0, 1930, -2187, 0, 0, 0, 0, 2598, 1753, 0, 0, 0, 0, 302, -2318, 0, 0, 0, 0, 595, 1704)
 }
-point_count = 5
+point_count = 6
 
 [sub_resource type="Curve2D" id="Curve2D_05jqx"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -574, -1889, 0, 0, 0, 0, 5237, -1674, 0, 0, 0, 0, -458, -1495, 0, 0, 0, 0, 5067, -1360, 0, 0, 0, 0, -789, -1656)
+"points": PackedVector2Array(0, 0, 0, 0, -642, -1251, 0, 0, 0, 0, 5235, -950, 0, 0, 0, 0, -504, -592, 0, 0, 0, 0, 5089, 43)
 }
-point_count = 5
+point_count = 4
 
 [sub_resource type="Curve2D" id="Curve2D_s5cut"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -789, 430, 0, 0, 0, 0, 5103, 430, 0, 0, 0, 0, -449, 762, 0, 0, 0, 0, 5013, 968, 0, 0, 0, 0, -619, 780)
+"points": PackedVector2Array(0, 0, 0, 0, 3974, 1712, 0, 0, 0, 0, 5260, 1020, 0, 0, 0, 0, -1155, -1023, 0, 0, 0, 0, 3648, -2122, 0, 0, 0, 0, 750, 1712, 0, 0, 0, 0, -919, 629)
 }
-point_count = 5
+point_count = 6
 
 [sub_resource type="Curve2D" id="Curve2D_it66m"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -440, 1227, 0, 0, 0, 0, 5022, 1004, 0, 0, 0, 0, -494, 1469, 0, 0, 0, 0, 5327, 1371, 0, 0, 0, 0, -771, 986)
+"points": PackedVector2Array(0, 0, 0, 0, 1336, 1769, 0, 0, 0, 0, 1890, -2204, 0, 0, 0, 0, 4324, 1785, 0, 0, 0, 0, -1065, 654, 0, 0, 0, 0, 5447, -1845)
 }
 point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_wm6hh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -886, -356, 0, 0, 0, 0, 5056, -315, 0, 0, 0, 0, -911, -38, 0, 0, 0, 0, 5089, -1219, 0, 0, 0, 0, -935, -1390)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_8kjm2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5121, 1142, 0, 0, 0, 0, -911, 890, 0, 0, 0, 0, 5146, 100, 0, 0, 0, 0, -780, -624, 0, 0, 0, 0, 5268, -1202, 0, 0, 0, 0, -797, -1601)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_i52kj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 135, -204, 0, 0, 0, 0, 5207, 602, 0, 0, 0, 0, -525, 629)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_y4tau"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3094, -515, 0, 0, 0, 0, -599, 192, 0, 0, 0, 0, 5133, -797, 0, 0, 0, 0, 5395, 777, 0, 0, 0, 0, -714, 1295)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_n40p1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 901, -481, 0, 0, 0, 0, 3256, 1645, 0, 0, 0, 0, -700, 663, 0, 0, 0, 0, 5260, -1087)
+}
+point_count = 4
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_5xkvv")
@@ -545,8 +575,8 @@ curve = SubResource("Curve2D_i8dl0")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D"]
 y_sort_enabled = true
-position = Vector2(-1228, -1866)
-rotation = 0.1364081
+position = Vector2(-470, -335)
+rotation = 0.038801506
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D/PathFollow2D"]
@@ -568,8 +598,8 @@ curve = SubResource("Curve2D_jf64p")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D2"]
 y_sort_enabled = true
-position = Vector2(-638, 590)
-rotation = -0.21755236
+position = Vector2(4912, -673)
+rotation = 3.1127634
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D2/PathFollow2D"]
@@ -587,12 +617,12 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
 [node name="Path2D3" type="Path2D" parent="Content/MovingBushes"]
-curve = SubResource("Curve2D_rw02v")
+curve = SubResource("Curve2D_jf64p")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D3"]
 y_sort_enabled = true
-position = Vector2(4927, 213)
-rotation = 2.7406538
+position = Vector2(4912, -673)
+rotation = 3.1127634
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D3/PathFollow2D"]
@@ -610,12 +640,12 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
 [node name="Path2D4" type="Path2D" parent="Content/MovingBushes"]
-curve = SubResource("Curve2D_3sd22")
+curve = SubResource("Curve2D_rw02v")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D4"]
 y_sort_enabled = true
-position = Vector2(5223, -1208)
-rotation = 1.973597
+position = Vector2(-403, -814)
+rotation = -0.006372922
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D4/PathFollow2D"]
@@ -633,12 +663,12 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
 [node name="Path2D5" type="Path2D" parent="Content/MovingBushes"]
-curve = SubResource("Curve2D_s5a7k")
+curve = SubResource("Curve2D_3sd22")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D5"]
 y_sort_enabled = true
-position = Vector2(2722, 1826)
-rotation = -2.075799
+position = Vector2(4937, 348)
+rotation = -3.123154
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D5/PathFollow2D"]
@@ -656,12 +686,12 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
 [node name="Path2D6" type="Path2D" parent="Content/MovingBushes"]
-curve = SubResource("Curve2D_koyeq")
+curve = SubResource("Curve2D_s5a7k")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D6"]
 y_sort_enabled = true
-position = Vector2(5139, 1102)
-rotation = -2.9988155
+position = Vector2(-522, 804)
+rotation = 0.01211617
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D6/PathFollow2D"]
@@ -679,12 +709,12 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
 [node name="Path2D7" type="Path2D" parent="Content/MovingBushes"]
-curve = SubResource("Curve2D_3ql07")
+curve = SubResource("Curve2D_koyeq")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D7"]
 y_sort_enabled = true
-position = Vector2(-762, 1326)
-rotation = -0.06073713
+position = Vector2(-544, -1801)
+rotation = 0.07857662
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D7/PathFollow2D"]
@@ -702,11 +732,12 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
 [node name="Path2D8" type="Path2D" parent="Content/MovingBushes"]
-curve = SubResource("Curve2D_w08tj")
+curve = SubResource("Curve2D_3ql07")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D8"]
 y_sort_enabled = true
-position = Vector2(-1111, -1790)
+position = Vector2(-522, -1683)
+rotation = 0.045130625
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D8/PathFollow2D"]
@@ -724,12 +755,12 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
 [node name="Path2D9" type="Path2D" parent="Content/MovingBushes"]
-curve = SubResource("Curve2D_spf4h")
+curve = SubResource("Curve2D_w08tj")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D9"]
 y_sort_enabled = true
-position = Vector2(3831, 144)
-rotation = -2.5750065
+position = Vector2(-528, 1061)
+rotation = 0.029327666
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D9/PathFollow2D"]
@@ -747,12 +778,12 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
 [node name="Path2D10" type="Path2D" parent="Content/MovingBushes"]
-curve = SubResource("Curve2D_or3hn")
+curve = SubResource("Curve2D_spf4h")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D10"]
 y_sort_enabled = true
-position = Vector2(223, -554)
-rotation = 0.2512865
+position = Vector2(587, -2163)
+rotation = 0.8662144
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D10/PathFollow2D"]
@@ -770,12 +801,12 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
 [node name="Path2D11" type="Path2D" parent="Content/MovingBushes"]
-curve = SubResource("Curve2D_6gebr")
+curve = SubResource("Curve2D_or3hn")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D11"]
 y_sort_enabled = true
-position = Vector2(-717, -1826)
-rotation = 0.03190226
+position = Vector2(5121, -1845)
+rotation = 3.0739417
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D11/PathFollow2D"]
@@ -793,12 +824,12 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
 [node name="Path2D12" type="Path2D" parent="Content/MovingBushes"]
-curve = SubResource("Curve2D_84yts")
+curve = SubResource("Curve2D_6gebr")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D12"]
 y_sort_enabled = true
-position = Vector2(2748, -366)
-rotation = 2.9232802
+position = Vector2(-935, -1691)
+rotation = 0.11055035
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D12/PathFollow2D"]
@@ -816,12 +847,12 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
 [node name="Path2D13" type="Path2D" parent="Content/MovingBushes"]
-curve = SubResource("Curve2D_15i7j")
+curve = SubResource("Curve2D_84yts")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D13"]
 y_sort_enabled = true
-position = Vector2(688, -152)
-rotation = -0.024344478
+position = Vector2(5357, 1305)
+rotation = -3.037887
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D13/PathFollow2D"]
@@ -839,12 +870,12 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
 [node name="Path2D14" type="Path2D" parent="Content/MovingBushes"]
-curve = SubResource("Curve2D_yxuth")
+curve = SubResource("Curve2D_15i7j")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D14"]
 y_sort_enabled = true
-position = Vector2(-476, -1226)
-rotation = 0.034014028
+position = Vector2(1019, -2204)
+rotation = 1.2272352
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D14/PathFollow2D"]
@@ -862,12 +893,12 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
 [node name="Path2D15" type="Path2D" parent="Content/MovingBushes"]
-curve = SubResource("Curve2D_05jqx")
+curve = SubResource("Curve2D_yxuth")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D15"]
 y_sort_enabled = true
-position = Vector2(-574, -1889)
-rotation = 0.03698193
+position = Vector2(-210, -2090)
+rotation = 1.4697881
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D15/PathFollow2D"]
@@ -885,11 +916,12 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
 [node name="Path2D16" type="Path2D" parent="Content/MovingBushes"]
-curve = SubResource("Curve2D_s5cut")
+curve = SubResource("Curve2D_05jqx")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D16"]
 y_sort_enabled = true
-position = Vector2(-789, 430)
+position = Vector2(-642, -1251)
+rotation = 0.0511719
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D16/PathFollow2D"]
@@ -907,12 +939,12 @@ y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
 [node name="Path2D17" type="Path2D" parent="Content/MovingBushes"]
-curve = SubResource("Curve2D_it66m")
+curve = SubResource("Curve2D_s5cut")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D17"]
 y_sort_enabled = true
-position = Vector2(-440, 1227)
-rotation = -0.040804874
+position = Vector2(3974, 1712)
+rotation = -0.4936631
 script = ExtResource("27_jf64p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D17/PathFollow2D"]
@@ -926,5 +958,143 @@ autoplay = "BushAnimation"
 y_sort_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D17/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D18" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_it66m")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D18"]
+y_sort_enabled = true
+position = Vector2(1336, 1769)
+rotation = -1.4322485
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D18/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D18/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D18/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D19" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_wm6hh")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D19"]
+y_sort_enabled = true
+position = Vector2(-886, -356)
+rotation = 0.006899924
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D19/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D19/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D19/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D20" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_8kjm2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D20"]
+y_sort_enabled = true
+position = Vector2(5121, 1142)
+rotation = -3.0998397
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D20/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D20/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D20/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D21" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_i52kj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D21"]
+y_sort_enabled = true
+position = Vector2(135, -204)
+rotation = 0.15759392
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D21/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D21/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D21/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D22" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_y4tau")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D22"]
+y_sort_enabled = true
+position = Vector2(3094, -515)
+rotation = 2.952438
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D22/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D22/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D22/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D23" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_n40p1")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D23"]
+y_sort_enabled = true
+position = Vector2(901, -481)
+rotation = 0.7343379
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D23/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D23/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D23/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
