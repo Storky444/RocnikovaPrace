@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 200.0  
+var speed = 2000.0  
 @onready var Object_Cactus = $"../Content/Object_Cactuses"
 @onready var animated_sprite = $AnimatedSprite2D
 

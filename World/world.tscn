@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bqri0d3x2hej"]
+[gd_scene load_steps=81 format=3 uid="uid://bqri0d3x2hej"]
 
 [ext_resource type="Script" uid="uid://cfoi4npyi2rg6" path="res://World/world.gd" id="1_5xkvv"]
 [ext_resource type="Texture2D" uid="uid://d0aj5vm2njgwj" path="res://textures/New Piskel (6).png" id="1_awrha"]
@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://bgygxb7j4f7ag" path="res://Animations/CowboyLeftAnimation/cowboy_animation0000 (4) (2).png" id="20_dqu5g"]
 [ext_resource type="Texture2D" uid="uid://b1aal44o1rowq" path="res://Animations/BorderAnimation/New Piskel (3).png" id="25_dg1ng"]
 [ext_resource type="Script" uid="uid://b0rvstxta8p3r" path="res://World/border.gd" id="25_yfuda"]
+[ext_resource type="Script" uid="uid://4w7cljcb6f7v" path="res://World/path_follow_2d.gd" id="27_jf64p"]
+[ext_resource type="Texture2D" uid="uid://c6ua5rf28untn" path="res://Animations/BushAnimation/bush.png" id="28_jf64p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0pyu"]
 atlas = ExtResource("19_0lysu")
@@ -269,12 +271,153 @@ size = Vector2(5616, 600)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wm6hh"]
 size = Vector2(5616, 600)
 
-[node name="World" type="Node2D" unique_id=1318307303]
+[sub_resource type="Curve2D" id="Curve2D_i8dl0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1228, -1866, 0, 0, 0, 0, 5766, -906, 0, 0, 0, 0, -780, -328, 0, 0, 0, 0, 5436, 217, 0, 0, 0, 0, -787, 937, 0, 0, 0, 0, 5584, 1576, 0, 0, 0, 0, -659, -1182, 0, 0, 0, 0, 4192, -2285, 0, 0, 0, 0, 5207, -301, 0, 0, 0, 0, -565, 433, 0, 0, 0, 0, 3452, 1671, 0, 0, 0, 0, -666, -1559, 0, 0, 0, 0, 3115, -2198)
+}
+point_count = 13
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5cut"]
+atlas = ExtResource("28_jf64p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_it66m"]
+atlas = ExtResource("28_jf64p")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm6hh"]
+atlas = ExtResource("28_jf64p")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kjm2"]
+atlas = ExtResource("28_jf64p")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i52kj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5cut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_it66m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wm6hh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kjm2")
+}],
+"loop": true,
+"name": &"BushAnimation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jf64p"]
+radius = 9.055248
+
+[sub_resource type="Curve2D" id="Curve2D_jf64p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -638, 590, 0, 0, 0, 0, 5053, -668, 0, 0, 0, 0, 3380, 1626, 0, 0, 0, 0, -912, 1042, 0, 0, 0, 0, 3884, -2266, 0, 0, 0, 0, 5445, -1401, 0, 0, 0, 0, -1208, -912, 0, 0, 0, 0, 1271, -2444, 0, 0, 0, 0, 3787, 1671, 0, 0, 0, 0, -1600, -579, 0, 0, 0, 0, 5697, -1016)
+}
+point_count = 11
+
+[sub_resource type="Curve2D" id="Curve2D_rw02v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 4927, 213, 0, 0, 0, 0, 1471, 1678, 0, 0, 0, 0, -586, 420, 0, 0, 0, 0, 2707, -2022, 0, 0, 0, 0, 5726, -1142, 0, 0, 0, 0, -1156, -971, 0, 0, 0, 0, 813, 1967, 0, 0, 0, 0, 5223, -1216, 0, 0, 0, 0, -675, -1674)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_3sd22"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5223, -1208, 0, 0, 0, 0, 3943, 1796, 0, 0, 0, 0, -771, -786, 0, 0, 0, 0, 5497, -727, 0, 0, 0, 0, 1597, 1885, 0, 0, 0, 0, -1015, -1282, 0, 0, 0, 0, 2877, -2059, 0, 0, 0, 0, 5845, -1290, 0, 0, 0, 0, -1393, -402, 0, 0, 0, 0, 6082, 1012)
+}
+point_count = 10
+
+[sub_resource type="Curve2D" id="Curve2D_s5a7k"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2722, 1826, 0, 0, 0, 0, 435, -2311, 0, 0, 0, 0, -978, -860, 0, 0, 0, 0, 5630, -350, 0, 0, 0, 0, 1686, 1863, 0, 0, 0, 0, -838, 886, 0, 0, 0, 0, 1952, -2488, 0, 0, 0, 0, 5741, -557)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_koyeq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5139, 1102, 0, 0, 0, 0, -906, 233, 0, 0, 0, 0, 5398, -644, 0, 0, 0, 0, -825, -1495, 0, 0, 0, 0, 5228, -2211, 0, 0, 0, 0, -834, 1559, 0, 0, 0, 0, 4772, 1684, 0, 0, 0, 0, 5613, -1074, 0, 0, 0, 0, -1031, -662)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_3ql07"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -762, 1326, 0, 0, 0, 0, 5273, 959, 0, 0, 0, 0, -726, 216, 0, 0, 0, 0, 5470, -537, 0, 0, 0, 0, 1091, 1729, 0, 0, 0, 0, 1620, -2381, 0, 0, 0, 0, 5121, -805, 0, 0, 0, 0, -1282, -349, 0, 0, 0, 0, 5739, 529, 0, 0, 0, 0, 447, 1827, 0, 0, 0, 0, 3151, -2677)
+}
+point_count = 11
+
+[sub_resource type="Curve2D" id="Curve2D_w08tj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1111, -1790, 0, 0, 0, 0, 5515, -1790, 0, 0, 0, 0, -646, 833, 0, 0, 0, 0, 3975, 1738, 0, 0, 0, 0, 3052, -2417, 0, 0, 0, 0, 661, 1863, 0, 0, 0, 0, -986, -1280, 0, 0, 0, 0, 5622, 99, 0, 0, 0, 0, -897, -1763, 0, 0, 0, 0, 1817, 1783)
+}
+point_count = 10
+
+[sub_resource type="Curve2D" id="Curve2D_spf4h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3831, 144, 0, 0, 0, 0, 214, -2157, 0, 0, 0, 0, -1040, -528, 0, 0, 0, 0, 3151, 1693, 0, 0, 0, 0, 5533, 287, 0, 0, 0, 0, 2864, -2721, 0, 0, 0, 0, 3169, -107, 0, 0, 0, 0, 5864, 681, 0, 0, 0, 0, 3822, 153)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_or3hn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 223, -554, 0, 0, 0, 0, 5139, 708, 0, 0, 0, 0, 214, 1711, 0, 0, 0, 0, 1611, -2408, 0, 0, 0, 0, -1049, 305, 0, 0, 0, 0, 5497, -689, 0, 0, 0, 0, 778, -2435, 0, 0, 0, 0, 1306, 1800, 0, 0, 0, 0, -709, -1020, 0, 0, 0, 0, 5219, -1692)
+}
+point_count = 10
+
+[sub_resource type="Curve2D" id="Curve2D_6gebr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -717, -1826, 0, 0, 0, 0, 5174, -1638, 0, 0, 0, 0, -762, -680, 0, 0, 0, 0, 5067, -429, 0, 0, 0, 0, -700, 171, 0, 0, 0, 0, 5219, 484, 0, 0, 0, 0, -700, 923, 0, 0, 0, 0, 5389, 1398, 0, 0, 0, 0, -422, 1568)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_84yts"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2748, -366, 0, 0, 0, 0, -520, 359, 0, 0, 0, 0, 1073, -2274, 0, 0, 0, 0, 1252, 1729, 0, 0, 0, 0, 5434, 592, 0, 0, 0, 0, -1031, 1183, 0, 0, 0, 0, 4028, -2829, 0, 0, 0, 0, 3966, 1863)
+}
+point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_15i7j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 688, -152, 0, 0, 0, 0, 5452, -268, 0, 0, 0, 0, -512, -152, 0, 0, 0, 0, 5246, 126, 0, 0, 0, 0, -655, -590)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_yxuth"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -476, -1226, 0, 0, 0, 0, 5049, -1038, 0, 0, 0, 0, -520, -787, 0, 0, 0, 0, 5076, -1539, 0, 0, 0, 0, -583, -1808)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_05jqx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -574, -1889, 0, 0, 0, 0, 5237, -1674, 0, 0, 0, 0, -458, -1495, 0, 0, 0, 0, 5067, -1360, 0, 0, 0, 0, -789, -1656)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_s5cut"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -789, 430, 0, 0, 0, 0, 5103, 430, 0, 0, 0, 0, -449, 762, 0, 0, 0, 0, 5013, 968, 0, 0, 0, 0, -619, 780)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_it66m"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -440, 1227, 0, 0, 0, 0, 5022, 1004, 0, 0, 0, 0, -494, 1469, 0, 0, 0, 0, 5327, 1371, 0, 0, 0, 0, -771, 986)
+}
+point_count = 5
+
+[node name="World" type="Node2D"]
 script = ExtResource("1_5xkvv")
 object_scenes = Array[PackedScene]([ExtResource("17_5xkvv"), ExtResource("15_f23eu"), ExtResource("4_kcyjf"), ExtResource("5_o6lw0"), ExtResource("6_yfuda")])
 min_distance_per_scene = Array[float]([20.0, 20.0, 10.0])
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1532918460]
+[node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(2479, -185)
@@ -283,55 +426,55 @@ texture = ExtResource("1_awrha")
 region_enabled = true
 region_rect = Rect2(0, 0, 4000, 4000)
 
-[node name="Content" type="Node2D" parent="." unique_id=1075392855]
+[node name="Content" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Player" parent="Content" unique_id=594388496 instance=ExtResource("2_j8job")]
+[node name="Player" parent="Content" instance=ExtResource("2_j8job")]
 y_sort_enabled = true
 texture_filter = 1
-position = Vector2(1, 8)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/Player" unique_id=1287278256]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/Player"]
 position = Vector2(1239, -136)
 sprite_frames = SubResource("SpriteFrames_yfuda")
 animation = &"Run_Up"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player" unique_id=1538382182]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player"]
 position = Vector2(1237, -125)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_oeat8")
 
-[node name="Camera2D2" type="Camera2D" parent="Content/Player" unique_id=750845171]
+[node name="Camera2D2" type="Camera2D" parent="Content/Player"]
 position = Vector2(1237, -125)
 zoom = Vector2(2, 2)
 
-[node name="Object_Rocks" type="Node2D" parent="Content" unique_id=1922452738]
+[node name="Object_Rocks" type="Node2D" parent="Content"]
 y_sort_enabled = true
 
-[node name="Medium_Rock" parent="Content/Object_Rocks" unique_id=1700992861 instance=ExtResource("15_f23eu")]
+[node name="Medium_Rock" parent="Content/Object_Rocks" instance=ExtResource("15_f23eu")]
 position = Vector2(-3213, -906)
 
-[node name="Big_Rock" parent="Content/Object_Rocks" unique_id=729743223 instance=ExtResource("17_5xkvv")]
+[node name="Big_Rock" parent="Content/Object_Rocks" instance=ExtResource("17_5xkvv")]
 position = Vector2(6382, -444)
 
-[node name="Object_Cactuses" type="Node2D" parent="Content" unique_id=496952463]
+[node name="Object_Cactuses" type="Node2D" parent="Content"]
 
-[node name="Cactus_Normal" parent="Content/Object_Cactuses" unique_id=1141653290 instance=ExtResource("4_kcyjf")]
+[node name="Cactus_Normal" parent="Content/Object_Cactuses" instance=ExtResource("4_kcyjf")]
 position = Vector2(-2049, -265)
 
-[node name="Cactus_Flower" parent="Content/Object_Cactuses" unique_id=1465603193 instance=ExtResource("5_o6lw0")]
+[node name="Cactus_Flower" parent="Content/Object_Cactuses" instance=ExtResource("5_o6lw0")]
 position = Vector2(-2143, -223)
 
-[node name="Object_Skulls" type="Node2D" parent="Content" unique_id=349473816]
+[node name="Object_Skulls" type="Node2D" parent="Content"]
 
-[node name="Skull_Normal" parent="Content/Object_Skulls" unique_id=1524459601 instance=ExtResource("6_yfuda")]
+[node name="Skull_Normal" parent="Content/Object_Skulls" instance=ExtResource("6_yfuda")]
+position = Vector2(-568, -112)
 
-[node name="Border" type="Node2D" parent="Content" unique_id=1504449795]
+[node name="Border" type="Node2D" parent="Content"]
 script = ExtResource("25_yfuda")
 
-[node name="Visual" type="Node2D" parent="Content/Border" unique_id=452001112]
+[node name="Visual" type="Node2D" parent="Content/Border"]
 
-[node name="Border1" type="AnimatedSprite2D" parent="Content/Border/Visual" unique_id=666703439]
+[node name="Border1" type="AnimatedSprite2D" parent="Content/Border/Visual"]
 z_index = 1
 texture_filter = 1
 position = Vector2(2353.5, -2635.5)
@@ -339,7 +482,7 @@ scale = Vector2(13.425, 2.3283331)
 sprite_frames = SubResource("SpriteFrames_yxuth")
 animation = &"BorderAnimation"
 
-[node name="Border2" type="AnimatedSprite2D" parent="Content/Border/Visual" unique_id=576818418]
+[node name="Border2" type="AnimatedSprite2D" parent="Content/Border/Visual"]
 z_index = 1
 texture_filter = 1
 position = Vector2(2348.085, 2176.7092)
@@ -348,7 +491,7 @@ scale = Vector2(13.435849, 2.0909688)
 sprite_frames = SubResource("SpriteFrames_yxuth")
 animation = &"BorderAnimation"
 
-[node name="Border3" type="AnimatedSprite2D" parent="Content/Border/Visual" unique_id=259209160]
+[node name="Border3" type="AnimatedSprite2D" parent="Content/Border/Visual"]
 z_index = 1
 texture_filter = 1
 position = Vector2(5622.7915, -193.86649)
@@ -357,7 +500,7 @@ scale = Vector2(5.810955, 2.5149214)
 sprite_frames = SubResource("SpriteFrames_yxuth")
 animation = &"BorderAnimation"
 
-[node name="Border4" type="AnimatedSprite2D" parent="Content/Border/Visual" unique_id=1912866747]
+[node name="Border4" type="AnimatedSprite2D" parent="Content/Border/Visual"]
 z_index = 1
 texture_filter = 1
 position = Vector2(-1006.334, -193.78357)
@@ -366,31 +509,422 @@ scale = Vector2(5.8106174, 2.243712)
 sprite_frames = SubResource("SpriteFrames_yxuth")
 animation = &"BorderAnimation"
 
-[node name="Collision" type="Node2D" parent="Content/Border" unique_id=258446837]
+[node name="Collision" type="Node2D" parent="Content/Border"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/Border/Collision" unique_id=489181629]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/Border/Collision"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D" unique_id=283030122]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D"]
 texture_filter = 1
 position = Vector2(2265, -2216)
 shape = SubResource("RectangleShape2D_05jqx")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Content/Border/Collision" unique_id=2019273544]
+[node name="StaticBody2D2" type="StaticBody2D" parent="Content/Border/Collision"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D2" unique_id=738290284]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D2"]
 position = Vector2(2265, 1849)
 shape = SubResource("RectangleShape2D_s5cut")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Content/Border/Collision" unique_id=783619884]
+[node name="StaticBody2D3" type="StaticBody2D" parent="Content/Border/Collision"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D3" unique_id=1786543983]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D3"]
 position = Vector2(-629, -162)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_it66m")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="Content/Border/Collision" unique_id=563396041]
+[node name="StaticBody2D4" type="StaticBody2D" parent="Content/Border/Collision"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D4" unique_id=1286680111]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D4"]
 position = Vector2(5159, -275)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_wm6hh")
+
+[node name="MovingBushes" type="Node2D" parent="Content"]
+
+[node name="Path2D" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_i8dl0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D"]
+y_sort_enabled = true
+position = Vector2(-1228, -1866)
+rotation = 0.1364081
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D2" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_jf64p")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D2"]
+y_sort_enabled = true
+position = Vector2(-638, 590)
+rotation = -0.21755236
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D2/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D2/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D2/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D3" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_rw02v")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D3"]
+y_sort_enabled = true
+position = Vector2(4927, 213)
+rotation = 2.7406538
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D3/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D3/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D3/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D4" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_3sd22")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D4"]
+y_sort_enabled = true
+position = Vector2(5223, -1208)
+rotation = 1.973597
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D4/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D4/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D4/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D5" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_s5a7k")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D5"]
+y_sort_enabled = true
+position = Vector2(2722, 1826)
+rotation = -2.075799
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D5/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D5/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D5/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D6" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_koyeq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D6"]
+y_sort_enabled = true
+position = Vector2(5139, 1102)
+rotation = -2.9988155
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D6/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D6/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D6/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D7" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_3ql07")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D7"]
+y_sort_enabled = true
+position = Vector2(-762, 1326)
+rotation = -0.06073713
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D7/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D7/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D7/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D8" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_w08tj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D8"]
+y_sort_enabled = true
+position = Vector2(-1111, -1790)
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D8/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D8/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D8/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D9" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_spf4h")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D9"]
+y_sort_enabled = true
+position = Vector2(3831, 144)
+rotation = -2.5750065
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D9/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D9/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D9/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D10" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_or3hn")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D10"]
+y_sort_enabled = true
+position = Vector2(223, -554)
+rotation = 0.2512865
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D10/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D10/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D10/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D11" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_6gebr")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D11"]
+y_sort_enabled = true
+position = Vector2(-717, -1826)
+rotation = 0.03190226
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D11/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D11/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D11/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D12" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_84yts")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D12"]
+y_sort_enabled = true
+position = Vector2(2748, -366)
+rotation = 2.9232802
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D12/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D12/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D12/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D13" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_15i7j")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D13"]
+y_sort_enabled = true
+position = Vector2(688, -152)
+rotation = -0.024344478
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D13/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D13/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D13/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D14" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_yxuth")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D14"]
+y_sort_enabled = true
+position = Vector2(-476, -1226)
+rotation = 0.034014028
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D14/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D14/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D14/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D15" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_05jqx")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D15"]
+y_sort_enabled = true
+position = Vector2(-574, -1889)
+rotation = 0.03698193
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D15/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D15/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D15/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D16" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_s5cut")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D16"]
+y_sort_enabled = true
+position = Vector2(-789, 430)
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D16/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D16/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D16/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
+
+[node name="Path2D17" type="Path2D" parent="Content/MovingBushes"]
+curve = SubResource("Curve2D_it66m")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D17"]
+y_sort_enabled = true
+position = Vector2(-440, 1227)
+rotation = -0.040804874
+script = ExtResource("27_jf64p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D17/PathFollow2D"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i52kj")
+animation = &"BushAnimation"
+autoplay = "BushAnimation"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D17/PathFollow2D"]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D17/PathFollow2D/StaticBody2D"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_jf64p")
