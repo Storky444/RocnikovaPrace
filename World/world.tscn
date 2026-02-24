@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://bqri0d3x2hej"]
+[gd_scene load_steps=110 format=3 uid="uid://bqri0d3x2hej"]
 
 [ext_resource type="Script" uid="uid://cfoi4npyi2rg6" path="res://World/world.gd" id="1_5xkvv"]
 [ext_resource type="Texture2D" uid="uid://d0aj5vm2njgwj" path="res://textures/New Piskel (6).png" id="1_awrha"]
@@ -28,6 +28,8 @@
 [ext_resource type="Script" uid="uid://b0rvstxta8p3r" path="res://World/border.gd" id="25_yfuda"]
 [ext_resource type="Script" uid="uid://4w7cljcb6f7v" path="res://World/path_follow_2d.gd" id="27_jf64p"]
 [ext_resource type="Texture2D" uid="uid://c6ua5rf28untn" path="res://Animations/BushAnimation/bush.png" id="28_jf64p"]
+[ext_resource type="Script" uid="uid://bdrwmh2jmwiox" path="res://World/path_vultures.gd" id="29_3sd22"]
+[ext_resource type="Texture2D" uid="uid://beku10cvrc8yu" path="res://Animations/VultureAnimation/vulture.png" id="29_rw02v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0pyu"]
 atlas = ExtResource("19_0lysu")
@@ -441,6 +443,142 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 901, -481, 0, 0, 0, 0, 3256, 1645, 0, 0, 0, 0, -700, 663, 0, 0, 0, 0, 5260, -1087)
 }
 point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_h4hkh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5350, 521, 0, 0, 0, 0, -959, 457)
+}
+point_count = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4hkh"]
+atlas = ExtResource("29_rw02v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xu702"]
+atlas = ExtResource("29_rw02v")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i363k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4hkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xu702")
+}],
+"loop": true,
+"name": &"VultureAnimation",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_xu702"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5309, 906, 0, 0, 0, 0, -862, 921)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_i363k"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5176, -1358, 0, 0, 0, 0, -1299, -1566)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_o2cvn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5827, -670, 0, 0, 0, 0, -1573, -722)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_m1472"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 6301, -1151, 0, 0, 0, 0, -1025, -1159)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_eyejc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 6101, 1017, 0, 0, 0, 0, -759, 1002)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_l3fwa"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5147, 1417, 0, 0, 0, 0, -751, 1424)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_3i426"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5443, -1647, 0, 0, 0, 0, -811, -1573)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_1ex6t"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 6035, -41, 0, 0, 0, 0, -1610, -78)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_4giqt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -619, 80, 0, 0, 0, 0, 5111, 135)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_8iv6r"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -788, 366, 0, 0, 0, 0, 5354, 358)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_3gnva"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -877, -826, 0, 0, 0, 0, 5753, -877)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_i5ake"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1321, -1832, 0, 0, 0, 0, 6005, -1817)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_dmovf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1284, 617, 0, 0, 0, 0, 5946, 684)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_32rkg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1410, 284, 0, 0, 0, 0, 5702, 299)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_a5wjk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1536, 1106, 0, 0, 0, 0, 6242, 1076)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_oyb3p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1336, -1462, 0, 0, 0, 0, 5894, -1484)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_2hrtt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1099, -1062, 0, 0, 0, 0, 5598, -996)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_g3lo7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1625, -581, 0, 0, 0, 0, 6131, -604)
+}
+point_count = 2
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_5xkvv")
@@ -1098,3 +1236,360 @@ y_sort_enabled = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D23/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
+
+[node name="MovingVulture" type="Node2D" parent="Content"]
+
+[node name="RightLeft2" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_h4hkh")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft2"]
+y_sort_enabled = true
+position = Vector2(5350, 521)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft2/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+flip_h = true
+
+[node name="RightLeft3" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_xu702")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft3"]
+y_sort_enabled = true
+position = Vector2(5309, 906)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft3/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+flip_h = true
+
+[node name="RightLeft4" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_i363k")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft4"]
+y_sort_enabled = true
+position = Vector2(5176, -1358)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft4/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+flip_h = true
+
+[node name="RightLeft5" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_o2cvn")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft5"]
+y_sort_enabled = true
+position = Vector2(5827, -670)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft5/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+flip_h = true
+
+[node name="RightLeft6" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_m1472")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft6"]
+y_sort_enabled = true
+position = Vector2(6301, -1151)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft6/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+flip_h = true
+
+[node name="RightLeft7" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_eyejc")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft7"]
+y_sort_enabled = true
+position = Vector2(6101, 1017)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft7/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+flip_h = true
+
+[node name="RightLeft8" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_l3fwa")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft8"]
+y_sort_enabled = true
+position = Vector2(5147, 1417)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft8/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+flip_h = true
+
+[node name="RightLeft9" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_3i426")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft9"]
+y_sort_enabled = true
+position = Vector2(5443, -1647)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft9/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+flip_h = true
+
+[node name="RightLeft10" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_1ex6t")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft10"]
+y_sort_enabled = true
+position = Vector2(6035, -41)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft10/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+flip_h = true
+
+[node name="LeftRight" type="Path2D" parent="Content/MovingVulture"]
+position = Vector2(-818.8304, 0)
+scale = Vector2(1.1602094, 1)
+curve = SubResource("Curve2D_4giqt")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight"]
+y_sort_enabled = true
+position = Vector2(-619, 80)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+
+[node name="LeftRight2" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_8iv6r")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight2"]
+y_sort_enabled = true
+position = Vector2(-788, 366)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight2/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+
+[node name="LeftRight3" type="Path2D" parent="Content/MovingVulture"]
+position = Vector2(-545.79736, 6.1035156e-05)
+scale = Vector2(1.0948718, 1)
+curve = SubResource("Curve2D_3gnva")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight3"]
+y_sort_enabled = true
+position = Vector2(-877, -826)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight3/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+
+[node name="LeftRight4" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_i5ake")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight4"]
+y_sort_enabled = true
+position = Vector2(-1321, -1832)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight4/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+
+[node name="LeftRight5" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_dmovf")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight5"]
+y_sort_enabled = true
+position = Vector2(-1284, 617)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight5/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+
+[node name="LeftRight6" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_32rkg")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight6"]
+y_sort_enabled = true
+position = Vector2(-1410, 284)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight6/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+
+[node name="LeftRight7" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_a5wjk")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight7"]
+y_sort_enabled = true
+position = Vector2(-1536, 1106)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight7/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+
+[node name="LeftRight8" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_oyb3p")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight8"]
+y_sort_enabled = true
+position = Vector2(-1336, -1462)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight8/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+
+[node name="LeftRight9" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_2hrtt")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight9"]
+y_sort_enabled = true
+position = Vector2(-1099, -1062)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight9/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
+
+[node name="LeftRight10" type="Path2D" parent="Content/MovingVulture"]
+curve = SubResource("Curve2D_g3lo7")
+
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight10"]
+y_sort_enabled = true
+position = Vector2(-1625, -581)
+rotation = 0.002539274
+rotates = false
+loop = false
+script = ExtResource("29_3sd22")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight10/PathVultures"]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_i363k")
+animation = &"VultureAnimation"
+autoplay = "VultureAnimation"
