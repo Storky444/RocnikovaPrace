@@ -1,5 +1,4 @@
-extends PathFollow2D
-
+extends Path2D
 
 
 var direction := 1
@@ -22,4 +21,3 @@ func _process(delta):
 
 func flip():
 	$AnimatedSprite2D.flip_h = !$AnimatedSprite2D.flip_h
-	
