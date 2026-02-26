@@ -7,7 +7,7 @@ var speed : float
 
 func _ready():
 	z_index = 5
-	speed = randf_range(100,200)
+	speed = randf_range(50,100)
 
 func _process(delta):
 	progress += speed * direction * delta
