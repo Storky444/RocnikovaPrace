@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=3 uid="uid://bqri0d3x2hej"]
+[gd_scene load_steps=177 format=3 uid="uid://bqri0d3x2hej"]
 
 [ext_resource type="Script" uid="uid://cfoi4npyi2rg6" path="res://World/world.gd" id="1_5xkvv"]
 [ext_resource type="Texture2D" uid="uid://d0aj5vm2njgwj" path="res://textures/New Piskel (6).png" id="1_awrha"]
@@ -34,8 +34,11 @@
 [ext_resource type="Texture2D" uid="uid://dqjgn7iw1cw47" path="res://Animations/TornadoAnimation/New Piskel (1).png" id="32_3ql07"]
 [ext_resource type="Texture2D" uid="uid://s4n10i00wooq" path="res://Animations/SmallScorpionAnimation/New Piskel (2).png" id="33_3ql07"]
 [ext_resource type="Script" uid="uid://dwmecyvad7xu6" path="res://World/enemy_1.gd" id="34_spf4h"]
-[ext_resource type="Texture2D" uid="uid://di1mknmqkbkwc" path="res://Animations/BigScorpionAnimation/New Piskel (3).png" id="35_or3hn"]
-[ext_resource type="Texture2D" uid="uid://hlbq2i7mfx8o" path="res://Animations/BigScorpionAnimation/New Piskel.png" id="36_6gebr"]
+[ext_resource type="Texture2D" uid="uid://baau53j8qdvbe" path="res://Animations/SkeletonAnimation/New Piskel (6) (1).png" id="35_6gebr"]
+[ext_resource type="Texture2D" uid="uid://co48pbi1wt45g" path="res://Animations/SkeletonAnimation/New Piskel (6) (4).png" id="35_15i7j"]
+[ext_resource type="Texture2D" uid="uid://c21xvakvjp8yr" path="res://Animations/SkeletonAnimation/New Piskel (6) (3) (3).png" id="35_or3hn"]
+[ext_resource type="Texture2D" uid="uid://b7aauakkv7ljb" path="res://Animations/SkeletonAnimation/New Piskel (6) (3) (2).png" id="36_6gebr"]
+[ext_resource type="Texture2D" uid="uid://blkjn3r6bu866" path="res://Animations/SkeletonAnimation/New Piskel (6) (2).png" id="38_84yts"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0pyu"]
 atlas = ExtResource("19_0lysu")
@@ -216,6 +219,9 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oeat8"]
 radius = 9.0
 height = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_15i7j"]
+radius = 21.023796
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_or3hn"]
 atlas = ExtResource("25_dg1ng")
@@ -822,40 +828,93 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyb3p"]
+atlas = ExtResource("35_15i7j")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hrtt"]
+atlas = ExtResource("35_15i7j")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3lo7"]
+atlas = ExtResource("35_15i7j")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i426"]
+atlas = ExtResource("35_6gebr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ex6t"]
+atlas = ExtResource("35_6gebr")
+region = Rect2(32, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_i52kj"]
 atlas = ExtResource("35_or3hn")
-region = Rect2(0, 0, 64, 64)
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4tau"]
 atlas = ExtResource("35_or3hn")
-region = Rect2(64, 0, 64, 64)
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n40p1"]
 atlas = ExtResource("35_or3hn")
-region = Rect2(128, 0, 64, 64)
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dlis5"]
 atlas = ExtResource("35_or3hn")
-region = Rect2(192, 0, 64, 64)
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmovf"]
 atlas = ExtResource("36_6gebr")
-region = Rect2(0, 0, 64, 64)
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m1472"]
 atlas = ExtResource("36_6gebr")
-region = Rect2(64, 0, 64, 64)
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eyejc"]
 atlas = ExtResource("36_6gebr")
-region = Rect2(128, 0, 64, 64)
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l3fwa"]
 atlas = ExtResource("36_6gebr")
-region = Rect2(192, 0, 64, 64)
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32rkg"]
+atlas = ExtResource("38_84yts")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5wjk"]
+atlas = ExtResource("38_84yts")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dlis5"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyb3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hrtt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3lo7")
+}],
+"loop": false,
+"name": &"SkeletonAnimationAttack",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i426")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ex6t")
+}],
+"loop": true,
+"name": &"SkeletonAnimationDown",
+"speed": 6.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i52kj")
@@ -870,8 +929,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_dlis5")
 }],
 "loop": true,
-"name": &"BigScorpionAnimationLeft",
-"speed": 5.0
+"name": &"SkeletonAnimationLeft",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -887,13 +946,27 @@ animations = [{
 "texture": SubResource("AtlasTexture_l3fwa")
 }],
 "loop": true,
-"name": &"BigScorpionAnimationRight",
-"speed": 5.0
+"name": &"SkeletonAnimationRight",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32rkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5wjk")
+}],
+"loop": true,
+"name": &"SkeletonAnimationUp",
+"speed": 6.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_84yts"]
-radius = 6.0
-height = 16.0
+radius = 3.0
+height = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5aim4"]
+radius = 22.090721
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_5xkvv")
@@ -928,6 +1001,12 @@ shape = SubResource("CapsuleShape2D_oeat8")
 [node name="Camera2D2" type="Camera2D" parent="Content/Player"]
 position = Vector2(1237, -125)
 zoom = Vector2(2, 2)
+
+[node name="HurtBox" type="Area2D" parent="Content/Player" groups=["enemy_attack"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player/HurtBox"]
+position = Vector2(1238, -135)
+shape = SubResource("CircleShape2D_15i7j")
 
 [node name="Object_Rocks" type="Node2D" parent="Content"]
 y_sort_enabled = true
@@ -2656,17 +2735,31 @@ scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_6gebr")
 
 [node name="Enemies" type="Node2D" parent="Content"]
+y_sort_enabled = true
 
-[node name="Enemy1_Scorpion" type="CharacterBody2D" parent="Content/Enemies"]
+[node name="Enemy1_Skeleton" type="CharacterBody2D" parent="Content/Enemies"]
+y_sort_enabled = true
 motion_mode = 1
 script = ExtResource("34_spf4h")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/Enemies/Enemy1_Scorpion"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/Enemies/Enemy1_Skeleton"]
+y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_dlis5")
-animation = &"BigScorpionAnimationRight"
+animation = &"SkeletonAnimationAttack"
+frame = 2
+frame_progress = 1.0
 
-[node name="CollisionShape_Right2" type="CollisionShape2D" parent="Content/Enemies/Enemy1_Scorpion"]
-position = Vector2(0, -2)
+[node name="CollisionShape_Right2" type="CollisionShape2D" parent="Content/Enemies/Enemy1_Skeleton"]
+y_sort_enabled = true
+position = Vector2(0, 13)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_84yts")
+
+[node name="Hitbox" type="Area2D" parent="Content/Enemies/Enemy1_Skeleton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Enemies/Enemy1_Skeleton/Hitbox"]
+shape = SubResource("CircleShape2D_5aim4")
+
+[connection signal="area_entered" from="Content/Player/HurtBox" to="Content/Player" method="_on_hurt_box_area_entered"]
+[connection signal="body_entered" from="Content/Enemies/Enemy1_Skeleton/Hitbox" to="Content/Enemies/Enemy1_Skeleton" method="_on_hitbox_body_entered"]
