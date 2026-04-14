@@ -1,0 +1,148 @@
+[gd_scene load_steps=22 format=3 uid="uid://dav4y8vvegoih"]
+
+[ext_resource type="Script" uid="uid://cfh3bvgl3rlwx" path="res://World/enemy_3_zombie.gd" id="1_kteij"]
+[ext_resource type="Texture2D" uid="uid://dpapdp8stnexx" path="res://Animations/ZombieAnimation/AnimatedZombieAttack.png" id="2_1g75f"]
+[ext_resource type="Texture2D" uid="uid://2rw5yj34f232" path="res://Animations/ZombieAnimation/AnimatedZombieDown.png" id="3_l2nda"]
+[ext_resource type="Texture2D" uid="uid://bvwnbwdmo4hiy" path="res://Animations/ZombieAnimation/AnimatedZombieLeft.png" id="4_fti2s"]
+[ext_resource type="Texture2D" uid="uid://bob0ldiuhfqdu" path="res://Animations/ZombieAnimation/AnimatedZombieRight.png" id="5_2p61c"]
+[ext_resource type="Texture2D" uid="uid://skdp66n3tmuo" path="res://Animations/ZombieAnimation/AnimatedZombieUp.png" id="6_xkj8v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07sb8"]
+atlas = ExtResource("2_1g75f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk2pd"]
+atlas = ExtResource("2_1g75f")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2jdt"]
+atlas = ExtResource("2_1g75f")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sujd"]
+atlas = ExtResource("2_1g75f")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxdgx"]
+atlas = ExtResource("3_l2nda")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7w2p"]
+atlas = ExtResource("3_l2nda")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yard"]
+atlas = ExtResource("4_fti2s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u84s7"]
+atlas = ExtResource("4_fti2s")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33bit"]
+atlas = ExtResource("5_2p61c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjvc3"]
+atlas = ExtResource("5_2p61c")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnce2"]
+atlas = ExtResource("6_xkj8v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q37gl"]
+atlas = ExtResource("6_xkj8v")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hejoe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07sb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk2pd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2jdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sujd")
+}],
+"loop": true,
+"name": &"ZombieAnimationAttack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxdgx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7w2p")
+}],
+"loop": true,
+"name": &"ZombieAnimationDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yard")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u84s7")
+}],
+"loop": true,
+"name": &"ZombieAnimationLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33bit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjvc3")
+}],
+"loop": true,
+"name": &"ZombieAnimationRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnce2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q37gl")
+}],
+"loop": true,
+"name": &"ZombieAnimationUp",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pj0qk"]
+radius = 3.0
+height = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w2jjc"]
+radius = 15.0
+
+[node name="Enemy3_Zombie" type="CharacterBody2D"]
+script = ExtResource("1_kteij")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_hejoe")
+animation = &"ZombieAnimationUp"
+
+[node name="CollisionShape_Rig" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 13)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pj0qk")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_w2jjc")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

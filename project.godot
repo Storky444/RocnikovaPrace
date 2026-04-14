@@ -29,6 +29,7 @@ window/size/viewport_height=1080
 player=""
 enemy_attack=""
 timer_label=""
+enemy=""
 
 [input]
 

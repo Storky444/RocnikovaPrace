@@ -93,6 +93,8 @@ func spawn_one_enemy():
 	var enemy_scene = enemy_scenes.pick_random()
 	var enemy = enemy_scene.instantiate()
 
+	print("SPAWNUL SE ENEMY")  
+
 	var angle = randf() * TAU
 	var distance = randf_range(enemy_spawn_radius_min, enemy_spawn_radius_max)
 	var offset = Vector2(cos(angle), sin(angle)) * distance
@@ -143,3 +145,5 @@ func spawn_objects():
 				break
 
 			attempts += 1
+			
+			
