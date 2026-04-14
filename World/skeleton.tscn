@@ -145,7 +145,7 @@ radius = 3.0
 height = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5aim4"]
-radius = 17.0
+radius = 12.0415945
 
 [node name="Enemy1_Skeleton" type="CharacterBody2D"]
 y_sort_enabled = true
