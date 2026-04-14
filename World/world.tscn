@@ -1266,6 +1266,14 @@ shape = SubResource("CapsuleShape2D_oeat8")
 position = Vector2(1237, -125)
 zoom = Vector2(2, 2)
 
+[node name="TimeLabel" type="Label" parent="Content/Player/Camera2D2" groups=["timer_label"]]
+offset_left = -28.0
+offset_top = -269.0
+offset_right = 72.0
+offset_bottom = 39.0
+theme_type_variation = &"HeaderLarge"
+text = "00:00"
+
 [node name="HurtBox" type="Area2D" parent="Content/Player" groups=["enemy_attack"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player/HurtBox"]

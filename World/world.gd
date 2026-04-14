@@ -7,33 +7,102 @@ extends Node2D
 @export var min_distance_between_objects: float = 80.0
 @export var min_distance_per_scene: Array[float] = []
 
-var player: Node = null
-var _debug_t := 0.0
+@export var enemy_scenes: Array[PackedScene]
+@export var enemy_spawn_radius_min: float = 400.0
+@export var enemy_spawn_radius_max: float = 700.0
+@export var max_enemies: int = 50
+
+var elapsed_time: float = 0.0
+var spawn_timer: float = 0.0
+
+var time_label: Label = null
+var player: Node2D = null
 
 func _ready():
 	randomize()
 	spawn_objects()
 
-	player = get_tree().get_first_node_in_group("player")
+	player = get_tree().get_first_node_in_group("player") as Node2D
+	time_label = get_tree().get_first_node_in_group("timer_label") as Label
+
 	print("WORLD READY | player found:", player)
+	print("TIME LABEL FOUND:", time_label)
 
 func _process(delta):
-	if player and player.hp <= 0:
-		print("GAME OVER")
-		get_tree().paused = true
+	if not player:
+		return
 
-	var hp_val = player.get("hp")  # bezpečný přístup (nespadne když hp neexistuje)
+	if time_label == null:
+		return
+
+	var hp_val = player.get("hp")
 	if hp_val == null:
 		print("ERROR: Player nemá proměnnou 'hp' ve scriptu!")
 		return
 
 	if int(hp_val) <= 0:
 		game_over()
+		return
+
+	elapsed_time += delta
+	spawn_timer += delta
+
+	update_timer_label()
+
+	if spawn_timer >= get_spawn_interval():
+		spawn_timer = 0.0
+		spawn_enemies_by_time()
+
+func update_timer_label():
+	if time_label == null:
+		return
+
+	var total_seconds = int(elapsed_time)
+	var minutes = int(total_seconds / 60)
+	var seconds = int(total_seconds % 60)
+	time_label.text = "%02d:%02d" % [minutes, seconds]
+
+func get_spawn_interval() -> float:
+	# čím delší čas, tím rychlejší spawn
+	return max(1.0, 3.0 - elapsed_time / 45.0)
+
+func get_spawn_count() -> int:
+	# čím delší čas, tím víc enemy najednou
+	return 1 + int(elapsed_time / 30.0)
+
+func spawn_enemies_by_time():
+	if not player:
+		return
+
+	var current_enemy_count = get_tree().get_nodes_in_group("enemy").size()
+	if current_enemy_count >= max_enemies:
+		return
+
+	var count_to_spawn = get_spawn_count()
+
+	for i in range(count_to_spawn):
+		if get_tree().get_nodes_in_group("enemy").size() >= max_enemies:
+			break
+		spawn_one_enemy()
+
+func spawn_one_enemy():
+	if enemy_scenes.is_empty():
+		print("No enemy scenes assigned!")
+		return
+
+	var enemy_scene = enemy_scenes.pick_random()
+	var enemy = enemy_scene.instantiate()
+
+	var angle = randf() * TAU
+	var distance = randf_range(enemy_spawn_radius_min, enemy_spawn_radius_max)
+	var offset = Vector2(cos(angle), sin(angle)) * distance
+
+	enemy.global_position = player.global_position + offset
+	$Content.add_child(enemy)
 
 func game_over():
 	print("GAME OVER")
 	get_tree().paused = true
-
 
 func spawn_objects():
 	if object_scenes.is_empty():
@@ -41,8 +110,6 @@ func spawn_objects():
 		return
 
 	var objects_node = $Content/Object_Rocks
-	var objects_node2 = $Content/Object_Cactuses
-	var objects_node3 = $Content/Object_Skulls
 	var placed_positions: Array[Vector2] = []
 
 	for i in range(object_count):
@@ -71,7 +138,6 @@ func spawn_objects():
 			if not overlapping:
 				var object = random_scene.instantiate()
 				object.position = random_position
-
 				objects_node.add_child(object)
 				placed_positions.append(random_position)
 				break
