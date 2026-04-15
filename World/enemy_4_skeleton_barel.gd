@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
-@export var speed := 80
 
-@export var attack_range := 30        
-@export var attack_duration := 0.2
-@export var attack_cooldown := 1
+@export var speed := 100
+
+@export var attack_range := 35        
+@export var attack_duration := 2.2
+@export var attack_cooldown := 5
 
 var player: Node2D = null
 var is_attacking := false
@@ -99,10 +100,6 @@ func update_animation(direction: Vector2):
 			anim.play("SkeletonBarelAnimationDown")
 		else:
 			anim.play("SkeletonBarelAnimationUp")
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed := 120
 
-@export var attack_range := 35.0        # dej klidně 60 na test
+@export var attack_range := 40        # dej klidně 60 na test
 @export var attack_duration := 0.35
 @export var attack_cooldown := 2
 

@@ -3,7 +3,7 @@ var can_take_damage = true
 var speed = 200.0  
 
 @onready var animated_sprite = $AnimatedSprite2D
-@export var hp: int = 100
+@export var hp: int = 1000
 
 	
 
