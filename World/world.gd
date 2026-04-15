@@ -8,9 +8,9 @@ extends Node2D
 @export var min_distance_per_scene: Array[float] = []
 
 @export var enemy_scenes: Array[PackedScene]
-@export var enemy_spawn_radius_min: float = 400.0
-@export var enemy_spawn_radius_max: float = 700.0
-@export var max_enemies: int = 50
+@export var enemy_spawn_radius_min: float = 100.0
+@export var enemy_spawn_radius_max: float = 300.0
+@export var max_enemies: int = 300
 
 var elapsed_time: float = 0.0
 var spawn_timer: float = 0.0
