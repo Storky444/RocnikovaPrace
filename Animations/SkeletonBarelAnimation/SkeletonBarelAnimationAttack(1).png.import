@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2sgusntiuqsw"
-path="res://.godot/imported/SkeletonBarelAnimationAttack.png-f8c5af1548f0e07cb0df69baf962b512.ctex"
+uid="uid://cy58rcehaktby"
+path="res://.godot/imported/SkeletonBarelAnimationAttack(1).png-1e6180128744024f2ff5ebb65d62ace9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Animations/SkeletonBarelAnimation/SkeletonBarelAnimationAttack.png"
-dest_files=["res://.godot/imported/SkeletonBarelAnimationAttack.png-f8c5af1548f0e07cb0df69baf962b512.ctex"]
+source_file="res://Animations/SkeletonBarelAnimation/SkeletonBarelAnimationAttack(1).png"
+dest_files=["res://.godot/imported/SkeletonBarelAnimationAttack(1).png-1e6180128744024f2ff5ebb65d62ace9.ctex"]
 
 [params]
 

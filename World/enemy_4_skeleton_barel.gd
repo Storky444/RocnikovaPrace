@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var speed := 100
 
 @export var attack_range := 35        
-@export var attack_duration := 2.2
+@export var attack_duration := 1.8
 @export var attack_cooldown := 5
 
 var player: Node2D = null
