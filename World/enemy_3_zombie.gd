@@ -75,7 +75,7 @@ func start_attack():
 
 	# damage jednou za attack
 	if player and player.has_method("take_damage"):
-		player.take_damage(20)
+		player.take_damage(10)
 	else:
 		print("ENEMY ERROR: player nemá take_damage()")
 

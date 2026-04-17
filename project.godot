@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="ShootyShots"
-run/main_scene="uid://bqri0d3x2hej"
+run/main_scene="uid://cxnnevggodtp6"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
