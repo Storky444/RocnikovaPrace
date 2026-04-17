@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxnnevggodtp6"]
+[gd_scene load_steps=12 format=3 uid="uid://cxnnevggodtp6"]
 
 [ext_resource type="Texture2D" uid="uid://oyn3ujgg1512" path="res://textures/menubg.png" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://qsl0kepinrt3" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://c8ujmdaljrta3" path="res://textures/New Piskel (5).png" id="3_glbon"]
+[ext_resource type="Texture2D" uid="uid://bm2bl0mee46sj" path="res://textures/pixil-frame-0 (9).png" id="4_glbon"]
+[ext_resource type="Texture2D" uid="uid://cyw50t2r033ne" path="res://textures/pixil-frame-0 (10).png" id="5_glbon"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
 texture = ExtResource("1_06t4h")
@@ -14,6 +17,15 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="FontVariation" id="FontVariation_06t4h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
+texture = ExtResource("3_glbon")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qe12f"]
+texture = ExtResource("4_glbon")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8qtwp"]
+texture = ExtResource("5_glbon")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -28,7 +40,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_7vrkn")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 layout_mode = 0
 offset_left = -960.0
 offset_top = -540.0
@@ -110,7 +122,88 @@ theme_override_font_sizes/font_size = 69
 text = "SHOOTY SHOTS
 "
 
+[node name="TutorialPopup" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -420.0
+offset_right = 320.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
+
+[node name="CloseButton" type="Button" parent="TutorialPopup"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_top = 66.0
+offset_right = -37.0
+offset_bottom = 122.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.76022506, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_qe12f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8qtwp")
+
+[node name="TutorialTextMain" type="Label" parent="TutorialPopup"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.0
+offset_top = -280.0
+offset_right = 242.0
+offset_bottom = 444.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "OVLÁDÁNÍ A PRINCIP HRY :
+Hráč se pohybuje po mapě a vyhýbá se nepřátelům,
+kteří ho aktivně pronásledují.
+Cílem není hru „dohrát“, ale dosáhnout co nejdelšího času přežití.
+
+TYPY NEPŘÁTEL :
+
+SKELETON
+Základní nepřítel, který útočí malým nožem a způsobuje 15 damage.
+
+GIANT ZOMBIE
+Pomalejší, ale silnější nepřítel s dřevěnou palicí. 
+Při zásahu uděluje 40 damage.
+
+FAST ZOMBIE
+Tento nepřítel způsobuje pouze 10 damage, 
+ale je výrazně rychlejší než ostatní.
+
+SKELETON BAREL
+Speciální nepřítel, který při kontaktu s hráčem exploduje 
+a udělí 25 damage.
+
+
+HERNÍ STRATEGIE
+
+Pro úspěšné přežití je důležité:
+-neustále se pohybovat
+-prioritně eliminovat nebezpečnější nepřátele
+-vyhýbat se obklíčení
+-využívat prostor mapy
+
+Hra je postavena na postupném zvyšování obtížnosti,
+kdy se s časem zvyšuje počet nepřátel,
+což nutí hráče reagovat rychleji a strategičtěji."
+
 [connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="TutorialPopup/CloseButton" to="." method="_on_close_button_pressed"]
