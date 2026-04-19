@@ -1,33 +1,17 @@
-[gd_scene load_steps=158 format=3 uid="uid://bqri0d3x2hej"]
+[gd_scene load_steps=123 format=3 uid="uid://bqri0d3x2hej"]
 
 [ext_resource type="Script" uid="uid://cfoi4npyi2rg6" path="res://World/world.gd" id="1_5xkvv"]
 [ext_resource type="Texture2D" uid="uid://d0aj5vm2njgwj" path="res://textures/New Piskel (6).png" id="1_awrha"]
 [ext_resource type="PackedScene" uid="uid://c7r006uem5qok" path="res://World/Player/player.tscn" id="2_j8job"]
-[ext_resource type="Texture2D" uid="uid://ci70227xna37k" path="res://Animations/CowboyIdleAnimation/cowboy_animation0000.png" id="3_awrha"]
-[ext_resource type="Texture2D" uid="uid://b2fgsb45vn5ml" path="res://Animations/CowboyIdleAnimation/cowboy_animation0001.png" id="4_f23eu"]
 [ext_resource type="PackedScene" uid="uid://dc7kmnmbw1xaw" path="res://World/cactus_normal.tscn" id="4_kcyjf"]
 [ext_resource type="PackedScene" uid="uid://brgr8cooqo2o2" path="res://World/cactus_flower.tscn" id="5_o6lw0"]
-[ext_resource type="Texture2D" uid="uid://by2isix62fw2d" path="res://Animations/CowboyIdleAnimation/cowboy_animation0002.png" id="5_oeat8"]
-[ext_resource type="Texture2D" uid="uid://d1f5av8t0exj7" path="res://Animations/CowboyIdleAnimation/cowboy_animation0003.png" id="6_5xkvv"]
 [ext_resource type="PackedScene" uid="uid://crshrd7d6px3" path="res://World/skull_normal.tscn" id="6_yfuda"]
 [ext_resource type="PackedScene" uid="uid://fnql0nin8mkh" path="res://World/skeletonbarel.tscn" id="7_6gebr"]
-[ext_resource type="Texture2D" uid="uid://bkhoajrgpow4c" path="res://Animations/CowboyIdleAnimation/cowboy_animation0004.png" id="7_kcyjf"]
 [ext_resource type="PackedScene" uid="uid://bf72jnargo2eq" path="res://World/skeleton.tscn" id="7_or3hn"]
 [ext_resource type="PackedScene" uid="uid://bu8v146c3xyns" path="res://World/giant.tscn" id="8_6gebr"]
-[ext_resource type="Texture2D" uid="uid://svjui1vf1wv" path="res://Animations/CowboyIdleAnimation/cowboy_animation0005.png" id="8_xw5lg"]
-[ext_resource type="Texture2D" uid="uid://dmy77erxkaurf" path="res://Animations/CowboyIdleAnimation/cowboy_animation0006.png" id="9_0lysu"]
 [ext_resource type="PackedScene" uid="uid://dav4y8vvegoih" path="res://World/zombie.tscn" id="9_84yts"]
-[ext_resource type="Texture2D" uid="uid://bclg8vxpyvy6w" path="res://Animations/CowboyIdleAnimation/cowboy_animation0007.png" id="10_26uyv"]
-[ext_resource type="Texture2D" uid="uid://b8dykqhs5cgpw" path="res://Animations/CowboyIdleAnimation/cowboy_animation0008.png" id="11_dqu5g"]
-[ext_resource type="Texture2D" uid="uid://buoso3x6dkxkn" path="res://Animations/CowboyIdleAnimation/cowboy_animation0009.png" id="12_o6lw0"]
-[ext_resource type="Texture2D" uid="uid://2ugj4axwa1pn" path="res://Animations/CowboyIdleAnimation/cowboy_animation0010.png" id="13_x0pyu"]
-[ext_resource type="Texture2D" uid="uid://3vlfcpl2ldyd" path="res://Animations/CowboyIdleAnimation/cowboy_animation0011.png" id="14_dg1ng"]
 [ext_resource type="PackedScene" uid="uid://d2vbgllcsn517" path="res://World/medium_rock.tscn" id="15_f23eu"]
 [ext_resource type="PackedScene" uid="uid://bihdknu747xb8" path="res://World/small_rock.tscn" id="17_5xkvv"]
-[ext_resource type="Texture2D" uid="uid://bmftv41jc2goy" path="res://Animations/CowboyDownAnimation/cowboy_animation0000 (3).png" id="19_0lysu"]
-[ext_resource type="Texture2D" uid="uid://cpna5pt7mln7s" path="res://Animations/CowboyUpAnimation/cowboy_animation0000 (2).png" id="19_xw5lg"]
-[ext_resource type="Texture2D" uid="uid://d1ks7ncngto0j" path="res://Animations/CowboyRightAnimation/cowboy_animation0000 (4) (1).png" id="20_26uyv"]
-[ext_resource type="Texture2D" uid="uid://bgygxb7j4f7ag" path="res://Animations/CowboyLeftAnimation/cowboy_animation0000 (4) (2).png" id="20_dqu5g"]
 [ext_resource type="Texture2D" uid="uid://b1aal44o1rowq" path="res://Animations/BorderAnimation/New Piskel (3).png" id="25_dg1ng"]
 [ext_resource type="Script" uid="uid://b0rvstxta8p3r" path="res://World/border.gd" id="25_yfuda"]
 [ext_resource type="Script" uid="uid://4w7cljcb6f7v" path="res://World/path_follow_2d.gd" id="27_jf64p"]
@@ -38,189 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://dqjgn7iw1cw47" path="res://Animations/TornadoAnimation/New Piskel (1).png" id="32_3ql07"]
 [ext_resource type="Texture2D" uid="uid://s4n10i00wooq" path="res://Animations/SmallScorpionAnimation/New Piskel (2).png" id="33_3ql07"]
 [ext_resource type="Script" uid="uid://dthnjreibk67b" path="res://World/character_body_2d.gd" id="38_84yts"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x0pyu"]
-atlas = ExtResource("19_0lysu")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dg1ng"]
-atlas = ExtResource("19_0lysu")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yfuda"]
-atlas = ExtResource("19_0lysu")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i8dl0"]
-atlas = ExtResource("19_0lysu")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_koyeq"]
-atlas = ExtResource("20_dqu5g")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ql07"]
-atlas = ExtResource("20_dqu5g")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w08tj"]
-atlas = ExtResource("20_dqu5g")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_spf4h"]
-atlas = ExtResource("20_dqu5g")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jf64p"]
-atlas = ExtResource("20_26uyv")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rw02v"]
-atlas = ExtResource("20_26uyv")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3sd22"]
-atlas = ExtResource("20_26uyv")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s5a7k"]
-atlas = ExtResource("20_26uyv")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0lysu"]
-atlas = ExtResource("19_xw5lg")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_26uyv"]
-atlas = ExtResource("19_xw5lg")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dqu5g"]
-atlas = ExtResource("19_xw5lg")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o6lw0"]
-atlas = ExtResource("19_xw5lg")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yfuda"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_awrha")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_f23eu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_oeat8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_5xkvv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_kcyjf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_xw5lg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_0lysu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_26uyv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_dqu5g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_o6lw0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_x0pyu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_dg1ng")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x0pyu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dg1ng")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yfuda")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i8dl0")
-}],
-"loop": true,
-"name": &"Run_Down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_koyeq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3ql07")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w08tj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_spf4h")
-}],
-"loop": true,
-"name": &"Run_Left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jf64p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rw02v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3sd22")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s5a7k")
-}],
-"loop": true,
-"name": &"Run_Right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0lysu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_26uyv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dqu5g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o6lw0")
-}],
-"loop": true,
-"name": &"Run_Up",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oeat8"]
-radius = 9.0
-height = 20.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_15i7j"]
-radius = 21.023796
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_or3hn"]
 atlas = ExtResource("25_dg1ng")
@@ -848,35 +649,6 @@ y_sort_enabled = true
 [node name="Player" parent="Content" groups=["player"] instance=ExtResource("2_j8job")]
 y_sort_enabled = true
 texture_filter = 1
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/Player"]
-position = Vector2(1239, -136)
-sprite_frames = SubResource("SpriteFrames_yfuda")
-animation = &"Run_Up"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player"]
-position = Vector2(1238, -130)
-shape = SubResource("CapsuleShape2D_oeat8")
-
-[node name="Camera2D2" type="Camera2D" parent="Content/Player"]
-position = Vector2(1237, -125)
-zoom = Vector2(2, 2)
-
-[node name="TimeLabel" type="Label" parent="Content/Player/Camera2D2" groups=["timer_label"]]
-z_index = 1
-offset_left = -28.0
-offset_top = -269.0
-offset_right = 72.0
-offset_bottom = 39.0
-theme_type_variation = &"HeaderLarge"
-text = "00:00"
-metadata/_edit_use_anchors_ = true
-
-[node name="HurtBox" type="Area2D" parent="Content/Player" groups=["enemy_attack"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player/HurtBox"]
-position = Vector2(1238, -135)
-shape = SubResource("CircleShape2D_15i7j")
 
 [node name="Object_Rocks" type="Node2D" parent="Content"]
 y_sort_enabled = true
@@ -2617,5 +2389,3 @@ y_sort_enabled = true
 position = Vector2(1191, 376)
 script = ExtResource("38_84yts")
 speed = 80
-
-[connection signal="area_entered" from="Content/Player/HurtBox" to="Content/Player" method="_on_hurt_box_area_entered"]
