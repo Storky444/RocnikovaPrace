@@ -91,9 +91,10 @@ func spawn_one_enemy():
 		return
 
 	var enemy_scene = enemy_scenes.pick_random()
-	var enemy = enemy_scene.instantiate()
+	print("SPAWNUJU SCENU:", enemy_scene.resource_path)
 
-	print("SPAWNUL SE ENEMY")  
+	var enemy = enemy_scene.instantiate()
+	print("SPAWNUL SE ENEMY:", enemy.name, "| script:", enemy.get_script())
 
 	var angle = randf() * TAU
 	var distance = randf_range(enemy_spawn_radius_min, enemy_spawn_radius_max)

@@ -6,7 +6,12 @@ extends CharacterBody2D
 @export var regen_amount: int = 5
 @export var regen_interval: float = 1.5
 @export var regen_delay: float = 3.0
+@export var bullet_scene: PackedScene
+@export var fire_rate: float = 4.0
+@export var bullet_spawn_offset: float = 0.0
 
+var can_shoot: bool = true
+var shoot_cooldown: float = 0.0
 var can_take_damage: bool = true
 var regen_active: bool = false
 
@@ -14,6 +19,7 @@ var regen_active: bool = false
 @onready var hp_bar: ProgressBar = $ProgressBar
 @onready var regeneration_timer: Timer = $Regeneration_Timer
 @onready var hp_label: Label = $ProgressBar/Label
+@onready var bullet_spawn: Marker2D = $BulletSpawn
 
 func _ready():
 	add_to_group("player")
@@ -32,10 +38,40 @@ func _ready():
 func _physics_process(delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * speed
-	
+
 	move_and_slide()
 	update_animation(direction)
 
+	if not can_shoot:
+		shoot_cooldown -= delta
+		if shoot_cooldown <= 0.0:
+			can_shoot = true
+
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and can_shoot:
+		shoot()
+		
+func shoot() -> void:
+	if bullet_scene == null:
+		print("CHYBA: bullet_scene není nastavená")
+		return
+
+	if bullet_spawn == null:
+		print("CHYBA: BulletSpawn nebyl nalezen")
+		return
+
+	can_shoot = false
+	shoot_cooldown = 1.0 / fire_rate
+
+	var bullet = bullet_scene.instantiate()
+	var mouse_pos = get_global_mouse_position()
+	var shoot_direction = (mouse_pos - bullet_spawn.global_position).normalized()
+
+	get_parent().add_child(bullet)
+
+	bullet.global_position = bullet_spawn.global_position
+	bullet.direction = shoot_direction
+	bullet.rotation = shoot_direction.angle()
+	
 func update_animation(direction):
 	if direction == Vector2.ZERO:
 		animated_sprite.play("Idle")

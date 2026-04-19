@@ -199,24 +199,24 @@ radius = 9.0
 height = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_akpav"]
-radius = 21.023796
+radius = 17.029387
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(967, 545)
 motion_mode = 1
 script = ExtResource("1_1s8kg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1239, -136)
+position = Vector2(1, -6)
 sprite_frames = SubResource("SpriteFrames_h2aaq")
 animation = &"Run_Up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1238, -130)
 shape = SubResource("CapsuleShape2D_ayoxi")
 
 [node name="Camera2D2" type="Camera2D" parent="."]
-position = Vector2(1237, -125)
+position = Vector2(-1, 5)
 zoom = Vector2(2, 2)
 
 [node name="TimeLabel" type="Label" parent="Camera2D2" groups=["timer_label"]]
@@ -232,7 +232,7 @@ metadata/_edit_use_anchors_ = true
 [node name="HurtBox" type="Area2D" parent="." groups=["enemy_attack"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(1238, -135)
+position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_akpav")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
@@ -240,10 +240,10 @@ modulate = Color(0.35720006, 0.8, 0.152, 1)
 z_index = 9
 y_sort_enabled = true
 texture_filter = 1
-offset_left = 1103.0
-offset_top = 74.0
-offset_right = 1983.0
-offset_bottom = 127.33334
+offset_left = -135.0
+offset_top = 204.0
+offset_right = 745.0
+offset_bottom = 257.33334
 scale = Vector2(0.3, 0.3)
 theme_override_font_sizes/font_size = 44
 show_percentage = false
@@ -269,5 +269,7 @@ text = "200/200"
 [node name="Regeneration_Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="BulletSpawn" type="Marker2D" parent="."]
 
 [connection signal="timeout" from="Regeneration_Timer" to="." method="_on_regeneration_timer_timeout"]

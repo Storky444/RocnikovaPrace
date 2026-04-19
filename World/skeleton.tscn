@@ -145,7 +145,7 @@ radius = 3.0
 height = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5aim4"]
-radius = 12.0415945
+radius = 18.0
 
 [node name="Enemy1_Skeleton" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -156,17 +156,18 @@ script = ExtResource("1_luhbm")
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_dlis5")
-animation = &"SkeletonAnimationDown"
+animation = &"SkeletonAnimationAttack"
 
 [node name="CollisionShape_Right2" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, 13)
+position = Vector2(3, 13)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_84yts")
 
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(3, -1)
 shape = SubResource("CircleShape2D_5aim4")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

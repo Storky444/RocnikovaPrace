@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=3 uid="uid://bqri0d3x2hej"]
+[gd_scene load_steps=124 format=3 uid="uid://bqri0d3x2hej"]
 
 [ext_resource type="Script" uid="uid://cfoi4npyi2rg6" path="res://World/world.gd" id="1_5xkvv"]
 [ext_resource type="Texture2D" uid="uid://d0aj5vm2njgwj" path="res://textures/New Piskel (6).png" id="1_awrha"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bf72jnargo2eq" path="res://World/skeleton.tscn" id="7_or3hn"]
 [ext_resource type="PackedScene" uid="uid://bu8v146c3xyns" path="res://World/giant.tscn" id="8_6gebr"]
 [ext_resource type="PackedScene" uid="uid://dav4y8vvegoih" path="res://World/zombie.tscn" id="9_84yts"]
+[ext_resource type="PackedScene" uid="uid://d2wyh1ftfinq4" path="res://World/Player/Bullet.tscn" id="13_o6lw0"]
 [ext_resource type="PackedScene" uid="uid://d2vbgllcsn517" path="res://World/medium_rock.tscn" id="15_f23eu"]
 [ext_resource type="PackedScene" uid="uid://bihdknu747xb8" path="res://World/small_rock.tscn" id="17_5xkvv"]
 [ext_resource type="Texture2D" uid="uid://b1aal44o1rowq" path="res://Animations/BorderAnimation/New Piskel (3).png" id="25_dg1ng"]
@@ -631,8 +632,10 @@ point_count = 2
 [node name="World" type="Node2D"]
 script = ExtResource("1_5xkvv")
 object_scenes = Array[PackedScene]([ExtResource("17_5xkvv"), ExtResource("15_f23eu"), ExtResource("4_kcyjf"), ExtResource("5_o6lw0"), ExtResource("6_yfuda")])
-min_distance_per_scene = Array[float]([20.0, 20.0, 10.0])
-enemy_scenes = Array[PackedScene]([ExtResource("7_or3hn"), ExtResource("8_6gebr"), ExtResource("9_84yts"), ExtResource("7_6gebr"), ExtResource("7_6gebr")])
+min_distance_per_scene = Array[float]([20.0, 20.0, 20.0, 20.0])
+enemy_scenes = Array[PackedScene]([ExtResource("7_or3hn"), ExtResource("8_6gebr"), ExtResource("9_84yts"), ExtResource("7_6gebr")])
+enemy_spawn_radius_min = 500.0
+enemy_spawn_radius_max = 1000.0
 
 [node name="Map" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -649,6 +652,7 @@ y_sort_enabled = true
 [node name="Player" parent="Content" groups=["player"] instance=ExtResource("2_j8job")]
 y_sort_enabled = true
 texture_filter = 1
+bullet_scene = ExtResource("13_o6lw0")
 
 [node name="Object_Rocks" type="Node2D" parent="Content"]
 y_sort_enabled = true
@@ -2380,12 +2384,20 @@ shape = SubResource("CapsuleShape2D_6gebr")
 y_sort_enabled = true
 
 [node name="Enemy1_Skeleton" parent="Content/Enemies" groups=["enemy"] instance=ExtResource("7_or3hn")]
+attack_range = 25
+max_hp = 60
 
 [node name="Enemy2_Giant" parent="Content/Enemies" groups=["enemy"] instance=ExtResource("8_6gebr")]
+attack_range = 20
+max_hp = 120
 
 [node name="Enemy3_Zombie" parent="Content/Enemies" groups=["enemy"] instance=ExtResource("9_84yts")]
+attack_range = 10
 
 [node name="Enemy4_SkeletonBarel" parent="Content/Enemies" instance=ExtResource("7_6gebr")]
-position = Vector2(1191, 376)
+position = Vector2(-2097, -2397)
 script = ExtResource("38_84yts")
 speed = 80
+attack_range = 15
+attack_cooldown = 1
+max_hp = 50

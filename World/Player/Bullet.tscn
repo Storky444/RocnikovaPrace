@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2wyh1ftfinq4"]
+
+[ext_resource type="Texture2D" uid="uid://reregquupv2b" path="res://textures/New Piskel (8).png" id="1_saqku"]
+[ext_resource type="Script" uid="uid://dkkocjvajqgl0" path="res://World/Player/bullet.gd" id="1_vyc06"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vyc06"]
+radius = 4.1231055
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_vyc06")
+damage = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_saqku")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vyc06")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

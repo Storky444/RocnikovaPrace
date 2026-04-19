@@ -5,7 +5,9 @@ extends CharacterBody2D
 @export var attack_range := 40        # dej klidně 60 na test
 @export var attack_duration := 0.35
 @export var attack_cooldown := 2
+@export var max_hp: int = 50
 
+var hp: int = 50
 var player: Node2D = null
 var is_attacking := false
 var can_attack := true
@@ -15,6 +17,8 @@ var can_attack := true
 @onready var cooldown_timer: Timer = Timer.new()
 
 func _ready():
+	add_to_group("enemy")
+	hp = max_hp
 	player = get_tree().get_first_node_in_group("player") as Node2D
 	print("ENEMY READY | player found:", player)
 
@@ -99,3 +103,13 @@ func update_animation(direction: Vector2):
 			anim.play("SkeletonAnimationDown")
 		else:
 			anim.play("SkeletonAnimationUp")
+			
+func take_damage(amount: int) -> void:
+	hp -= amount
+	print(name, " dostal damage: ", amount, " | hp: ", hp)
+
+	if hp <= 0:
+		die()
+
+func die() -> void:
+	queue_free()

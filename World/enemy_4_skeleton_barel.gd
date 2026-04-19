@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-
-@export var speed := 100
-
-@export var attack_range := 35        
+@export var speed := 120.0
+@export var attack_range := 20.0
 @export var attack_duration := 1.8
-@export var attack_cooldown := 5
+@export var attack_cooldown := 2.0
+@export var max_hp: int = 80
 
+var hp: int
 var player: Node2D = null
 var is_attacking := false
 var can_attack := true
@@ -16,16 +16,17 @@ var can_attack := true
 @onready var cooldown_timer: Timer = Timer.new()
 
 func _ready():
+	add_to_group("enemy")
+	hp = max_hp
 	player = get_tree().get_first_node_in_group("player") as Node2D
-	print("ENEMY READY | player found:", player)
 
-	# Attack timer
+	print("BAREL READY |", name, "| has take_damage:", has_method("take_damage"), "| script:", get_script())
+
 	attack_timer.one_shot = true
 	attack_timer.wait_time = attack_duration
 	add_child(attack_timer)
 	attack_timer.timeout.connect(_on_attack_finished)
 
-	# Cooldown timer
 	cooldown_timer.one_shot = true
 	cooldown_timer.wait_time = attack_cooldown
 	add_child(cooldown_timer)
@@ -35,25 +36,21 @@ func _physics_process(delta):
 	if not player:
 		return
 
-	# stejný cíl pro CHASE i pro ATTACK RANGE (tohle byl často bug)
 	var target_pos := player.global_position
 	var sprite = player.get_node_or_null("AnimatedSprite2D")
 	if sprite:
 		target_pos += sprite.position
 
-	# když útočí, stojí a nic nepřepisuje animaci
 	if is_attacking:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
 
-	# attack check
 	var dist := global_position.distance_to(target_pos)
 	if can_attack and dist <= attack_range:
 		start_attack()
 		return
 
-	# chase
 	var direction := target_pos - global_position
 	if direction.length() < 1:
 		velocity = Vector2.ZERO
@@ -65,21 +62,19 @@ func _physics_process(delta):
 	update_animation(direction)
 
 func start_attack():
+	print("BAREL START ATTACK")
 	can_attack = false
 	is_attacking = true
 	velocity = Vector2.ZERO
 
-	# zahraj attack animaci (vynutit restart)
 	anim.stop()
 	anim.play("SkeletonBarelAnimationAttack")
+	anim.frame = 0
+	anim.frame_progress = 0.0
 
-	# damage jednou za attack
 	if player and player.has_method("take_damage"):
-		player.take_damage(20)
-	else:
-		print("ENEMY ERROR: player nemá take_damage()")
+		player.take_damage(30)
 
-	# spustí se konec attacku
 	attack_timer.start()
 
 func _on_attack_finished():
@@ -101,6 +96,12 @@ func update_animation(direction: Vector2):
 		else:
 			anim.play("SkeletonBarelAnimationUp")
 
+func take_damage(amount: int) -> void:
+	hp -= amount
+	print("BAREL HIT ->", name, "| hp:", hp)
 
-func _on_hitbox_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if hp <= 0:
+		die()
+
+func die() -> void:
+	queue_free()
