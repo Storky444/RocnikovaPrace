@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bqri0d3x2hej"]
+[gd_scene load_steps=158 format=3 uid="uid://bqri0d3x2hej"]
 
 [ext_resource type="Script" uid="uid://cfoi4npyi2rg6" path="res://World/world.gd" id="1_5xkvv"]
 [ext_resource type="Texture2D" uid="uid://d0aj5vm2njgwj" path="res://textures/New Piskel (6).png" id="1_awrha"]
@@ -827,13 +827,13 @@ _data = {
 }
 point_count = 2
 
-[node name="World" type="Node2D" unique_id=160202083]
+[node name="World" type="Node2D"]
 script = ExtResource("1_5xkvv")
 object_scenes = Array[PackedScene]([ExtResource("17_5xkvv"), ExtResource("15_f23eu"), ExtResource("4_kcyjf"), ExtResource("5_o6lw0"), ExtResource("6_yfuda")])
 min_distance_per_scene = Array[float]([20.0, 20.0, 10.0])
 enemy_scenes = Array[PackedScene]([ExtResource("7_or3hn"), ExtResource("8_6gebr"), ExtResource("9_84yts"), ExtResource("7_6gebr"), ExtResource("7_6gebr")])
 
-[node name="Map" type="Sprite2D" parent="." unique_id=2034448668]
+[node name="Map" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(2479, -185)
@@ -842,27 +842,27 @@ texture = ExtResource("1_awrha")
 region_enabled = true
 region_rect = Rect2(0, 0, 4000, 4000)
 
-[node name="Content" type="Node2D" parent="." unique_id=2101442924]
+[node name="Content" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Player" parent="Content" unique_id=931186553 groups=["player"] instance=ExtResource("2_j8job")]
+[node name="Player" parent="Content" groups=["player"] instance=ExtResource("2_j8job")]
 y_sort_enabled = true
 texture_filter = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/Player" unique_id=1145390905]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/Player"]
 position = Vector2(1239, -136)
 sprite_frames = SubResource("SpriteFrames_yfuda")
 animation = &"Run_Up"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player" unique_id=623105783]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player"]
 position = Vector2(1238, -130)
 shape = SubResource("CapsuleShape2D_oeat8")
 
-[node name="Camera2D2" type="Camera2D" parent="Content/Player" unique_id=738313921]
+[node name="Camera2D2" type="Camera2D" parent="Content/Player"]
 position = Vector2(1237, -125)
 zoom = Vector2(2, 2)
 
-[node name="TimeLabel" type="Label" parent="Content/Player/Camera2D2" unique_id=1919416125 groups=["timer_label"]]
+[node name="TimeLabel" type="Label" parent="Content/Player/Camera2D2" groups=["timer_label"]]
 z_index = 1
 offset_left = -28.0
 offset_top = -269.0
@@ -870,41 +870,42 @@ offset_right = 72.0
 offset_bottom = 39.0
 theme_type_variation = &"HeaderLarge"
 text = "00:00"
+metadata/_edit_use_anchors_ = true
 
-[node name="HurtBox" type="Area2D" parent="Content/Player" unique_id=376849499 groups=["enemy_attack"]]
+[node name="HurtBox" type="Area2D" parent="Content/Player" groups=["enemy_attack"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player/HurtBox" unique_id=659997515]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Player/HurtBox"]
 position = Vector2(1238, -135)
 shape = SubResource("CircleShape2D_15i7j")
 
-[node name="Object_Rocks" type="Node2D" parent="Content" unique_id=1891850150]
+[node name="Object_Rocks" type="Node2D" parent="Content"]
 y_sort_enabled = true
 
-[node name="Medium_Rock" parent="Content/Object_Rocks" unique_id=534914555 instance=ExtResource("15_f23eu")]
+[node name="Medium_Rock" parent="Content/Object_Rocks" instance=ExtResource("15_f23eu")]
 position = Vector2(-3213, -906)
 
-[node name="Big_Rock" parent="Content/Object_Rocks" unique_id=1374483101 instance=ExtResource("17_5xkvv")]
+[node name="Big_Rock" parent="Content/Object_Rocks" instance=ExtResource("17_5xkvv")]
 position = Vector2(6382, -444)
 
-[node name="Object_Cactuses" type="Node2D" parent="Content" unique_id=1913670524]
+[node name="Object_Cactuses" type="Node2D" parent="Content"]
 
-[node name="Cactus_Normal" parent="Content/Object_Cactuses" unique_id=1599811922 instance=ExtResource("4_kcyjf")]
+[node name="Cactus_Normal" parent="Content/Object_Cactuses" instance=ExtResource("4_kcyjf")]
 position = Vector2(-2049, -265)
 
-[node name="Cactus_Flower" parent="Content/Object_Cactuses" unique_id=1344958888 instance=ExtResource("5_o6lw0")]
+[node name="Cactus_Flower" parent="Content/Object_Cactuses" instance=ExtResource("5_o6lw0")]
 position = Vector2(-2143, -223)
 
-[node name="Object_Skulls" type="Node2D" parent="Content" unique_id=1229961914]
+[node name="Object_Skulls" type="Node2D" parent="Content"]
 
-[node name="Skull_Normal" parent="Content/Object_Skulls" unique_id=1386880299 instance=ExtResource("6_yfuda")]
+[node name="Skull_Normal" parent="Content/Object_Skulls" instance=ExtResource("6_yfuda")]
 position = Vector2(-568, -112)
 
-[node name="Border" type="Node2D" parent="Content" unique_id=1017627441]
+[node name="Border" type="Node2D" parent="Content"]
 script = ExtResource("25_yfuda")
 
-[node name="Visual" type="Node2D" parent="Content/Border" unique_id=7362990]
+[node name="Visual" type="Node2D" parent="Content/Border"]
 
-[node name="Border1" type="AnimatedSprite2D" parent="Content/Border/Visual" unique_id=234553436]
+[node name="Border1" type="AnimatedSprite2D" parent="Content/Border/Visual"]
 z_index = 1
 texture_filter = 1
 position = Vector2(2353.5, -2635.5)
@@ -912,7 +913,7 @@ scale = Vector2(13.425, 2.3283331)
 sprite_frames = SubResource("SpriteFrames_yxuth")
 animation = &"BorderAnimation"
 
-[node name="Border2" type="AnimatedSprite2D" parent="Content/Border/Visual" unique_id=877049300]
+[node name="Border2" type="AnimatedSprite2D" parent="Content/Border/Visual"]
 z_index = 1
 texture_filter = 1
 position = Vector2(2348.085, 2176.7092)
@@ -921,7 +922,7 @@ scale = Vector2(13.435849, 2.0909688)
 sprite_frames = SubResource("SpriteFrames_yxuth")
 animation = &"BorderAnimation"
 
-[node name="Border3" type="AnimatedSprite2D" parent="Content/Border/Visual" unique_id=1734387143]
+[node name="Border3" type="AnimatedSprite2D" parent="Content/Border/Visual"]
 z_index = 1
 texture_filter = 1
 position = Vector2(5622.7915, -193.86649)
@@ -930,7 +931,7 @@ scale = Vector2(5.810955, 2.5149214)
 sprite_frames = SubResource("SpriteFrames_yxuth")
 animation = &"BorderAnimation"
 
-[node name="Border4" type="AnimatedSprite2D" parent="Content/Border/Visual" unique_id=54209252]
+[node name="Border4" type="AnimatedSprite2D" parent="Content/Border/Visual"]
 z_index = 1
 texture_filter = 1
 position = Vector2(-1006.334, -193.78357)
@@ -939,574 +940,574 @@ scale = Vector2(5.8106174, 2.243712)
 sprite_frames = SubResource("SpriteFrames_yxuth")
 animation = &"BorderAnimation"
 
-[node name="Collision" type="Node2D" parent="Content/Border" unique_id=161921258]
+[node name="Collision" type="Node2D" parent="Content/Border"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/Border/Collision" unique_id=349892272]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/Border/Collision"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D" unique_id=517076030]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D"]
 texture_filter = 1
 position = Vector2(2261, -2227)
 shape = SubResource("RectangleShape2D_05jqx")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Content/Border/Collision" unique_id=534988684]
+[node name="StaticBody2D2" type="StaticBody2D" parent="Content/Border/Collision"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D2" unique_id=1517895312]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D2"]
 position = Vector2(2265, 1849)
 shape = SubResource("RectangleShape2D_s5cut")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Content/Border/Collision" unique_id=1735040552]
+[node name="StaticBody2D3" type="StaticBody2D" parent="Content/Border/Collision"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D3" unique_id=1588269126]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D3"]
 position = Vector2(-629, -162)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_it66m")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="Content/Border/Collision" unique_id=424776888]
+[node name="StaticBody2D4" type="StaticBody2D" parent="Content/Border/Collision"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D4" unique_id=825245988]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/Border/Collision/StaticBody2D4"]
 position = Vector2(5159, -275)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_wm6hh")
 
-[node name="MovingBushes" type="Node2D" parent="Content" unique_id=1481136057]
+[node name="MovingBushes" type="Node2D" parent="Content"]
 
-[node name="Path2D" type="Path2D" parent="Content/MovingBushes" unique_id=1779287070]
+[node name="Path2D" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_i8dl0")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D" unique_id=1108505677]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D"]
 y_sort_enabled = true
 position = Vector2(-470, -335)
 rotation = 0.038801506
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D/PathFollow2D" unique_id=52850253]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D/PathFollow2D" unique_id=317105121]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D/PathFollow2D/StaticBody2D" unique_id=76497829]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D2" type="Path2D" parent="Content/MovingBushes" unique_id=503237446]
+[node name="Path2D2" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_jf64p")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D2" unique_id=1701907272]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D2"]
 y_sort_enabled = true
 position = Vector2(4912, -673)
 rotation = 3.1127634
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D2/PathFollow2D" unique_id=1673573207]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D2/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D2/PathFollow2D" unique_id=78509315]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D2/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D2/PathFollow2D/StaticBody2D" unique_id=1226069888]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D2/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D3" type="Path2D" parent="Content/MovingBushes" unique_id=1836782560]
+[node name="Path2D3" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_jf64p")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D3" unique_id=1471648959]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D3"]
 y_sort_enabled = true
 position = Vector2(4912, -673)
 rotation = 3.1127634
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D3/PathFollow2D" unique_id=738683078]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D3/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D3/PathFollow2D" unique_id=652657375]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D3/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D3/PathFollow2D/StaticBody2D" unique_id=189995720]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D3/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D4" type="Path2D" parent="Content/MovingBushes" unique_id=718121989]
+[node name="Path2D4" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_rw02v")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D4" unique_id=704323798]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D4"]
 y_sort_enabled = true
 position = Vector2(-403, -814)
 rotation = -0.006372922
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D4/PathFollow2D" unique_id=1274310228]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D4/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D4/PathFollow2D" unique_id=672674061]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D4/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D4/PathFollow2D/StaticBody2D" unique_id=1474336328]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D4/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D5" type="Path2D" parent="Content/MovingBushes" unique_id=2032745571]
+[node name="Path2D5" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_3sd22")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D5" unique_id=995813884]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D5"]
 y_sort_enabled = true
 position = Vector2(4937, 348)
 rotation = -3.123154
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D5/PathFollow2D" unique_id=1377705659]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D5/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D5/PathFollow2D" unique_id=100921273]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D5/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D5/PathFollow2D/StaticBody2D" unique_id=1149176057]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D5/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D6" type="Path2D" parent="Content/MovingBushes" unique_id=2095490033]
+[node name="Path2D6" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_s5a7k")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D6" unique_id=1044446048]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D6"]
 y_sort_enabled = true
 position = Vector2(-522, 804)
 rotation = 0.01211617
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D6/PathFollow2D" unique_id=1245441702]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D6/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D6/PathFollow2D" unique_id=141438177]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D6/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D6/PathFollow2D/StaticBody2D" unique_id=763515494]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D6/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D7" type="Path2D" parent="Content/MovingBushes" unique_id=316992160]
+[node name="Path2D7" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_koyeq")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D7" unique_id=747523603]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D7"]
 y_sort_enabled = true
 position = Vector2(-544, -1801)
 rotation = 0.07857662
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D7/PathFollow2D" unique_id=109996208]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D7/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D7/PathFollow2D" unique_id=1142673084]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D7/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D7/PathFollow2D/StaticBody2D" unique_id=1799636120]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D7/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D8" type="Path2D" parent="Content/MovingBushes" unique_id=2141841630]
+[node name="Path2D8" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_3ql07")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D8" unique_id=627283756]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D8"]
 y_sort_enabled = true
 position = Vector2(-522, -1683)
 rotation = 0.045130625
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D8/PathFollow2D" unique_id=116051886]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D8/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D8/PathFollow2D" unique_id=1407418653]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D8/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D8/PathFollow2D/StaticBody2D" unique_id=1478028162]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D8/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D9" type="Path2D" parent="Content/MovingBushes" unique_id=1528173086]
+[node name="Path2D9" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_w08tj")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D9" unique_id=108608257]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D9"]
 y_sort_enabled = true
 position = Vector2(-528, 1061)
 rotation = 0.029327666
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D9/PathFollow2D" unique_id=590634384]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D9/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D9/PathFollow2D" unique_id=1937339143]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D9/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D9/PathFollow2D/StaticBody2D" unique_id=5905615]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D9/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D10" type="Path2D" parent="Content/MovingBushes" unique_id=2135096596]
+[node name="Path2D10" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_spf4h")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D10" unique_id=204786974]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D10"]
 y_sort_enabled = true
 position = Vector2(587, -2163)
 rotation = 0.8662144
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D10/PathFollow2D" unique_id=847090837]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D10/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D10/PathFollow2D" unique_id=2006961197]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D10/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D10/PathFollow2D/StaticBody2D" unique_id=1977870019]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D10/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D11" type="Path2D" parent="Content/MovingBushes" unique_id=1070315039]
+[node name="Path2D11" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_or3hn")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D11" unique_id=405544623]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D11"]
 y_sort_enabled = true
 position = Vector2(5121, -1845)
 rotation = 3.0739417
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D11/PathFollow2D" unique_id=995202954]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D11/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D11/PathFollow2D" unique_id=523849588]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D11/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D11/PathFollow2D/StaticBody2D" unique_id=464945132]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D11/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D12" type="Path2D" parent="Content/MovingBushes" unique_id=1200240128]
+[node name="Path2D12" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_6gebr")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D12" unique_id=2087267344]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D12"]
 y_sort_enabled = true
 position = Vector2(-935, -1691)
 rotation = 0.11055035
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D12/PathFollow2D" unique_id=108449283]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D12/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D12/PathFollow2D" unique_id=1555914646]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D12/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D12/PathFollow2D/StaticBody2D" unique_id=1880743366]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D12/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D13" type="Path2D" parent="Content/MovingBushes" unique_id=1690540528]
+[node name="Path2D13" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_84yts")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D13" unique_id=311176642]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D13"]
 y_sort_enabled = true
 position = Vector2(5357, 1305)
 rotation = -3.037887
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D13/PathFollow2D" unique_id=2128126112]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D13/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D13/PathFollow2D" unique_id=163319265]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D13/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D13/PathFollow2D/StaticBody2D" unique_id=1965381301]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D13/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D14" type="Path2D" parent="Content/MovingBushes" unique_id=1491870258]
+[node name="Path2D14" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_15i7j")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D14" unique_id=211501606]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D14"]
 y_sort_enabled = true
 position = Vector2(1019, -2204)
 rotation = 1.2272352
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D14/PathFollow2D" unique_id=1031464260]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D14/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D14/PathFollow2D" unique_id=1618343700]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D14/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D14/PathFollow2D/StaticBody2D" unique_id=1617712468]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D14/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D15" type="Path2D" parent="Content/MovingBushes" unique_id=19034466]
+[node name="Path2D15" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_yxuth")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D15" unique_id=1883967663]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D15"]
 y_sort_enabled = true
 position = Vector2(-210, -2090)
 rotation = 1.4697881
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D15/PathFollow2D" unique_id=194295307]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D15/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D15/PathFollow2D" unique_id=1984669812]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D15/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D15/PathFollow2D/StaticBody2D" unique_id=195361004]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D15/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D16" type="Path2D" parent="Content/MovingBushes" unique_id=321775904]
+[node name="Path2D16" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_05jqx")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D16" unique_id=203717141]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D16"]
 y_sort_enabled = true
 position = Vector2(-642, -1251)
 rotation = 0.0511719
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D16/PathFollow2D" unique_id=1860587527]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D16/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D16/PathFollow2D" unique_id=1824281440]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D16/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D16/PathFollow2D/StaticBody2D" unique_id=1042671093]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D16/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D17" type="Path2D" parent="Content/MovingBushes" unique_id=1839259386]
+[node name="Path2D17" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_s5cut")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D17" unique_id=643964250]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D17"]
 y_sort_enabled = true
 position = Vector2(3974, 1712)
 rotation = -0.4936631
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D17/PathFollow2D" unique_id=907002805]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D17/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D17/PathFollow2D" unique_id=809081482]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D17/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D17/PathFollow2D/StaticBody2D" unique_id=1724694692]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D17/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D18" type="Path2D" parent="Content/MovingBushes" unique_id=1006831043]
+[node name="Path2D18" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_it66m")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D18" unique_id=1751343313]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D18"]
 y_sort_enabled = true
 position = Vector2(1336, 1769)
 rotation = -1.4322485
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D18/PathFollow2D" unique_id=1057235849]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D18/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D18/PathFollow2D" unique_id=77534245]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D18/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D18/PathFollow2D/StaticBody2D" unique_id=826279915]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D18/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D19" type="Path2D" parent="Content/MovingBushes" unique_id=2092382817]
+[node name="Path2D19" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_wm6hh")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D19" unique_id=1184374381]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D19"]
 y_sort_enabled = true
 position = Vector2(-886, -356)
 rotation = 0.006899924
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D19/PathFollow2D" unique_id=1321684096]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D19/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D19/PathFollow2D" unique_id=1057404815]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D19/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D19/PathFollow2D/StaticBody2D" unique_id=1540185072]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D19/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D20" type="Path2D" parent="Content/MovingBushes" unique_id=756780947]
+[node name="Path2D20" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_8kjm2")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D20" unique_id=1109197792]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D20"]
 y_sort_enabled = true
 position = Vector2(5121, 1142)
 rotation = -3.0998397
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D20/PathFollow2D" unique_id=1759622554]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D20/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D20/PathFollow2D" unique_id=1426882724]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D20/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D20/PathFollow2D/StaticBody2D" unique_id=332111670]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D20/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D21" type="Path2D" parent="Content/MovingBushes" unique_id=378873821]
+[node name="Path2D21" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_i52kj")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D21" unique_id=890900569]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D21"]
 y_sort_enabled = true
 position = Vector2(135, -204)
 rotation = 0.15759392
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D21/PathFollow2D" unique_id=1949645159]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D21/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D21/PathFollow2D" unique_id=1916150279]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D21/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D21/PathFollow2D/StaticBody2D" unique_id=765005349]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D21/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D22" type="Path2D" parent="Content/MovingBushes" unique_id=409684947]
+[node name="Path2D22" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_y4tau")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D22" unique_id=249022319]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D22"]
 y_sort_enabled = true
 position = Vector2(3094, -515)
 rotation = 2.952438
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D22/PathFollow2D" unique_id=177703704]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D22/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D22/PathFollow2D" unique_id=1555079796]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D22/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D22/PathFollow2D/StaticBody2D" unique_id=294585923]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D22/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="Path2D23" type="Path2D" parent="Content/MovingBushes" unique_id=1106767446]
+[node name="Path2D23" type="Path2D" parent="Content/MovingBushes"]
 curve = SubResource("Curve2D_n40p1")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D23" unique_id=837869183]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/MovingBushes/Path2D23"]
 y_sort_enabled = true
 position = Vector2(901, -481)
 rotation = 0.7343379
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D23/PathFollow2D" unique_id=1399667485]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingBushes/Path2D23/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i52kj")
 animation = &"BushAnimation"
 autoplay = "BushAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D23/PathFollow2D" unique_id=1286680313]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/MovingBushes/Path2D23/PathFollow2D"]
 y_sort_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D23/PathFollow2D/StaticBody2D" unique_id=1172623305]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingBushes/Path2D23/PathFollow2D/StaticBody2D"]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_jf64p")
 
-[node name="MovingVulture" type="Node2D" parent="Content" unique_id=635448949]
+[node name="MovingVulture" type="Node2D" parent="Content"]
 
-[node name="RightLeft2" type="Path2D" parent="Content/MovingVulture" unique_id=970816788]
+[node name="RightLeft2" type="Path2D" parent="Content/MovingVulture"]
 position = Vector2(-1141.4011, 0)
 scale = Vector2(1.213346, 1)
 curve = SubResource("Curve2D_h4hkh")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft2" unique_id=357352573]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft2"]
 y_sort_enabled = true
 position = Vector2(6110.7065, 495.99997)
 rotation = 0.002539274
@@ -1514,7 +1515,7 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft2/PathVultures" unique_id=1302019913]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft2/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
@@ -1522,10 +1523,10 @@ animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 flip_h = true
 
-[node name="RightLeft3" type="Path2D" parent="Content/MovingVulture" unique_id=1966190116]
+[node name="RightLeft3" type="Path2D" parent="Content/MovingVulture"]
 curve = SubResource("Curve2D_xu702")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft3" unique_id=2032118775]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft3"]
 y_sort_enabled = true
 position = Vector2(5309, 906)
 rotation = 0.002539274
@@ -1533,7 +1534,7 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft3/PathVultures" unique_id=1692720485]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft3/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
@@ -1541,10 +1542,10 @@ animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 flip_h = true
 
-[node name="RightLeft4" type="Path2D" parent="Content/MovingVulture" unique_id=282792509]
+[node name="RightLeft4" type="Path2D" parent="Content/MovingVulture"]
 curve = SubResource("Curve2D_i363k")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft4" unique_id=1610505702]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft4"]
 y_sort_enabled = true
 position = Vector2(5176, -1358)
 rotation = 0.002539274
@@ -1552,7 +1553,7 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft4/PathVultures" unique_id=1028779530]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft4/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
@@ -1560,10 +1561,10 @@ animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 flip_h = true
 
-[node name="RightLeft5" type="Path2D" parent="Content/MovingVulture" unique_id=1276146188]
+[node name="RightLeft5" type="Path2D" parent="Content/MovingVulture"]
 curve = SubResource("Curve2D_o2cvn")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft5" unique_id=1049942464]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft5"]
 y_sort_enabled = true
 position = Vector2(6666, -675)
 rotation = 0.002539274
@@ -1571,7 +1572,7 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft5/PathVultures" unique_id=989485818]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft5/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
@@ -1579,10 +1580,10 @@ animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 flip_h = true
 
-[node name="RightLeft6" type="Path2D" parent="Content/MovingVulture" unique_id=314818956]
+[node name="RightLeft6" type="Path2D" parent="Content/MovingVulture"]
 curve = SubResource("Curve2D_m1472")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft6" unique_id=1662617400]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft6"]
 y_sort_enabled = true
 position = Vector2(7925, -1191)
 rotation = 0.002539274
@@ -1590,7 +1591,7 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft6/PathVultures" unique_id=1906699471]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft6/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
@@ -1598,10 +1599,10 @@ animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 flip_h = true
 
-[node name="RightLeft7" type="Path2D" parent="Content/MovingVulture" unique_id=1774196612]
+[node name="RightLeft7" type="Path2D" parent="Content/MovingVulture"]
 curve = SubResource("Curve2D_eyejc")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft7" unique_id=1680077105]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft7"]
 y_sort_enabled = true
 position = Vector2(7724, 1003)
 rotation = 0.002539274
@@ -1609,7 +1610,7 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft7/PathVultures" unique_id=1900710486]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft7/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
@@ -1617,10 +1618,10 @@ animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 flip_h = true
 
-[node name="RightLeft8" type="Path2D" parent="Content/MovingVulture" unique_id=1898010177]
+[node name="RightLeft8" type="Path2D" parent="Content/MovingVulture"]
 curve = SubResource("Curve2D_l3fwa")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft8" unique_id=271428877]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft8"]
 y_sort_enabled = true
 position = Vector2(5147, 1417)
 rotation = 0.002539274
@@ -1628,7 +1629,7 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft8/PathVultures" unique_id=554735775]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft8/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
@@ -1636,10 +1637,10 @@ animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 flip_h = true
 
-[node name="RightLeft9" type="Path2D" parent="Content/MovingVulture" unique_id=223977774]
+[node name="RightLeft9" type="Path2D" parent="Content/MovingVulture"]
 curve = SubResource("Curve2D_3i426")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft9" unique_id=1133464025]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft9"]
 y_sort_enabled = true
 position = Vector2(7461, -1768)
 rotation = 0.002539274
@@ -1647,7 +1648,7 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft9/PathVultures" unique_id=546780144]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft9/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
@@ -1655,10 +1656,10 @@ animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 flip_h = true
 
-[node name="RightLeft10" type="Path2D" parent="Content/MovingVulture" unique_id=1053870814]
+[node name="RightLeft10" type="Path2D" parent="Content/MovingVulture"]
 curve = SubResource("Curve2D_1ex6t")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft10" unique_id=1063551598]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/RightLeft10"]
 y_sort_enabled = true
 position = Vector2(6035, -41)
 rotation = 0.002539274
@@ -1666,7 +1667,7 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft10/PathVultures" unique_id=1170299132]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/RightLeft10/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
@@ -1674,12 +1675,12 @@ animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 flip_h = true
 
-[node name="LeftRight" type="Path2D" parent="Content/MovingVulture" unique_id=194428203]
+[node name="LeftRight" type="Path2D" parent="Content/MovingVulture"]
 position = Vector2(-818.8304, 0)
 scale = Vector2(1.1602094, 1)
 curve = SubResource("Curve2D_4giqt")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight" unique_id=1058614953]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight"]
 y_sort_enabled = true
 position = Vector2(-1450.7465, 82)
 rotation = 0.002539274
@@ -1687,17 +1688,17 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight/PathVultures" unique_id=2012019075]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
 animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 
-[node name="LeftRight2" type="Path2D" parent="Content/MovingVulture" unique_id=1570499749]
+[node name="LeftRight2" type="Path2D" parent="Content/MovingVulture"]
 curve = SubResource("Curve2D_8iv6r")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight2" unique_id=2073156151]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight2"]
 y_sort_enabled = true
 position = Vector2(-637, 378)
 rotation = 0.002539274
@@ -1705,19 +1706,19 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight2/PathVultures" unique_id=399247711]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight2/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
 animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 
-[node name="LeftRight3" type="Path2D" parent="Content/MovingVulture" unique_id=2001720125]
+[node name="LeftRight3" type="Path2D" parent="Content/MovingVulture"]
 position = Vector2(-545.79736, 6.1035156e-05)
 scale = Vector2(1.0948718, 1)
 curve = SubResource("Curve2D_3gnva")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight3" unique_id=1523818719]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight3"]
 y_sort_enabled = true
 position = Vector2(-1448.7566, -801.00006)
 rotation = 0.002539274
@@ -1725,17 +1726,17 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight3/PathVultures" unique_id=1869265894]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight3/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
 animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 
-[node name="LeftRight4" type="Path2D" parent="Content/MovingVulture" unique_id=1817569088]
+[node name="LeftRight4" type="Path2D" parent="Content/MovingVulture"]
 curve = SubResource("Curve2D_i5ake")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight4" unique_id=320731086]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight4"]
 y_sort_enabled = true
 position = Vector2(-1321, -1832)
 rotation = 0.002539274
@@ -1743,17 +1744,17 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight4/PathVultures" unique_id=1567174364]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight4/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
 animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 
-[node name="LeftRight5" type="Path2D" parent="Content/MovingVulture" unique_id=1024291586]
+[node name="LeftRight5" type="Path2D" parent="Content/MovingVulture"]
 curve = SubResource("Curve2D_dmovf")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight5" unique_id=393046927]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight5"]
 y_sort_enabled = true
 position = Vector2(-1284, 617)
 rotation = 0.002539274
@@ -1761,17 +1762,17 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight5/PathVultures" unique_id=211873386]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight5/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
 animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 
-[node name="LeftRight6" type="Path2D" parent="Content/MovingVulture" unique_id=507451986]
+[node name="LeftRight6" type="Path2D" parent="Content/MovingVulture"]
 curve = SubResource("Curve2D_32rkg")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight6" unique_id=1213343188]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight6"]
 y_sort_enabled = true
 position = Vector2(-3351, 178)
 rotation = 0.002539274
@@ -1779,17 +1780,17 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight6/PathVultures" unique_id=374333885]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight6/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
 animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 
-[node name="LeftRight7" type="Path2D" parent="Content/MovingVulture" unique_id=1014020384]
+[node name="LeftRight7" type="Path2D" parent="Content/MovingVulture"]
 curve = SubResource("Curve2D_a5wjk")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight7" unique_id=355405811]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight7"]
 y_sort_enabled = true
 position = Vector2(-2282, 1205)
 rotation = 0.002539274
@@ -1797,17 +1798,17 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight7/PathVultures" unique_id=1211065281]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight7/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
 animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 
-[node name="LeftRight8" type="Path2D" parent="Content/MovingVulture" unique_id=1769801801]
+[node name="LeftRight8" type="Path2D" parent="Content/MovingVulture"]
 curve = SubResource("Curve2D_oyb3p")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight8" unique_id=62704609]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight8"]
 y_sort_enabled = true
 position = Vector2(-2306, -1428)
 rotation = 0.002539274
@@ -1815,19 +1816,19 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight8/PathVultures" unique_id=1974972337]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight8/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
 animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 
-[node name="LeftRight9" type="Path2D" parent="Content/MovingVulture" unique_id=563067667]
+[node name="LeftRight9" type="Path2D" parent="Content/MovingVulture"]
 position = Vector2(-1287.2809, 0)
 scale = Vector2(1.2299538, 1)
 curve = SubResource("Curve2D_2hrtt")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight9" unique_id=324815190]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight9"]
 y_sort_enabled = true
 position = Vector2(-1099, -1062)
 rotation = 0.002539274
@@ -1835,17 +1836,17 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight9/PathVultures" unique_id=259996426]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight9/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
 animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 
-[node name="LeftRight10" type="Path2D" parent="Content/MovingVulture" unique_id=1457791405]
+[node name="LeftRight10" type="Path2D" parent="Content/MovingVulture"]
 curve = SubResource("Curve2D_g3lo7")
 
-[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight10" unique_id=358425841]
+[node name="PathVultures" type="PathFollow2D" parent="Content/MovingVulture/LeftRight10"]
 y_sort_enabled = true
 position = Vector2(-1625, -581)
 rotation = 0.002539274
@@ -1853,26 +1854,26 @@ rotates = false
 loop = false
 script = ExtResource("29_3sd22")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight10/PathVultures" unique_id=208123062]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingVulture/LeftRight10/PathVultures"]
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_i363k")
 animation = &"VultureAnimation"
 autoplay = "VultureAnimation"
 
-[node name="MovingTornado" type="Node2D" parent="Content" unique_id=511240720]
+[node name="MovingTornado" type="Node2D" parent="Content"]
 y_sort_enabled = true
 
-[node name="PathTornado" type="Path2D" parent="Content/MovingTornado" unique_id=1684058789]
+[node name="PathTornado" type="Path2D" parent="Content/MovingTornado"]
 curve = SubResource("Curve2D_dlis5")
 
-[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado" unique_id=1553881861]
+[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado"]
 position = Vector2(-866, -1510)
 rotation = -0.020047441
 rotates = false
 script = ExtResource("31_koyeq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado/TornadoPath" unique_id=19515562]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado/TornadoPath"]
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
@@ -1881,41 +1882,41 @@ sprite_frames = SubResource("SpriteFrames_dmovf")
 animation = &"TornadoAnimation"
 autoplay = "TornadoAnimation"
 
-[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado/TornadoPath" unique_id=1767487048]
+[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado/TornadoPath"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado/TornadoPath/StaticBody" unique_id=949039744]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado/TornadoPath/StaticBody"]
 y_sort_enabled = true
 position = Vector2(18.417297, -20.634949)
 shape = SubResource("CapsuleShape2D_koyeq")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado/TornadoPath/StaticBody" unique_id=1651536776]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado/TornadoPath/StaticBody"]
 position = Vector2(0.3006915, -14.996985)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_3ql07")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado/TornadoPath/StaticBody" unique_id=2112837021]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado/TornadoPath/StaticBody"]
 position = Vector2(-3.2399504, 11.93745)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_w08tj")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado/TornadoPath/StaticBody" unique_id=1477963320]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado/TornadoPath/StaticBody"]
 position = Vector2(-16.595663, -20.336765)
 shape = SubResource("CapsuleShape2D_spf4h")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado/TornadoPath/StaticBody" unique_id=328863892]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado/TornadoPath/StaticBody"]
 position = Vector2(-4.0593357, 2.919213)
 shape = SubResource("CapsuleShape2D_or3hn")
 
-[node name="PathTornado2" type="Path2D" parent="Content/MovingTornado" unique_id=435039510]
+[node name="PathTornado2" type="Path2D" parent="Content/MovingTornado"]
 curve = SubResource("Curve2D_5aim4")
 
-[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado2" unique_id=676474371]
+[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado2"]
 position = Vector2(5266, 690)
 rotation = -0.020047441
 rotates = false
 script = ExtResource("31_koyeq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado2/TornadoPath" unique_id=85299178]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado2/TornadoPath"]
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
@@ -1924,41 +1925,41 @@ sprite_frames = SubResource("SpriteFrames_dmovf")
 animation = &"TornadoAnimation"
 autoplay = "TornadoAnimation"
 
-[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado2/TornadoPath" unique_id=821584169]
+[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado2/TornadoPath"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado2/TornadoPath/StaticBody" unique_id=1027362528]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado2/TornadoPath/StaticBody"]
 y_sort_enabled = true
 position = Vector2(18.417297, -20.634949)
 shape = SubResource("CapsuleShape2D_koyeq")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado2/TornadoPath/StaticBody" unique_id=489586674]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado2/TornadoPath/StaticBody"]
 position = Vector2(0.3006915, -14.996985)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_3ql07")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado2/TornadoPath/StaticBody" unique_id=1577645840]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado2/TornadoPath/StaticBody"]
 position = Vector2(-3.2399504, 11.93745)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_w08tj")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado2/TornadoPath/StaticBody" unique_id=495863243]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado2/TornadoPath/StaticBody"]
 position = Vector2(-16.595663, -20.336765)
 shape = SubResource("CapsuleShape2D_spf4h")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado2/TornadoPath/StaticBody" unique_id=151776448]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado2/TornadoPath/StaticBody"]
 position = Vector2(-4.0593357, 2.919213)
 shape = SubResource("CapsuleShape2D_or3hn")
 
-[node name="PathTornado3" type="Path2D" parent="Content/MovingTornado" unique_id=772369189]
+[node name="PathTornado3" type="Path2D" parent="Content/MovingTornado"]
 curve = SubResource("Curve2D_h4nnu")
 
-[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado3" unique_id=1357416504]
+[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado3"]
 position = Vector2(2731, 1849)
 rotation = -0.020047441
 rotates = false
 script = ExtResource("31_koyeq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado3/TornadoPath" unique_id=1717348410]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado3/TornadoPath"]
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
@@ -1967,41 +1968,41 @@ sprite_frames = SubResource("SpriteFrames_dmovf")
 animation = &"TornadoAnimation"
 autoplay = "TornadoAnimation"
 
-[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado3/TornadoPath" unique_id=1659502728]
+[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado3/TornadoPath"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado3/TornadoPath/StaticBody" unique_id=1100463284]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado3/TornadoPath/StaticBody"]
 y_sort_enabled = true
 position = Vector2(18.417297, -20.634949)
 shape = SubResource("CapsuleShape2D_koyeq")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado3/TornadoPath/StaticBody" unique_id=1036084551]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado3/TornadoPath/StaticBody"]
 position = Vector2(0.3006915, -14.996985)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_3ql07")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado3/TornadoPath/StaticBody" unique_id=196449744]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado3/TornadoPath/StaticBody"]
 position = Vector2(-3.2399504, 11.93745)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_w08tj")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado3/TornadoPath/StaticBody" unique_id=1585173791]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado3/TornadoPath/StaticBody"]
 position = Vector2(-16.595663, -20.336765)
 shape = SubResource("CapsuleShape2D_spf4h")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado3/TornadoPath/StaticBody" unique_id=567715294]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado3/TornadoPath/StaticBody"]
 position = Vector2(-4.0593357, 2.919213)
 shape = SubResource("CapsuleShape2D_or3hn")
 
-[node name="PathTornado4" type="Path2D" parent="Content/MovingTornado" unique_id=2097485907]
+[node name="PathTornado4" type="Path2D" parent="Content/MovingTornado"]
 curve = SubResource("Curve2D_houwb")
 
-[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado4" unique_id=2018435992]
+[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado4"]
 position = Vector2(-714, -1564)
 rotation = -0.020047441
 rotates = false
 script = ExtResource("31_koyeq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado4/TornadoPath" unique_id=1815881509]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado4/TornadoPath"]
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
@@ -2010,41 +2011,41 @@ sprite_frames = SubResource("SpriteFrames_dmovf")
 animation = &"TornadoAnimation"
 autoplay = "TornadoAnimation"
 
-[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado4/TornadoPath" unique_id=114889162]
+[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado4/TornadoPath"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado4/TornadoPath/StaticBody" unique_id=1178674485]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado4/TornadoPath/StaticBody"]
 y_sort_enabled = true
 position = Vector2(18.417297, -20.634949)
 shape = SubResource("CapsuleShape2D_koyeq")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado4/TornadoPath/StaticBody" unique_id=1025559239]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado4/TornadoPath/StaticBody"]
 position = Vector2(0.3006915, -14.996985)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_3ql07")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado4/TornadoPath/StaticBody" unique_id=1435667062]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado4/TornadoPath/StaticBody"]
 position = Vector2(-3.2399504, 11.93745)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_w08tj")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado4/TornadoPath/StaticBody" unique_id=754759527]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado4/TornadoPath/StaticBody"]
 position = Vector2(-16.595663, -20.336765)
 shape = SubResource("CapsuleShape2D_spf4h")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado4/TornadoPath/StaticBody" unique_id=747772362]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado4/TornadoPath/StaticBody"]
 position = Vector2(-4.0593357, 2.919213)
 shape = SubResource("CapsuleShape2D_or3hn")
 
-[node name="PathTornado5" type="Path2D" parent="Content/MovingTornado" unique_id=1630174427]
+[node name="PathTornado5" type="Path2D" parent="Content/MovingTornado"]
 curve = SubResource("Curve2D_o8btu")
 
-[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado5" unique_id=1321946558]
+[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado5"]
 position = Vector2(1355, -2387)
 rotation = -0.020047441
 rotates = false
 script = ExtResource("31_koyeq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado5/TornadoPath" unique_id=1960571895]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado5/TornadoPath"]
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
@@ -2053,41 +2054,41 @@ sprite_frames = SubResource("SpriteFrames_dmovf")
 animation = &"TornadoAnimation"
 autoplay = "TornadoAnimation"
 
-[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado5/TornadoPath" unique_id=1443319116]
+[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado5/TornadoPath"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado5/TornadoPath/StaticBody" unique_id=267028720]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado5/TornadoPath/StaticBody"]
 y_sort_enabled = true
 position = Vector2(18.417297, -20.634949)
 shape = SubResource("CapsuleShape2D_koyeq")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado5/TornadoPath/StaticBody" unique_id=2064421672]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado5/TornadoPath/StaticBody"]
 position = Vector2(0.3006915, -14.996985)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_3ql07")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado5/TornadoPath/StaticBody" unique_id=1091877761]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado5/TornadoPath/StaticBody"]
 position = Vector2(-3.2399504, 11.93745)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_w08tj")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado5/TornadoPath/StaticBody" unique_id=1613984816]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado5/TornadoPath/StaticBody"]
 position = Vector2(-16.595663, -20.336765)
 shape = SubResource("CapsuleShape2D_spf4h")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado5/TornadoPath/StaticBody" unique_id=1184837061]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado5/TornadoPath/StaticBody"]
 position = Vector2(-4.0593357, 2.919213)
 shape = SubResource("CapsuleShape2D_or3hn")
 
-[node name="PathTornado6" type="Path2D" parent="Content/MovingTornado" unique_id=2050082409]
+[node name="PathTornado6" type="Path2D" parent="Content/MovingTornado"]
 curve = SubResource("Curve2D_2j1j3")
 
-[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado6" unique_id=27022778]
+[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado6"]
 position = Vector2(4389, -2182)
 rotation = -0.020047441
 rotates = false
 script = ExtResource("31_koyeq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado6/TornadoPath" unique_id=523600837]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado6/TornadoPath"]
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
@@ -2096,41 +2097,41 @@ sprite_frames = SubResource("SpriteFrames_dmovf")
 animation = &"TornadoAnimation"
 autoplay = "TornadoAnimation"
 
-[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado6/TornadoPath" unique_id=1900376203]
+[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado6/TornadoPath"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado6/TornadoPath/StaticBody" unique_id=1846605514]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado6/TornadoPath/StaticBody"]
 y_sort_enabled = true
 position = Vector2(18.417297, -20.634949)
 shape = SubResource("CapsuleShape2D_koyeq")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado6/TornadoPath/StaticBody" unique_id=622624012]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado6/TornadoPath/StaticBody"]
 position = Vector2(0.3006915, -14.996985)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_3ql07")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado6/TornadoPath/StaticBody" unique_id=945584375]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado6/TornadoPath/StaticBody"]
 position = Vector2(-3.2399504, 11.93745)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_w08tj")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado6/TornadoPath/StaticBody" unique_id=938873697]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado6/TornadoPath/StaticBody"]
 position = Vector2(-16.595663, -20.336765)
 shape = SubResource("CapsuleShape2D_spf4h")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado6/TornadoPath/StaticBody" unique_id=1231973357]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado6/TornadoPath/StaticBody"]
 position = Vector2(-4.0593357, 2.919213)
 shape = SubResource("CapsuleShape2D_or3hn")
 
-[node name="PathTornado7" type="Path2D" parent="Content/MovingTornado" unique_id=1874280965]
+[node name="PathTornado7" type="Path2D" parent="Content/MovingTornado"]
 curve = SubResource("Curve2D_12w7i")
 
-[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado7" unique_id=749454883]
+[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado7"]
 position = Vector2(-324, 1708)
 rotation = -0.020047441
 rotates = false
 script = ExtResource("31_koyeq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado7/TornadoPath" unique_id=1003103422]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado7/TornadoPath"]
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
@@ -2139,41 +2140,41 @@ sprite_frames = SubResource("SpriteFrames_dmovf")
 animation = &"TornadoAnimation"
 autoplay = "TornadoAnimation"
 
-[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado7/TornadoPath" unique_id=262697615]
+[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado7/TornadoPath"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado7/TornadoPath/StaticBody" unique_id=903924559]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado7/TornadoPath/StaticBody"]
 y_sort_enabled = true
 position = Vector2(18.417297, -20.634949)
 shape = SubResource("CapsuleShape2D_koyeq")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado7/TornadoPath/StaticBody" unique_id=1988503041]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado7/TornadoPath/StaticBody"]
 position = Vector2(0.3006915, -14.996985)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_3ql07")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado7/TornadoPath/StaticBody" unique_id=131718848]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado7/TornadoPath/StaticBody"]
 position = Vector2(-3.2399504, 11.93745)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_w08tj")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado7/TornadoPath/StaticBody" unique_id=486121939]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado7/TornadoPath/StaticBody"]
 position = Vector2(-16.595663, -20.336765)
 shape = SubResource("CapsuleShape2D_spf4h")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado7/TornadoPath/StaticBody" unique_id=1556420514]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado7/TornadoPath/StaticBody"]
 position = Vector2(-4.0593357, 2.919213)
 shape = SubResource("CapsuleShape2D_or3hn")
 
-[node name="PathTornado8" type="Path2D" parent="Content/MovingTornado" unique_id=2040379892]
+[node name="PathTornado8" type="Path2D" parent="Content/MovingTornado"]
 curve = SubResource("Curve2D_xmbla")
 
-[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado8" unique_id=904782004]
+[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado8"]
 position = Vector2(196, -2312)
 rotation = -0.020047441
 rotates = false
 script = ExtResource("31_koyeq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado8/TornadoPath" unique_id=100924859]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado8/TornadoPath"]
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
@@ -2182,41 +2183,41 @@ sprite_frames = SubResource("SpriteFrames_dmovf")
 animation = &"TornadoAnimation"
 autoplay = "TornadoAnimation"
 
-[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado8/TornadoPath" unique_id=1823883166]
+[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado8/TornadoPath"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado8/TornadoPath/StaticBody" unique_id=850409771]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado8/TornadoPath/StaticBody"]
 y_sort_enabled = true
 position = Vector2(18.417297, -20.634949)
 shape = SubResource("CapsuleShape2D_koyeq")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado8/TornadoPath/StaticBody" unique_id=1778209328]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado8/TornadoPath/StaticBody"]
 position = Vector2(0.3006915, -14.996985)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_3ql07")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado8/TornadoPath/StaticBody" unique_id=1178191817]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado8/TornadoPath/StaticBody"]
 position = Vector2(-3.2399504, 11.93745)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_w08tj")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado8/TornadoPath/StaticBody" unique_id=2128540937]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado8/TornadoPath/StaticBody"]
 position = Vector2(-16.595663, -20.336765)
 shape = SubResource("CapsuleShape2D_spf4h")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado8/TornadoPath/StaticBody" unique_id=743234714]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado8/TornadoPath/StaticBody"]
 position = Vector2(-4.0593357, 2.919213)
 shape = SubResource("CapsuleShape2D_or3hn")
 
-[node name="PathTornado9" type="Path2D" parent="Content/MovingTornado" unique_id=448982033]
+[node name="PathTornado9" type="Path2D" parent="Content/MovingTornado"]
 curve = SubResource("Curve2D_ngrok")
 
-[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado9" unique_id=810493147]
+[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado9"]
 position = Vector2(4736, 1871)
 rotation = -0.020047441
 rotates = false
 script = ExtResource("31_koyeq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado9/TornadoPath" unique_id=266936613]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado9/TornadoPath"]
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
@@ -2225,41 +2226,41 @@ sprite_frames = SubResource("SpriteFrames_dmovf")
 animation = &"TornadoAnimation"
 autoplay = "TornadoAnimation"
 
-[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado9/TornadoPath" unique_id=684612205]
+[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado9/TornadoPath"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado9/TornadoPath/StaticBody" unique_id=141379430]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado9/TornadoPath/StaticBody"]
 y_sort_enabled = true
 position = Vector2(18.417297, -20.634949)
 shape = SubResource("CapsuleShape2D_koyeq")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado9/TornadoPath/StaticBody" unique_id=300929575]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado9/TornadoPath/StaticBody"]
 position = Vector2(0.3006915, -14.996985)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_3ql07")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado9/TornadoPath/StaticBody" unique_id=1036022216]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado9/TornadoPath/StaticBody"]
 position = Vector2(-3.2399504, 11.93745)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_w08tj")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado9/TornadoPath/StaticBody" unique_id=1923471137]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado9/TornadoPath/StaticBody"]
 position = Vector2(-16.595663, -20.336765)
 shape = SubResource("CapsuleShape2D_spf4h")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado9/TornadoPath/StaticBody" unique_id=1999654860]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado9/TornadoPath/StaticBody"]
 position = Vector2(-4.0593357, 2.919213)
 shape = SubResource("CapsuleShape2D_or3hn")
 
-[node name="PathTornado10" type="Path2D" parent="Content/MovingTornado" unique_id=48295037]
+[node name="PathTornado10" type="Path2D" parent="Content/MovingTornado"]
 curve = SubResource("Curve2D_isdyu")
 
-[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado10" unique_id=1183126639]
+[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado10"]
 position = Vector2(-768, -1922)
 rotation = -0.020047441
 rotates = false
 script = ExtResource("31_koyeq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado10/TornadoPath" unique_id=1464114502]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado10/TornadoPath"]
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
@@ -2268,41 +2269,41 @@ sprite_frames = SubResource("SpriteFrames_dmovf")
 animation = &"TornadoAnimation"
 autoplay = "TornadoAnimation"
 
-[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado10/TornadoPath" unique_id=1299417202]
+[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado10/TornadoPath"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado10/TornadoPath/StaticBody" unique_id=378193379]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado10/TornadoPath/StaticBody"]
 y_sort_enabled = true
 position = Vector2(18.417297, -20.634949)
 shape = SubResource("CapsuleShape2D_koyeq")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado10/TornadoPath/StaticBody" unique_id=627133186]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado10/TornadoPath/StaticBody"]
 position = Vector2(0.3006915, -14.996985)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_3ql07")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado10/TornadoPath/StaticBody" unique_id=1614470263]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado10/TornadoPath/StaticBody"]
 position = Vector2(-3.2399504, 11.93745)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_w08tj")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado10/TornadoPath/StaticBody" unique_id=1243115143]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado10/TornadoPath/StaticBody"]
 position = Vector2(-16.595663, -20.336765)
 shape = SubResource("CapsuleShape2D_spf4h")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado10/TornadoPath/StaticBody" unique_id=138926771]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado10/TornadoPath/StaticBody"]
 position = Vector2(-4.0593357, 2.919213)
 shape = SubResource("CapsuleShape2D_or3hn")
 
-[node name="PathTornado11" type="Path2D" parent="Content/MovingTornado" unique_id=243358922]
+[node name="PathTornado11" type="Path2D" parent="Content/MovingTornado"]
 curve = SubResource("Curve2D_8tc7i")
 
-[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado11" unique_id=491318670]
+[node name="TornadoPath" type="PathFollow2D" parent="Content/MovingTornado/PathTornado11"]
 position = Vector2(-660, 1437)
 rotation = -0.020047441
 rotates = false
 script = ExtResource("31_koyeq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado11/TornadoPath" unique_id=441321991]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/MovingTornado/PathTornado11/TornadoPath"]
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
@@ -2311,175 +2312,175 @@ sprite_frames = SubResource("SpriteFrames_dmovf")
 animation = &"TornadoAnimation"
 autoplay = "TornadoAnimation"
 
-[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado11/TornadoPath" unique_id=1163716599]
+[node name="StaticBody" type="StaticBody2D" parent="Content/MovingTornado/PathTornado11/TornadoPath"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado11/TornadoPath/StaticBody" unique_id=2143334581]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado11/TornadoPath/StaticBody"]
 y_sort_enabled = true
 position = Vector2(18.417297, -20.634949)
 shape = SubResource("CapsuleShape2D_koyeq")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado11/TornadoPath/StaticBody" unique_id=434178130]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado11/TornadoPath/StaticBody"]
 position = Vector2(0.3006915, -14.996985)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_3ql07")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado11/TornadoPath/StaticBody" unique_id=670464011]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado11/TornadoPath/StaticBody"]
 position = Vector2(-3.2399504, 11.93745)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_w08tj")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado11/TornadoPath/StaticBody" unique_id=730276543]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado11/TornadoPath/StaticBody"]
 position = Vector2(-16.595663, -20.336765)
 shape = SubResource("CapsuleShape2D_spf4h")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado11/TornadoPath/StaticBody" unique_id=184549816]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Content/MovingTornado/PathTornado11/TornadoPath/StaticBody"]
 position = Vector2(-4.0593357, 2.919213)
 shape = SubResource("CapsuleShape2D_or3hn")
 
-[node name="SmallMovingScorpion" type="Node2D" parent="Content" unique_id=1948818192]
+[node name="SmallMovingScorpion" type="Node2D" parent="Content"]
 
-[node name="LeftRight" type="Path2D" parent="Content/SmallMovingScorpion" unique_id=1253702095]
+[node name="LeftRight" type="Path2D" parent="Content/SmallMovingScorpion"]
 y_sort_enabled = true
 curve = SubResource("Curve2D_c4deb")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/LeftRight" unique_id=806127646]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/LeftRight"]
 position = Vector2(-1508, -1656)
 rotation = -0.0059523107
 rotates = false
 loop = false
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/LeftRight/PathFollow2D" unique_id=1119211701]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/LeftRight/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_6agqs")
 animation = &"SmallScorpionAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/LeftRight/PathFollow2D" unique_id=1448966723]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/LeftRight/PathFollow2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/LeftRight/PathFollow2D/StaticBody2D" unique_id=172020359]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/LeftRight/PathFollow2D/StaticBody2D"]
 position = Vector2(-0.0059673786, 0.999982)
 rotation = 1.5707964
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_6gebr")
 
-[node name="LeftRight2" type="Path2D" parent="Content/SmallMovingScorpion" unique_id=285440916]
+[node name="LeftRight2" type="Path2D" parent="Content/SmallMovingScorpion"]
 y_sort_enabled = true
 curve = SubResource("Curve2D_sw2vp")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/LeftRight2" unique_id=1979913431]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/LeftRight2"]
 position = Vector2(-566, -870)
 rotation = -0.0059523107
 rotates = false
 loop = false
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/LeftRight2/PathFollow2D" unique_id=2099337731]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/LeftRight2/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_6agqs")
 animation = &"SmallScorpionAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/LeftRight2/PathFollow2D" unique_id=725748261]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/LeftRight2/PathFollow2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/LeftRight2/PathFollow2D/StaticBody2D" unique_id=917084867]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/LeftRight2/PathFollow2D/StaticBody2D"]
 position = Vector2(-0.0059673786, 0.999982)
 rotation = 1.5707964
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_6gebr")
 
-[node name="LeftRight3" type="Path2D" parent="Content/SmallMovingScorpion" unique_id=1261025021]
+[node name="LeftRight3" type="Path2D" parent="Content/SmallMovingScorpion"]
 y_sort_enabled = true
 curve = SubResource("Curve2D_jdjvx")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/LeftRight3" unique_id=1494226098]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/LeftRight3"]
 position = Vector2(852, -12)
 rotation = -0.0059523107
 rotates = false
 loop = false
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/LeftRight3/PathFollow2D" unique_id=955804370]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/LeftRight3/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_6agqs")
 animation = &"SmallScorpionAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/LeftRight3/PathFollow2D" unique_id=230412844]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/LeftRight3/PathFollow2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/LeftRight3/PathFollow2D/StaticBody2D" unique_id=1200342654]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/LeftRight3/PathFollow2D/StaticBody2D"]
 position = Vector2(-0.0059673786, 0.999982)
 rotation = 1.5707964
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_6gebr")
 
-[node name="LeftRight4" type="Path2D" parent="Content/SmallMovingScorpion" unique_id=826395066]
+[node name="LeftRight4" type="Path2D" parent="Content/SmallMovingScorpion"]
 y_sort_enabled = true
 curve = SubResource("Curve2D_8g8aq")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/LeftRight4" unique_id=1706416376]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/LeftRight4"]
 position = Vector2(-805, 584)
 rotation = -0.0059523107
 rotates = false
 loop = false
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/LeftRight4/PathFollow2D" unique_id=1847660826]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/LeftRight4/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_6agqs")
 animation = &"SmallScorpionAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/LeftRight4/PathFollow2D" unique_id=1352562765]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/LeftRight4/PathFollow2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/LeftRight4/PathFollow2D/StaticBody2D" unique_id=2136512942]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/LeftRight4/PathFollow2D/StaticBody2D"]
 position = Vector2(-0.0059673786, 0.999982)
 rotation = 1.5707964
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_6gebr")
 
-[node name="LeftRight5" type="Path2D" parent="Content/SmallMovingScorpion" unique_id=1671918967]
+[node name="LeftRight5" type="Path2D" parent="Content/SmallMovingScorpion"]
 y_sort_enabled = true
 curve = SubResource("Curve2D_fl40u")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/LeftRight5" unique_id=1473298861]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/LeftRight5"]
 position = Vector2(-1281, -786)
 rotation = -0.0059523107
 rotates = false
 loop = false
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/LeftRight5/PathFollow2D" unique_id=99951372]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/LeftRight5/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_6agqs")
 animation = &"SmallScorpionAnimation"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/LeftRight5/PathFollow2D" unique_id=1127697937]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/LeftRight5/PathFollow2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/LeftRight5/PathFollow2D/StaticBody2D" unique_id=451352174]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/LeftRight5/PathFollow2D/StaticBody2D"]
 position = Vector2(-0.0059673786, 0.999982)
 rotation = 1.5707964
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_6gebr")
 
-[node name="RightLeft" type="Path2D" parent="Content/SmallMovingScorpion" unique_id=2144861189]
+[node name="RightLeft" type="Path2D" parent="Content/SmallMovingScorpion"]
 y_sort_enabled = true
 curve = SubResource("Curve2D_6agqs")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/RightLeft" unique_id=848871000]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/RightLeft"]
 position = Vector2(5440, -369)
 rotation = -0.0059523107
 rotates = false
 loop = false
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/RightLeft/PathFollow2D" unique_id=1248630921]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/RightLeft/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.2, 0.2)
@@ -2487,26 +2488,26 @@ sprite_frames = SubResource("SpriteFrames_6agqs")
 animation = &"SmallScorpionAnimation"
 flip_h = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/RightLeft/PathFollow2D" unique_id=1593469219]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/RightLeft/PathFollow2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/RightLeft/PathFollow2D/StaticBody2D" unique_id=6915463]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/RightLeft/PathFollow2D/StaticBody2D"]
 position = Vector2(-0.0059673786, 0.999982)
 rotation = 1.5707964
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_6gebr")
 
-[node name="RightLeft2" type="Path2D" parent="Content/SmallMovingScorpion" unique_id=362593570]
+[node name="RightLeft2" type="Path2D" parent="Content/SmallMovingScorpion"]
 y_sort_enabled = true
 curve = SubResource("Curve2D_of366")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/RightLeft2" unique_id=629437780]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/RightLeft2"]
 position = Vector2(5631, 906)
 rotation = -0.0059523107
 rotates = false
 loop = false
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/RightLeft2/PathFollow2D" unique_id=1046757424]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/RightLeft2/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.2, 0.2)
@@ -2514,26 +2515,26 @@ sprite_frames = SubResource("SpriteFrames_6agqs")
 animation = &"SmallScorpionAnimation"
 flip_h = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/RightLeft2/PathFollow2D" unique_id=150199883]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/RightLeft2/PathFollow2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/RightLeft2/PathFollow2D/StaticBody2D" unique_id=269189357]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/RightLeft2/PathFollow2D/StaticBody2D"]
 position = Vector2(-0.0059673786, 0.999982)
 rotation = 1.5707964
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_6gebr")
 
-[node name="RightLeft3" type="Path2D" parent="Content/SmallMovingScorpion" unique_id=1516314745]
+[node name="RightLeft3" type="Path2D" parent="Content/SmallMovingScorpion"]
 y_sort_enabled = true
 curve = SubResource("Curve2D_lspjd")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/RightLeft3" unique_id=1636488690]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/RightLeft3"]
 position = Vector2(5309, -1716)
 rotation = -0.0059523107
 rotates = false
 loop = false
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/RightLeft3/PathFollow2D" unique_id=1187482868]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/RightLeft3/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.2, 0.2)
@@ -2541,26 +2542,26 @@ sprite_frames = SubResource("SpriteFrames_6agqs")
 animation = &"SmallScorpionAnimation"
 flip_h = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/RightLeft3/PathFollow2D" unique_id=1366504441]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/RightLeft3/PathFollow2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/RightLeft3/PathFollow2D/StaticBody2D" unique_id=622899144]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/RightLeft3/PathFollow2D/StaticBody2D"]
 position = Vector2(-0.0059673786, 0.999982)
 rotation = 1.5707964
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_6gebr")
 
-[node name="RightLeft4" type="Path2D" parent="Content/SmallMovingScorpion" unique_id=210567008]
+[node name="RightLeft4" type="Path2D" parent="Content/SmallMovingScorpion"]
 y_sort_enabled = true
 curve = SubResource("Curve2D_07sb8")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/RightLeft4" unique_id=251959873]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/RightLeft4"]
 position = Vector2(5691, -631)
 rotation = -0.0059523107
 rotates = false
 loop = false
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/RightLeft4/PathFollow2D" unique_id=825356803]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/RightLeft4/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.2, 0.2)
@@ -2568,26 +2569,26 @@ sprite_frames = SubResource("SpriteFrames_6agqs")
 animation = &"SmallScorpionAnimation"
 flip_h = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/RightLeft4/PathFollow2D" unique_id=289186840]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/RightLeft4/PathFollow2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/RightLeft4/PathFollow2D/StaticBody2D" unique_id=1843601173]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/RightLeft4/PathFollow2D/StaticBody2D"]
 position = Vector2(-0.0059673786, 0.999982)
 rotation = 1.5707964
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_6gebr")
 
-[node name="RightLeft5" type="Path2D" parent="Content/SmallMovingScorpion" unique_id=821590416]
+[node name="RightLeft5" type="Path2D" parent="Content/SmallMovingScorpion"]
 y_sort_enabled = true
 curve = SubResource("Curve2D_dk2pd")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/RightLeft5" unique_id=368507939]
+[node name="PathFollow2D" type="PathFollow2D" parent="Content/SmallMovingScorpion/RightLeft5"]
 position = Vector2(5357, 72)
 rotation = -0.0059523107
 rotates = false
 loop = false
 script = ExtResource("27_jf64p")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/RightLeft5/PathFollow2D" unique_id=1305752176]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Content/SmallMovingScorpion/RightLeft5/PathFollow2D"]
 y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.2, 0.2)
@@ -2595,24 +2596,24 @@ sprite_frames = SubResource("SpriteFrames_6agqs")
 animation = &"SmallScorpionAnimation"
 flip_h = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/RightLeft5/PathFollow2D" unique_id=889664235]
+[node name="StaticBody2D" type="StaticBody2D" parent="Content/SmallMovingScorpion/RightLeft5/PathFollow2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/RightLeft5/PathFollow2D/StaticBody2D" unique_id=1981390924]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content/SmallMovingScorpion/RightLeft5/PathFollow2D/StaticBody2D"]
 position = Vector2(-0.0059673786, 0.999982)
 rotation = 1.5707964
 scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_6gebr")
 
-[node name="Enemies" type="Node2D" parent="Content" unique_id=1272343146]
+[node name="Enemies" type="Node2D" parent="Content"]
 y_sort_enabled = true
 
-[node name="Enemy1_Skeleton" parent="Content/Enemies" unique_id=2029985033 groups=["enemy"] instance=ExtResource("7_or3hn")]
+[node name="Enemy1_Skeleton" parent="Content/Enemies" groups=["enemy"] instance=ExtResource("7_or3hn")]
 
-[node name="Enemy2_Giant" parent="Content/Enemies" unique_id=1612620487 groups=["enemy"] instance=ExtResource("8_6gebr")]
+[node name="Enemy2_Giant" parent="Content/Enemies" groups=["enemy"] instance=ExtResource("8_6gebr")]
 
-[node name="Enemy3_Zombie" parent="Content/Enemies" unique_id=216368296 groups=["enemy"] instance=ExtResource("9_84yts")]
+[node name="Enemy3_Zombie" parent="Content/Enemies" groups=["enemy"] instance=ExtResource("9_84yts")]
 
-[node name="Enemy4_SkeletonBarel" parent="Content/Enemies" unique_id=130958954 instance=ExtResource("7_6gebr")]
+[node name="Enemy4_SkeletonBarel" parent="Content/Enemies" instance=ExtResource("7_6gebr")]
 position = Vector2(1191, 376)
 script = ExtResource("38_84yts")
 speed = 80
