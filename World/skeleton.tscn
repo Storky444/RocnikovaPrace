@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bf72jnargo2eq"]
+[gd_scene load_steps=27 format=3 uid="uid://bf72jnargo2eq"]
 
 [ext_resource type="Script" uid="uid://dwmecyvad7xu6" path="res://World/enemy_1.gd" id="1_luhbm"]
 [ext_resource type="Texture2D" uid="uid://co48pbi1wt45g" path="res://Animations/SkeletonAnimation/New Piskel (6) (4).png" id="2_aejia"]
@@ -147,6 +147,12 @@ height = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_5aim4"]
 radius = 18.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luhbm"]
+bg_color = Color(0.15, 0.15, 0.15, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aejia"]
+bg_color = Color(0.75, 0, 0, 1)
+
 [node name="Enemy1_Skeleton" type="CharacterBody2D"]
 y_sort_enabled = true
 motion_mode = 1
@@ -156,7 +162,7 @@ script = ExtResource("1_luhbm")
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_dlis5")
-animation = &"SkeletonAnimationAttack"
+animation = &"SkeletonAnimationDown"
 
 [node name="CollisionShape_Right2" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
@@ -170,4 +176,15 @@ shape = SubResource("CapsuleShape2D_84yts")
 position = Vector2(3, -1)
 shape = SubResource("CircleShape2D_5aim4")
 
+[node name="HealthBar" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_left = -9.0
+offset_top = -20.0
+offset_right = 10.0
+offset_bottom = -16.0
+theme_override_styles/background = SubResource("StyleBoxFlat_luhbm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_aejia")
+show_percentage = false
+
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="value_changed" from="HealthBar" to="." method="_on_health_bar_value_changed"]

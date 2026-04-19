@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dav4y8vvegoih"]
+[gd_scene load_steps=24 format=3 uid="uid://dav4y8vvegoih"]
 
 [ext_resource type="Script" uid="uid://cfh3bvgl3rlwx" path="res://World/enemy_3_zombie.gd" id="1_kteij"]
 [ext_resource type="Texture2D" uid="uid://dpapdp8stnexx" path="res://Animations/ZombieAnimation/AnimatedZombieAttack.png" id="2_1g75f"]
@@ -126,6 +126,12 @@ height = 14.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_w2jjc"]
 radius = 12.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kteij"]
+bg_color = Color(0.15, 0.15, 0.15, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1g75f"]
+bg_color = Color(0.75, 0, 0, 1)
+
 [node name="Enemy3_Zombie" type="CharacterBody2D"]
 script = ExtResource("1_kteij")
 
@@ -145,4 +151,15 @@ shape = SubResource("CapsuleShape2D_pj0qk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_w2jjc")
 
+[node name="HealthBar3" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_left = -10.0
+offset_top = -21.0
+offset_right = 9.0
+offset_bottom = -17.0
+theme_override_styles/background = SubResource("StyleBoxFlat_kteij")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1g75f")
+show_percentage = false
+
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="value_changed" from="HealthBar3" to="." method="_on_health_bar_3_value_changed"]

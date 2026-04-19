@@ -2385,6 +2385,7 @@ y_sort_enabled = true
 
 [node name="Enemy1_Skeleton" parent="Content/Enemies" groups=["enemy"] instance=ExtResource("7_or3hn")]
 attack_range = 25
+attack_duration = 1.8
 max_hp = 60
 
 [node name="Enemy2_Giant" parent="Content/Enemies" groups=["enemy"] instance=ExtResource("8_6gebr")]

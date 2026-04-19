@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bu8v146c3xyns"]
+[gd_scene load_steps=26 format=3 uid="uid://bu8v146c3xyns"]
 
 [ext_resource type="Script" uid="uid://byxaltjitpyx0" path="res://World/enemy_2_giant.gd" id="1_qkrsa"]
 [ext_resource type="Texture2D" uid="uid://vffrgel4rla1" path="res://Animations/GiantAnimation/AnimatedGiantAttack.png" id="2_nk0t4"]
@@ -140,6 +140,12 @@ height = 22.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_a2jdt"]
 radius = 22.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkrsa"]
+bg_color = Color(0.15, 0.15, 0.15, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nk0t4"]
+bg_color = Color(0.75, 0, 0, 1)
+
 [node name="Enemy2_Giant" type="CharacterBody2D"]
 script = ExtResource("1_qkrsa")
 
@@ -160,4 +166,15 @@ shape = SubResource("CapsuleShape2D_dk2pd")
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_a2jdt")
 
+[node name="HealthBar2" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_left = -11.0
+offset_top = -26.0
+offset_right = 8.0
+offset_bottom = -22.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qkrsa")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nk0t4")
+show_percentage = false
+
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="value_changed" from="HealthBar2" to="." method="_on_health_bar_2_value_changed"]

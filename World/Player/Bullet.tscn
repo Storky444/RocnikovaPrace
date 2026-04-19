@@ -4,14 +4,14 @@
 [ext_resource type="Script" uid="uid://dkkocjvajqgl0" path="res://World/Player/bullet.gd" id="1_vyc06"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vyc06"]
-radius = 4.1231055
+radius = 3.0
 
 [node name="Bullet" type="Area2D"]
 script = ExtResource("1_vyc06")
-damage = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_saqku")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

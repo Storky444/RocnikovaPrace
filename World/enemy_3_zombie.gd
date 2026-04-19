@@ -16,6 +16,7 @@ var can_attack := true
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_timer: Timer = Timer.new()
 @onready var cooldown_timer: Timer = Timer.new()
+@onready var health_bar: ProgressBar = $HealthBar3
 
 func _ready():
 	add_to_group("enemy")
@@ -34,6 +35,10 @@ func _ready():
 	cooldown_timer.wait_time = attack_cooldown
 	add_child(cooldown_timer)
 	cooldown_timer.timeout.connect(_on_cooldown_finished)
+	
+	health_bar.max_value = max_hp
+	health_bar.value = hp
+	health_bar.visible = false
 
 func _physics_process(delta):
 	if not player:
@@ -92,6 +97,10 @@ func _on_attack_finished():
 
 func _on_cooldown_finished():
 	can_attack = true
+	
+func update_health_bar() -> void:
+	health_bar.max_value = max_hp
+	health_bar.value = hp
 
 func update_animation(direction: Vector2):
 	if abs(direction.x) > abs(direction.y):
@@ -111,6 +120,11 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	
 func take_damage(amount: int) -> void:
 	hp -= amount
+	hp = clamp(hp, 0, max_hp)
+
+	health_bar.visible = true
+	update_health_bar()
+
 	print(name, " dostal damage: ", amount, " | hp: ", hp)
 
 	if hp <= 0:
@@ -118,3 +132,7 @@ func take_damage(amount: int) -> void:
 
 func die() -> void:
 	queue_free()
+
+
+func _on_health_bar_3_value_changed(value: float) -> void:
+	pass # Replace with function body.

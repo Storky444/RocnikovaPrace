@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://fnql0nin8mkh"]
+[gd_scene load_steps=45 format=3 uid="uid://fnql0nin8mkh"]
 
 [ext_resource type="Script" uid="uid://b07l258uuovth" path="res://World/enemy_4_skeleton_barel.gd" id="1_nf4vk"]
 [ext_resource type="Texture2D" uid="uid://cy58rcehaktby" path="res://Animations/SkeletonBarelAnimation/SkeletonBarelAnimationAttack(1).png" id="2_nf4vk"]
@@ -273,6 +273,12 @@ height = 22.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_c1pqk"]
 radius = 20.024984
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nf4vk"]
+bg_color = Color(0.15, 0.15, 0.15, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uc5i4"]
+bg_color = Color(0.75, 0, 0, 1)
+
 [node name="Enemy4_SkeletonBarel" type="CharacterBody2D" groups=["enemy"]]
 position = Vector2(-1355, 513)
 script = ExtResource("1_nf4vk")
@@ -295,5 +301,15 @@ shape = SubResource("CapsuleShape2D_yfyx6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(4, 0)
 shape = SubResource("CircleShape2D_c1pqk")
+
+[node name="HealthBar4" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_left = -10.0
+offset_top = -21.0
+offset_right = 9.0
+offset_bottom = -17.0
+theme_override_styles/background = SubResource("StyleBoxFlat_nf4vk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uc5i4")
+show_percentage = false
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
