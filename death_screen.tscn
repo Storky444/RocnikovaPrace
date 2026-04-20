@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://3plflkkc2vwy"]
+
+[ext_resource type="Script" uid="uid://cjp4ad12x6wgr" path="res://death_screen.gd" id="1_if853"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_if853"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="DeathScreen" type="CanvasLayer" unique_id=1261862095]
+process_mode = 3
+visible = false
+script = ExtResource("1_if853")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=719274077]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3882353)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=782071310]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=901559591]
+layout_mode = 2
+alignment = 1
+
+[node name="YouDiedLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1174049462]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 81
+text = "YOU DIED !"
+horizontal_alignment = 1
+
+[node name="MainMenuButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1301455873]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_if853")
+text = "Return to Menu"
+
+[node name="TimeLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1161338677]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "You survived: 00:00"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

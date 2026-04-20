@@ -18,13 +18,16 @@ var spawn_timer: float = 0.0
 var time_label: Label = null
 var player: Node2D = null
 
+var death_screen: CanvasLayer = null
+var is_game_over := false
+
 func _ready():
 	randomize()
 	spawn_objects()
 
 	player = get_tree().get_first_node_in_group("player") as Node2D
 	time_label = get_tree().get_first_node_in_group("timer_label") as Label
-
+	death_screen = $DeathScreen
 	print("WORLD READY | player found:", player)
 	print("TIME LABEL FOUND:", time_label)
 
@@ -40,7 +43,7 @@ func _process(delta):
 		print("ERROR: Player nemá proměnnou 'hp' ve scriptu!")
 		return
 
-	if int(hp_val) <= 0:
+	if int(hp_val) <= 0 and not is_game_over:
 		game_over()
 		return
 
@@ -103,8 +106,12 @@ func spawn_one_enemy():
 	enemy.global_position = player.global_position + offset
 	$Content.add_child(enemy)
 
-func game_over():
-	print("GAME OVER")
+func game_over() -> void:
+	is_game_over = true
+
+	if death_screen:
+		death_screen.show_death_screen(elapsed_time)
+
 	get_tree().paused = true
 
 func spawn_objects():
@@ -146,5 +153,7 @@ func spawn_objects():
 				break
 
 			attempts += 1
+			
+
 			
 			

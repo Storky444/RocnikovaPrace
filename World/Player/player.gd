@@ -102,9 +102,7 @@ func take_damage(amount: int) -> void:
 
 	print("damage took", amount, "hp =", hp)
 
-	if hp <= 0:
-		die()
-		return
+	
 
 	await get_tree().create_timer(1.0).timeout
 	can_take_damage = true
@@ -132,7 +130,3 @@ func _on_regeneration_timer_timeout() -> void:
 	else:
 		regen_active = false
 		regeneration_timer.stop()
-
-func die():
-	print("GAME OVER")
-	get_tree().paused = true
