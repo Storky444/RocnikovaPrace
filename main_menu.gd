@@ -10,7 +10,8 @@ func _on_tutorial_button_pressed() -> void:
 
 
 func _on_settings_button_pressed() -> void:
-	pass # Replace with function body.
+	$SettingsPopup.visible = true
+	
 
 
 func _on_exit_button_pressed() -> void:
@@ -19,3 +20,16 @@ func _on_exit_button_pressed() -> void:
 
 func _on_close_button_pressed() -> void:
 	$TutorialPopup.visible = false
+	$SettingsPopup.visible = false
+	
+
+
+
+func _on_volume_slider_value_changed(value: float) -> void:
+	$SettingsPopup/VolumePercent.text = str(int(value)) + "%"
+
+	if value <= 0:
+		AudioServer.set_bus_mute(0, true)
+	else:
+		AudioServer.set_bus_mute(0, false)
+		AudioServer.set_bus_volume_db(0, linear_to_db(value / 100.0))
