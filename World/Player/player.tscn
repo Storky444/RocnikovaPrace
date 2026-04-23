@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c7r006uem5qok"]
+[gd_scene load_steps=40 format=3 uid="uid://c7r006uem5qok"]
 
 [ext_resource type="Script" uid="uid://bko6ltek2f8l0" path="res://World/Player/player.gd" id="1_1s8kg"]
 [ext_resource type="Texture2D" uid="uid://ci70227xna37k" path="res://Animations/CowboyIdleAnimation/cowboy_animation0000.png" id="2_tisq8"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bgygxb7j4f7ag" path="res://Animations/CowboyLeftAnimation/cowboy_animation0000 (4) (2).png" id="15_hth11"]
 [ext_resource type="Texture2D" uid="uid://d1ks7ncngto0j" path="res://Animations/CowboyRightAnimation/cowboy_animation0000 (4) (1).png" id="16_vmuqe"]
 [ext_resource type="Texture2D" uid="uid://cpna5pt7mln7s" path="res://Animations/CowboyUpAnimation/cowboy_animation0000 (2).png" id="17_jybjg"]
+[ext_resource type="AudioStream" uid="uid://bej4as376k38o" path="res://Sounds/freesound_community-footsteps-in-thin-snow-46199.mp3" id="18_le41i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0pyu"]
 atlas = ExtResource("14_jsdm2")
@@ -207,25 +208,25 @@ bg_color = Color(0, 0, 0, 0.3529412)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_le41i"]
 bg_color = Color(0.11558921, 0.75597423, 0, 1)
 
-[node name="Player" type="CharacterBody2D" unique_id=102068616]
+[node name="Player" type="CharacterBody2D"]
 position = Vector2(967, 545)
 motion_mode = 1
 script = ExtResource("1_1s8kg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2060677611]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1, -6)
 sprite_frames = SubResource("SpriteFrames_h2aaq")
 animation = &"Run_Up"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=585151319]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ayoxi")
 
-[node name="Camera2D2" type="Camera2D" parent="." unique_id=764562138]
+[node name="Camera2D2" type="Camera2D" parent="."]
 position = Vector2(-1, 5)
 zoom = Vector2(2, 2)
 
-[node name="TimeLabel" type="Label" parent="Camera2D2" unique_id=655968419 groups=["timer_label"]]
+[node name="TimeLabel" type="Label" parent="Camera2D2" groups=["timer_label"]]
 z_index = 1
 offset_left = -28.0
 offset_top = -269.0
@@ -235,13 +236,13 @@ theme_type_variation = &"HeaderLarge"
 text = "00:00"
 metadata/_edit_use_anchors_ = true
 
-[node name="HurtBox" type="Area2D" parent="." unique_id=93819072 groups=["enemy_attack"]]
+[node name="HurtBox" type="Area2D" parent="." groups=["enemy_attack"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=792628324]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_akpav")
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=561247370]
+[node name="ProgressBar" type="ProgressBar" parent="."]
 modulate = Color(0.35720006, 0.8, 0.152, 1)
 z_index = 18
 y_sort_enabled = true
@@ -256,7 +257,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_tisq8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_le41i")
 show_percentage = false
 
-[node name="Label" type="Label" parent="ProgressBar" unique_id=303287427]
+[node name="Label" type="Label" parent="ProgressBar"]
 z_index = 10
 layout_mode = 1
 anchors_preset = 8
@@ -274,10 +275,13 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 44
 text = "200/200"
 
-[node name="Regeneration_Timer" type="Timer" parent="." unique_id=649989334]
+[node name="Regeneration_Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
 
-[node name="BulletSpawn" type="Marker2D" parent="." unique_id=306436340]
+[node name="BulletSpawn" type="Marker2D" parent="."]
+
+[node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_le41i")
 
 [connection signal="timeout" from="Regeneration_Timer" to="." method="_on_regeneration_timer_timeout"]

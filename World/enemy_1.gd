@@ -1,12 +1,11 @@
 extends CharacterBody2D
 
 @export var speed := 120
-
-@export var attack_range := 40        # dej klidně 60 na test
+@export var attack_range := 40
 @export var attack_duration := 0.35
 @export var attack_cooldown := 2
 @export var max_hp: int = 50
-
+@export var attack_sound: AudioStream
 
 var hp: int = 50
 var player: Node2D = null
@@ -24,13 +23,11 @@ func _ready():
 	player = get_tree().get_first_node_in_group("player") as Node2D
 	print("ENEMY READY | player found:", player)
 
-	# Attack timer
 	attack_timer.one_shot = true
 	attack_timer.wait_time = attack_duration
 	add_child(attack_timer)
 	attack_timer.timeout.connect(_on_attack_finished)
 
-	# Cooldown timer
 	cooldown_timer.one_shot = true
 	cooldown_timer.wait_time = attack_cooldown
 	add_child(cooldown_timer)
@@ -44,25 +41,21 @@ func _physics_process(delta):
 	if not player:
 		return
 
-	# stejný cíl pro CHASE i pro ATTACK RANGE (tohle byl často bug)
 	var target_pos := player.global_position
 	var sprite = player.get_node_or_null("AnimatedSprite2D")
 	if sprite:
 		target_pos += sprite.position
 
-	# když útočí, stojí a nic nepřepisuje animaci
 	if is_attacking:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
 
-	# attack check
 	var dist := global_position.distance_to(target_pos)
 	if can_attack and dist <= attack_range:
 		start_attack()
 		return
 
-	# chase
 	var direction := target_pos - global_position
 	if direction.length() < 1:
 		velocity = Vector2.ZERO
@@ -73,22 +66,34 @@ func _physics_process(delta):
 	move_and_slide()
 	update_animation(direction)
 
+func play_attack_sound() -> void:
+	if attack_sound == null:
+		print("CHYBA: attack_sound není nastavený")
+		return
+
+	var sound_player = AudioStreamPlayer2D.new()
+	sound_player.stream = attack_sound
+	sound_player.global_position = global_position
+	sound_player.pitch_scale = randf_range(0.95, 1.05)
+
+	get_tree().current_scene.add_child(sound_player)
+	sound_player.play()
+	sound_player.finished.connect(func(): sound_player.queue_free())
+
 func start_attack():
 	can_attack = false
 	is_attacking = true
 	velocity = Vector2.ZERO
 
-	# zahraj attack animaci (vynutit restart)
 	anim.stop()
 	anim.play("SkeletonAnimationAttack")
+	play_attack_sound()
 
-	# damage jednou za attack
 	if player and player.has_method("take_damage"):
 		player.take_damage(15)
 	else:
 		print("ENEMY ERROR: player nemá take_damage()")
 
-	# spustí se konec attacku
 	attack_timer.start()
 
 func _on_attack_finished():
@@ -129,6 +134,5 @@ func take_damage(amount: int) -> void:
 func die() -> void:
 	queue_free()
 
-
 func _on_health_bar_value_changed(value: float) -> void:
-	pass # Replace with function body.
+	pass

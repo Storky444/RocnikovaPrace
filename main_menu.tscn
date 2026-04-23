@@ -1,10 +1,11 @@
-[gd_scene format=3 uid="uid://cxnnevggodtp6"]
+[gd_scene load_steps=15 format=3 uid="uid://cxnnevggodtp6"]
 
 [ext_resource type="Texture2D" uid="uid://oyn3ujgg1512" path="res://textures/menubg.png" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://qsl0kepinrt3" path="res://main_menu.gd" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://c8ujmdaljrta3" path="res://textures/New Piskel (5).png" id="3_glbon"]
 [ext_resource type="Texture2D" uid="uid://bm2bl0mee46sj" path="res://textures/pixil-frame-0 (9).png" id="4_glbon"]
 [ext_resource type="Texture2D" uid="uid://cyw50t2r033ne" path="res://textures/pixil-frame-0 (10).png" id="5_glbon"]
+[ext_resource type="AudioStream" uid="uid://cb0h4cvn4fa6v" path="res://Sounds/freemusiclab-charming-phonk-i-free-background-music-i-free-music-lab-release-513626.mp3" id="6_nlkkf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vrkn"]
 texture = ExtResource("1_06t4h")
@@ -51,7 +52,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="MainMenu" type="Control" unique_id=1951772134]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -64,7 +65,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_7vrkn")
 
-[node name="Background" type="Panel" parent="." unique_id=1038567154]
+[node name="Background" type="Panel" parent="."]
 layout_mode = 0
 offset_left = -960.0
 offset_top = -540.0
@@ -72,7 +73,7 @@ offset_right = 960.0
 offset_bottom = 540.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_7vrkn")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=699032733]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -89,7 +90,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 8
 
-[node name="StartGameButton" type="Button" parent="VBoxContainer" unique_id=1688036558]
+[node name="StartGameButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
@@ -98,7 +99,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
 text = "Start Game"
 
-[node name="TutorialButton" type="Button" parent="VBoxContainer" unique_id=554641102]
+[node name="TutorialButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
@@ -107,7 +108,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
 text = "Tutorial"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=637004600]
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
@@ -117,7 +118,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
 text = "Settings
 "
 
-[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=323675442]
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 5
 size_flags_vertical = 7
@@ -127,7 +128,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
 text = "Exit
 "
 
-[node name="Label" type="Label" parent="." unique_id=1064622501]
+[node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -146,7 +147,7 @@ theme_override_font_sizes/font_size = 69
 text = "SHOOTY SHOTS
 "
 
-[node name="TutorialPopup" type="Panel" parent="." unique_id=1915377534]
+[node name="TutorialPopup" type="Panel" parent="."]
 visible = false
 texture_filter = 1
 layout_mode = 1
@@ -163,7 +164,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
 
-[node name="CloseButton" type="Button" parent="TutorialPopup" unique_id=306566751]
+[node name="CloseButton" type="Button" parent="TutorialPopup"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -177,7 +178,7 @@ theme_override_colors/font_color = Color(0.76022506, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_qe12f")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8qtwp")
 
-[node name="TutorialTextMain" type="Label" parent="TutorialPopup" unique_id=388434551]
+[node name="TutorialTextMain" type="Label" parent="TutorialPopup"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -227,7 +228,7 @@ Hra je postavena na postupném zvyšování obtížnosti,
 kdy se s časem zvyšuje počet nepřátel,
 což nutí hráče reagovat rychleji a strategičtěji."
 
-[node name="SettingsPopup" type="Panel" parent="." unique_id=2061482234]
+[node name="SettingsPopup" type="Panel" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -243,7 +244,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_glbon")
 
-[node name="TitleLabel" type="Label" parent="SettingsPopup" unique_id=1378833472]
+[node name="TitleLabel" type="Label" parent="SettingsPopup"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -258,7 +259,7 @@ theme_override_font_sizes/font_size = 31
 text = "Volume"
 horizontal_alignment = 1
 
-[node name="VolumeSlider" type="HSlider" parent="SettingsPopup" unique_id=885887373]
+[node name="VolumeSlider" type="HSlider" parent="SettingsPopup"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -274,7 +275,7 @@ grow_vertical = 2
 scale = Vector2(1, 1.5)
 value = 100.0
 
-[node name="VolumePercent" type="Label" parent="SettingsPopup" unique_id=311224006]
+[node name="VolumePercent" type="Label" parent="SettingsPopup"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -289,7 +290,7 @@ theme_override_font_sizes/font_size = 26
 text = "100%"
 horizontal_alignment = 1
 
-[node name="CloseButton" type="Button" parent="SettingsPopup" unique_id=666810913]
+[node name="CloseButton" type="Button" parent="SettingsPopup"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -307,7 +308,10 @@ theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_nlkkf")
 text = "Back"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=120305730]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_nlkkf")
+volume_db = -13.352
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]

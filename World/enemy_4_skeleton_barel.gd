@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var attack_duration := 1.8
 @export var attack_cooldown := 2.0
 @export var max_hp: int = 80
+@export var attack_sound: AudioStream
 
 var hp: int
 var player: Node2D = null
@@ -21,7 +22,7 @@ func _ready():
 	hp = max_hp
 	player = get_tree().get_first_node_in_group("player") as Node2D
 
-	print("BAREL READY |", name, "| has take_damage:", has_method("take_damage"), "| script:", get_script())
+	print("BAREL READY |", name, "| has take_damage:", has_method("take_damage"), "| script:", get_script(), "| attack_sound:", attack_sound)
 
 	attack_timer.one_shot = true
 	attack_timer.wait_time = attack_duration
@@ -66,6 +67,20 @@ func _physics_process(delta):
 	move_and_slide()
 	update_animation(direction)
 
+func play_attack_sound() -> void:
+	if attack_sound == null:
+		print("CHYBA: attack_sound není nastavený |", name)
+		return
+
+	var sound_player = AudioStreamPlayer2D.new()
+	sound_player.stream = attack_sound
+	sound_player.global_position = global_position
+	sound_player.pitch_scale = randf_range(0.95, 1.05)
+
+	get_tree().current_scene.add_child(sound_player)
+	sound_player.play()
+	sound_player.finished.connect(func(): sound_player.queue_free())
+
 func start_attack():
 	print("BAREL START ATTACK")
 	can_attack = false
@@ -76,6 +91,8 @@ func start_attack():
 	anim.play("SkeletonBarelAnimationAttack")
 	anim.frame = 0
 	anim.frame_progress = 0.0
+
+	play_attack_sound()
 
 	if player and player.has_method("take_damage"):
 		player.take_damage(30)

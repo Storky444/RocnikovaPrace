@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://bu8v146c3xyns"]
+[gd_scene load_steps=27 format=3 uid="uid://bu8v146c3xyns"]
 
 [ext_resource type="Script" uid="uid://byxaltjitpyx0" path="res://World/enemy_2_giant.gd" id="1_qkrsa"]
+[ext_resource type="AudioStream" uid="uid://bppd61ef1686q" path="res://Sounds/dragon-studio-violent-sword-slice-393839.mp3" id="2_e0j3m"]
 [ext_resource type="Texture2D" uid="uid://vffrgel4rla1" path="res://Animations/GiantAnimation/AnimatedGiantAttack.png" id="2_nk0t4"]
 [ext_resource type="Texture2D" uid="uid://c8deu808je1qg" path="res://Animations/GiantAnimation/AnimatedGiantDown.png" id="3_e0j3m"]
 [ext_resource type="Texture2D" uid="uid://cj3rhtncud8y6" path="res://Animations/GiantAnimation/AnimatedGiantLeft.png" id="4_0spoc"]
@@ -148,7 +149,9 @@ bg_color = Color(0.75, 0, 0, 1)
 
 [node name="Enemy2_Giant" type="CharacterBody2D"]
 script = ExtResource("1_qkrsa")
+attack_range = 30
 max_hp = 140
+attack_sound = ExtResource("2_e0j3m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
