@@ -1,10 +1,11 @@
-[gd_scene load_steps=46 format=3 uid="uid://fnql0nin8mkh"]
+[gd_scene load_steps=53 format=3 uid="uid://fnql0nin8mkh"]
 
 [ext_resource type="Script" uid="uid://b07l258uuovth" path="res://World/enemy_4_skeleton_barel.gd" id="1_nf4vk"]
 [ext_resource type="Texture2D" uid="uid://cy58rcehaktby" path="res://Animations/SkeletonBarelAnimation/SkeletonBarelAnimationAttack(1).png" id="2_nf4vk"]
 [ext_resource type="AudioStream" uid="uid://cd3tnyc12ymia" path="res://Sounds/dragon-studio-boom-copyright-free-487662.mp3" id="2_uc5i4"]
 [ext_resource type="Texture2D" uid="uid://pti162mfostj" path="res://Animations/SkeletonBarelAnimation/SkeletonBarelAnimationDown (1).png" id="3_uc5i4"]
 [ext_resource type="Texture2D" uid="uid://bm2cb385nxtg2" path="res://Animations/SkeletonBarelAnimation/SkeletonBarelAnimationLeft.png" id="4_2u6xs"]
+[ext_resource type="Texture2D" uid="uid://md4agoy56ds5" path="res://Animations/SkeletonBarelAnimation/SkeletonBarelAnimationDown (1) (1).png" id="4_76bmq"]
 [ext_resource type="Texture2D" uid="uid://bsaj1iyb3nhki" path="res://Animations/SkeletonBarelAnimation/SkeletonBarelAnimationUp.png" id="5_76bmq"]
 [ext_resource type="Texture2D" uid="uid://cc75bi11wbwlu" path="res://Animations/SkeletonBarelAnimation/SkeletonBarelAnimationRight.png" id="5_nf4vk"]
 
@@ -67,6 +68,30 @@ region = Rect2(650, 0, 50, 50)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jwbfc"]
 atlas = ExtResource("2_nf4vk")
 region = Rect2(700, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h73rw"]
+atlas = ExtResource("4_76bmq")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfyx6"]
+atlas = ExtResource("4_76bmq")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1pqk"]
+atlas = ExtResource("4_76bmq")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hlym"]
+atlas = ExtResource("4_76bmq")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptyxk"]
+atlas = ExtResource("4_76bmq")
+region = Rect2(168, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x176a"]
+atlas = ExtResource("4_76bmq")
+region = Rect2(210, 0, 42, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sxrk0"]
 atlas = ExtResource("3_uc5i4")
@@ -194,6 +219,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_h73rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfyx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1pqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hlym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptyxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x176a")
+}],
+"loop": false,
+"name": &"SkeletonBarelAnimationDeath",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_sxrk0")
 }, {
 "duration": 1.0,
@@ -290,8 +338,7 @@ attack_sound = ExtResource("2_uc5i4")
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_h73rw")
-animation = &"SkeletonBarelAnimationAttack"
-frame_progress = 0.15021004
+animation = &"SkeletonBarelAnimationDeath"
 
 [node name="CollisionShape_Rig" type="CollisionShape2D" parent="."]
 position = Vector2(2, 4)

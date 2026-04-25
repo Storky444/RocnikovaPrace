@@ -1,10 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://bf72jnargo2eq"]
+[gd_scene load_steps=33 format=3 uid="uid://bf72jnargo2eq"]
 
 [ext_resource type="Script" uid="uid://dwmecyvad7xu6" path="res://World/enemy_1.gd" id="1_luhbm"]
 [ext_resource type="Texture2D" uid="uid://co48pbi1wt45g" path="res://Animations/SkeletonAnimation/New Piskel (6) (4).png" id="2_aejia"]
 [ext_resource type="AudioStream" uid="uid://8waobjd4jmmk" path="res://Sounds/musicholder-sword-sound-260274.mp3" id="2_pspwn"]
 [ext_resource type="Texture2D" uid="uid://baau53j8qdvbe" path="res://Animations/SkeletonAnimation/New Piskel (6) (1).png" id="3_pspwn"]
 [ext_resource type="Texture2D" uid="uid://c21xvakvjp8yr" path="res://Animations/SkeletonAnimation/New Piskel (6) (3) (3).png" id="4_gs0o2"]
+[ext_resource type="Texture2D" uid="uid://c4vxbd51m0561" path="res://Animations/SkeletonAnimation/SkeletonDeath.png" id="4_pspwn"]
 [ext_resource type="Texture2D" uid="uid://b7aauakkv7ljb" path="res://Animations/SkeletonAnimation/New Piskel (6) (3) (2).png" id="5_g31pk"]
 [ext_resource type="Texture2D" uid="uid://blkjn3r6bu866" path="res://Animations/SkeletonAnimation/New Piskel (6) (2).png" id="6_ygx3u"]
 
@@ -19,6 +20,22 @@ region = Rect2(32, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_g3lo7"]
 atlas = ExtResource("2_aejia")
 region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs0o2"]
+atlas = ExtResource("4_pspwn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g31pk"]
+atlas = ExtResource("4_pspwn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygx3u"]
+atlas = ExtResource("4_pspwn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xmud"]
+atlas = ExtResource("4_pspwn")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3i426"]
 atlas = ExtResource("3_pspwn")
@@ -83,6 +100,23 @@ animations = [{
 "loop": false,
 "name": &"SkeletonAnimationAttack",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs0o2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g31pk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygx3u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xmud")
+}],
+"loop": false,
+"name": &"SkeletonAnimationDeath",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -164,7 +198,7 @@ attack_sound = ExtResource("2_pspwn")
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_dlis5")
-animation = &"SkeletonAnimationDown"
+animation = &"SkeletonAnimationDeath"
 
 [node name="CollisionShape_Right2" type="CollisionShape2D" parent="."]
 y_sort_enabled = true

@@ -11,6 +11,7 @@ var hp: int = 50
 var player: Node2D = null
 var is_attacking := false
 var can_attack := true
+var is_dead := false
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_timer: Timer = Timer.new()
@@ -38,6 +39,9 @@ func _ready():
 	health_bar.visible = false
 
 func _physics_process(delta):
+	if is_dead:
+		return
+
 	if not player:
 		return
 
@@ -123,6 +127,9 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	pass
 	
 func take_damage(amount: int) -> void:
+	if is_dead:
+		return
+
 	hp -= amount
 	hp = clamp(hp, 0, max_hp)
 
@@ -135,6 +142,23 @@ func take_damage(amount: int) -> void:
 		die()
 
 func die() -> void:
+	if is_dead:
+		return
+
+	is_dead = true
+	is_attacking = false
+	can_attack = false
+	velocity = Vector2.ZERO
+
+	attack_timer.stop()
+	cooldown_timer.stop()
+
+	health_bar.visible = false
+
+	anim.stop()
+	anim.play("ZombieAnimationDeath")
+
+	await anim.animation_finished
 	queue_free()
 
 func _on_health_bar_3_value_changed(value: float) -> void:

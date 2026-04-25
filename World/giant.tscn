@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://bu8v146c3xyns"]
+[gd_scene load_steps=34 format=3 uid="uid://bu8v146c3xyns"]
 
 [ext_resource type="Script" uid="uid://byxaltjitpyx0" path="res://World/enemy_2_giant.gd" id="1_qkrsa"]
 [ext_resource type="AudioStream" uid="uid://bppd61ef1686q" path="res://Sounds/dragon-studio-violent-sword-slice-393839.mp3" id="2_e0j3m"]
 [ext_resource type="Texture2D" uid="uid://vffrgel4rla1" path="res://Animations/GiantAnimation/AnimatedGiantAttack.png" id="2_nk0t4"]
 [ext_resource type="Texture2D" uid="uid://c8deu808je1qg" path="res://Animations/GiantAnimation/AnimatedGiantDown.png" id="3_e0j3m"]
 [ext_resource type="Texture2D" uid="uid://cj3rhtncud8y6" path="res://Animations/GiantAnimation/AnimatedGiantLeft.png" id="4_0spoc"]
+[ext_resource type="Texture2D" uid="uid://docj6o17wfwpe" path="res://Animations/GiantAnimation/AnimatedGiantDeath.png" id="4_e0j3m"]
 [ext_resource type="Texture2D" uid="uid://bnup7amt8p0my" path="res://Animations/GiantAnimation/AnimatedGiantRight.png" id="5_vei1w"]
 [ext_resource type="Texture2D" uid="uid://cfdn5d06i8d6v" path="res://Animations/GiantAnimation/AnimatedGiantUp.png" id="6_s2oqf"]
 
@@ -24,15 +25,39 @@ region = Rect2(84, 0, 42, 42)
 atlas = ExtResource("2_nk0t4")
 region = Rect2(126, 0, 42, 42)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2j1j3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0spoc"]
+atlas = ExtResource("4_e0j3m")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vei1w"]
+atlas = ExtResource("4_e0j3m")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2oqf"]
+atlas = ExtResource("4_e0j3m")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7eff"]
+atlas = ExtResource("4_e0j3m")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_476s1"]
+atlas = ExtResource("4_e0j3m")
+region = Rect2(168, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bw18"]
+atlas = ExtResource("4_e0j3m")
+region = Rect2(210, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dadcp"]
 atlas = ExtResource("3_e0j3m")
 region = Rect2(0, 0, 42, 42)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_12w7i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjg2v"]
 atlas = ExtResource("3_e0j3m")
 region = Rect2(42, 0, 42, 42)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xmbla"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg1vg"]
 atlas = ExtResource("3_e0j3m")
 region = Rect2(84, 0, 42, 42)
 
@@ -79,19 +104,42 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o8btu")
 }],
-"loop": true,
+"loop": false,
 "name": &"GiantAnimationAttack",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2j1j3")
+"texture": SubResource("AtlasTexture_0spoc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_12w7i")
+"texture": SubResource("AtlasTexture_vei1w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xmbla")
+"texture": SubResource("AtlasTexture_s2oqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7eff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_476s1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bw18")
+}],
+"loop": false,
+"name": &"GiantAnimationDeath",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dadcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjg2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg1vg")
 }],
 "loop": true,
 "name": &"GiantAnimationDown",
@@ -157,7 +205,7 @@ attack_sound = ExtResource("2_e0j3m")
 y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_07sb8")
-animation = &"GiantAnimationDown"
+animation = &"GiantAnimationDeath"
 
 [node name="CollisionShape_Rig" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 16)
