@@ -331,6 +331,7 @@ bg_color = Color(0.75, 0, 0, 1)
 [node name="Enemy4_SkeletonBarel" type="CharacterBody2D" groups=["enemy"]]
 position = Vector2(-1355, 513)
 script = ExtResource("1_nf4vk")
+attack_range = 25.0
 attack_duration = 1.0
 attack_sound = ExtResource("2_uc5i4")
 

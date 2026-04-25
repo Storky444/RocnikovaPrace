@@ -91,10 +91,15 @@ func start_attack():
 	anim.play("GiantAnimationAttack")
 	play_attack_sound()
 
+	await get_tree().create_timer(0.15).timeout
+
+	if is_dead:
+		return
+
 	if player and player.has_method("take_damage"):
-		player.take_damage(35)
-	else:
-		attack_timer.start()
+		player.take_damage(15)
+
+	attack_timer.start()
 
 func _on_attack_finished():
 	is_attacking = false
