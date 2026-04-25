@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://bqri0d3x2hej"]
+[gd_scene load_steps=126 format=3 uid="uid://bqri0d3x2hej"]
 
 [ext_resource type="Script" uid="uid://cfoi4npyi2rg6" path="res://World/world.gd" id="1_5xkvv"]
 [ext_resource type="Texture2D" uid="uid://d0aj5vm2njgwj" path="res://textures/New Piskel (6).png" id="1_awrha"]
@@ -14,15 +14,11 @@
 [ext_resource type="AudioStream" uid="uid://daw7t73exucb0" path="res://Sounds/freesound_community-realistic-gun-fire-100696.mp3" id="14_dg1ng"]
 [ext_resource type="PackedScene" uid="uid://d2vbgllcsn517" path="res://World/medium_rock.tscn" id="15_f23eu"]
 [ext_resource type="PackedScene" uid="uid://bihdknu747xb8" path="res://World/small_rock.tscn" id="17_5xkvv"]
-[ext_resource type="AudioStream" uid="uid://8waobjd4jmmk" path="res://Sounds/musicholder-sword-sound-260274.mp3" id="24_rw02v"]
 [ext_resource type="PackedScene" uid="uid://3plflkkc2vwy" path="res://death_screen.tscn" id="24_x0pyu"]
-[ext_resource type="AudioStream" uid="uid://bppd61ef1686q" path="res://Sounds/dragon-studio-violent-sword-slice-393839.mp3" id="25_3sd22"]
 [ext_resource type="Texture2D" uid="uid://b1aal44o1rowq" path="res://Animations/BorderAnimation/New Piskel (3).png" id="25_dg1ng"]
 [ext_resource type="Script" uid="uid://b0rvstxta8p3r" path="res://World/border.gd" id="25_yfuda"]
-[ext_resource type="AudioStream" uid="uid://beuwfg7bj1clg" path="res://Sounds/freesound_community-zombie-bite-96528.mp3" id="26_s5a7k"]
 [ext_resource type="Script" uid="uid://4w7cljcb6f7v" path="res://World/path_follow_2d.gd" id="27_jf64p"]
 [ext_resource type="Texture2D" uid="uid://c6ua5rf28untn" path="res://Animations/BushAnimation/bush.png" id="28_jf64p"]
-[ext_resource type="AudioStream" uid="uid://cd3tnyc12ymia" path="res://Sounds/dragon-studio-boom-copyright-free-487662.mp3" id="28_koyeq"]
 [ext_resource type="Script" uid="uid://bdrwmh2jmwiox" path="res://World/path_vultures.gd" id="29_3sd22"]
 [ext_resource type="Texture2D" uid="uid://beku10cvrc8yu" path="res://Animations/VultureAnimation/vulture.png" id="29_rw02v"]
 [ext_resource type="Script" uid="uid://nawc5vnuj8vy" path="res://World/tornado_path.gd" id="31_koyeq"]
@@ -2395,18 +2391,15 @@ position = Vector2(-1091, -345)
 attack_range = 25
 attack_duration = 1.8
 max_hp = 60
-attack_sound = ExtResource("24_rw02v")
 
 [node name="Enemy2_Giant" parent="Content/Enemies" groups=["enemy"] instance=ExtResource("8_6gebr")]
 position = Vector2(-1035, -253)
 attack_range = 20
 max_hp = 120
-attack_sound = ExtResource("25_3sd22")
 
 [node name="Enemy3_Zombie" parent="Content/Enemies" groups=["enemy"] instance=ExtResource("9_84yts")]
 position = Vector2(-980, -314)
 attack_range = 10
-attack_sound = ExtResource("26_s5a7k")
 
 [node name="Enemy4_SkeletonBarel" parent="Content/Enemies" instance=ExtResource("7_6gebr")]
 position = Vector2(-2097, -2397)
@@ -2415,6 +2408,5 @@ speed = 80
 attack_range = 15
 attack_cooldown = 1
 max_hp = 50
-attack_sound = ExtResource("28_koyeq")
 
 [node name="DeathScreen" parent="." instance=ExtResource("24_x0pyu")]

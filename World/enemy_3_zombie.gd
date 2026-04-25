@@ -72,7 +72,6 @@ func _physics_process(delta):
 
 func play_attack_sound() -> void:
 	if attack_sound == null:
-		print("CHYBA: attack_sound není nastavený")
 		return
 
 	var sound_player = AudioStreamPlayer2D.new()
@@ -96,9 +95,7 @@ func start_attack():
 	if player and player.has_method("take_damage"):
 		player.take_damage(15)
 	else:
-		print("ENEMY ERROR: player nemá take_damage()")
-
-	attack_timer.start()
+		attack_timer.start()
 
 func _on_attack_finished():
 	is_attacking = false

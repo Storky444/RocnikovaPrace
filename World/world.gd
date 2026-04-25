@@ -28,8 +28,7 @@ func _ready():
 	player = get_tree().get_first_node_in_group("player") as Node2D
 	time_label = get_tree().get_first_node_in_group("timer_label") as Label
 	death_screen = $DeathScreen
-	print("WORLD READY | player found:", player)
-	print("TIME LABEL FOUND:", time_label)
+	
 
 func _process(delta):
 	if not player:
@@ -40,7 +39,6 @@ func _process(delta):
 
 	var hp_val = player.get("hp")
 	if hp_val == null:
-		print("ERROR: Player nemá proměnnou 'hp' ve scriptu!")
 		return
 
 	if int(hp_val) <= 0 and not is_game_over:
@@ -66,11 +64,9 @@ func update_timer_label():
 	time_label.text = "%02d:%02d" % [minutes, seconds]
 
 func get_spawn_interval() -> float:
-	# čím delší čas, tím rychlejší spawn
 	return max(1.0, 3.0 - elapsed_time / 45.0)
 
 func get_spawn_count() -> int:
-	# čím delší čas, tím víc enemy najednou
 	return 1 + int(elapsed_time / 30.0)
 
 func spawn_enemies_by_time():

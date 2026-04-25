@@ -22,7 +22,6 @@ func _ready():
 	add_to_group("enemy")
 	hp = max_hp
 	player = get_tree().get_first_node_in_group("player") as Node2D
-	print("ENEMY READY | player found:", player)
 
 	attack_timer.one_shot = true
 	attack_timer.wait_time = attack_duration
@@ -72,7 +71,6 @@ func _physics_process(delta):
 
 func play_attack_sound() -> void:
 	if attack_sound == null:
-		print("CHYBA: attack_sound není nastavený")
 		return
 
 	var sound_player = AudioStreamPlayer2D.new()
@@ -96,9 +94,7 @@ func start_attack():
 	if player and player.has_method("take_damage"):
 		player.take_damage(35)
 	else:
-		print("ENEMY ERROR: player nemá take_damage()")
-
-	attack_timer.start()
+		attack_timer.start()
 
 func _on_attack_finished():
 	is_attacking = false

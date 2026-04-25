@@ -75,11 +75,9 @@ func handle_footsteps(delta: float) -> void:
 
 func play_footstep() -> void:
 	if footstep_player == null:
-		print("CHYBA: FootstepPlayer nebyl nalezen")
 		return
 
 	if footstep_player.stream == null:
-		print("CHYBA: FootstepPlayer nemá nastavený sound")
 		return
 
 	footstep_player.pitch_scale = randf_range(0.6, 1)
@@ -89,11 +87,9 @@ func play_footstep() -> void:
 
 func shoot() -> void:
 	if bullet_scene == null:
-		print("CHYBA: bullet_scene není nastavená")
 		return
 
 	if bullet_spawn == null:
-		print("CHYBA: BulletSpawn nebyl nalezen")
 		return
 
 	can_shoot = false

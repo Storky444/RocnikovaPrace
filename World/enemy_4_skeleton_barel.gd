@@ -23,8 +23,6 @@ func _ready():
 	hp = max_hp
 	player = get_tree().get_first_node_in_group("player") as Node2D
 
-	print("BAREL READY |", name, "| has take_damage:", has_method("take_damage"), "| script:", get_script(), "| attack_sound:", attack_sound)
-
 	attack_timer.one_shot = true
 	attack_timer.wait_time = attack_duration
 	add_child(attack_timer)
@@ -73,7 +71,6 @@ func _physics_process(delta):
 
 func play_attack_sound() -> void:
 	if attack_sound == null:
-		print("CHYBA: attack_sound není nastavený |", name)
 		return
 
 	var sound_player = AudioStreamPlayer2D.new()
@@ -86,7 +83,6 @@ func play_attack_sound() -> void:
 	sound_player.finished.connect(func(): sound_player.queue_free())
 
 func start_attack():
-	print("BAREL START ATTACK")
 	can_attack = false
 	is_attacking = true
 	velocity = Vector2.ZERO
@@ -135,8 +131,6 @@ func take_damage(amount: int) -> void:
 
 	health_bar.visible = true
 	update_health_bar()
-
-	print(name, " dostal damage: ", amount, " | hp: ", hp)
 
 	if hp <= 0:
 		die()
