@@ -10,7 +10,6 @@ extends CharacterBody2D
 @export var fire_rate: float = 4.0
 @export var bullet_spawn_offset: float = 0.0
 @export var shoot_sound: AudioStream
-
 @export var footstep_delay: float = 0.35
 
 var can_shoot: bool = true
@@ -26,10 +25,8 @@ var footstep_timer: float = 0.0
 @onready var bullet_spawn: Marker2D = $BulletSpawn
 @onready var footstep_player: AudioStreamPlayer2D = $FootstepPlayer
 
-
 func _ready():
 	add_to_group("player")
-
 	hp = max_hp
 
 	hp_bar.min_value = 0
@@ -40,7 +37,6 @@ func _ready():
 
 	regeneration_timer.wait_time = regen_interval
 	regeneration_timer.timeout.connect(_on_regeneration_timer_timeout)
-
 
 func _physics_process(delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -58,7 +54,7 @@ func _physics_process(delta):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and can_shoot:
 		shoot()
 
-
+# zvuky kroku pri pohybu hrace
 func handle_footsteps(delta: float) -> void:
 	if velocity.length() > 0:
 		footstep_timer -= delta
@@ -71,8 +67,8 @@ func handle_footsteps(delta: float) -> void:
 		
 		if footstep_player.playing:
 			footstep_player.stop()
-
-
+			
+# prehrani jednoho kroku
 func play_footstep() -> void:
 	if footstep_player == null:
 		return
@@ -82,9 +78,8 @@ func play_footstep() -> void:
 
 	footstep_player.pitch_scale = randf_range(0.6, 1)
 	footstep_player.play()
-	
 
-
+# vytvori zvuk vystrelu, spawne kulku a nastavi ji smer podle pozice mysi
 func shoot() -> void:
 	if bullet_scene == null:
 		return
@@ -95,14 +90,12 @@ func shoot() -> void:
 	can_shoot = false
 	shoot_cooldown = 1.0 / fire_rate
 
-	# 🔊 PLAY SOUND (stacking)
 	var player = AudioStreamPlayer2D.new()
 	player.stream = shoot_sound
 	player.global_position = global_position
 	get_tree().current_scene.add_child(player)
 	player.play()
 
-	# 🧹 auto delete po dohrání
 	player.finished.connect(func(): player.queue_free())
 
 	var bullet = bullet_scene.instantiate()
@@ -114,7 +107,6 @@ func shoot() -> void:
 	bullet.global_position = bullet_spawn.global_position
 	bullet.direction = shoot_direction
 	bullet.rotation = shoot_direction.angle()
-
 
 func update_animation(direction):
 	if direction == Vector2.ZERO:
@@ -132,7 +124,7 @@ func update_animation(direction):
 		else:
 			animated_sprite.play("Run_Up")
 
-
+# po zasahu se odecte hp, na chvili se zakaze dalsi damage a po delay zacne regenerace
 func take_damage(amount: int) -> void:
 	if not can_take_damage:
 		return
@@ -145,8 +137,6 @@ func take_damage(amount: int) -> void:
 	hp = clamp(hp, 0, max_hp)
 	update_hp_bar()
 
-	print("damage took", amount, "hp =", hp)
-
 	await get_tree().create_timer(1.0).timeout
 	can_take_damage = true
 
@@ -156,12 +146,10 @@ func take_damage(amount: int) -> void:
 		regen_active = true
 		regeneration_timer.start()
 
-
 func update_hp_bar() -> void:
 	hp_bar.max_value = max_hp
 	hp_bar.value = hp
 	hp_label.text = str(hp) + " / " + str(max_hp) + " HP"
-
 
 func _on_regeneration_timer_timeout() -> void:
 	if not regen_active:
@@ -171,7 +159,6 @@ func _on_regeneration_timer_timeout() -> void:
 		hp += regen_amount
 		hp = clamp(hp, 0, max_hp)
 		update_hp_bar()
-		print("healing... hp =", hp)
 	else:
 		regen_active = false
 		regeneration_timer.stop()

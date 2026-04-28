@@ -12,24 +12,27 @@ extends Node2D
 @export var enemy_spawn_radius_max: float = 300.0
 @export var max_enemies: int = 300
 
+# cas preziti hrace
 var elapsed_time: float = 0.0
 var spawn_timer: float = 0.0
 
+# reference na UI cas
 var time_label: Label = null
 var player: Node2D = null
 
+# death screen
 var death_screen: CanvasLayer = null
 var is_game_over := false
 
 func _ready():
 	randomize()
-	spawn_objects()
+	spawn_objects() 
 
+	# najde hrace podle group
 	player = get_tree().get_first_node_in_group("player") as Node2D
 	time_label = get_tree().get_first_node_in_group("timer_label") as Label
 	death_screen = $DeathScreen
 	
-
 func _process(delta):
 	if not player:
 		return
@@ -37,19 +40,23 @@ func _process(delta):
 	if time_label == null:
 		return
 
+	# ziskani hp hrace
 	var hp_val = player.get("hp")
 	if hp_val == null:
 		return
 
+	# kontrola smrti hrace
 	if int(hp_val) <= 0 and not is_game_over:
 		game_over()
 		return
 
+	# pricita cas
 	elapsed_time += delta
 	spawn_timer += delta
 
 	update_timer_label()
 
+	# kontrola jestli je cas spawnout nepratele
 	if spawn_timer >= get_spawn_interval():
 		spawn_timer = 0.0
 		spawn_enemies_by_time()
@@ -64,6 +71,7 @@ func update_timer_label():
 	time_label.text = "%02d:%02d" % [minutes, seconds]
 
 func get_spawn_interval() -> float:
+	# cim dele hra trva, tim casteji spawn
 	return max(1.0, 3.0 - elapsed_time / 45.0)
 
 func get_spawn_count() -> int:
@@ -72,7 +80,7 @@ func get_spawn_count() -> int:
 func spawn_enemies_by_time():
 	if not player:
 		return
-
+		
 	var current_enemy_count = get_tree().get_nodes_in_group("enemy").size()
 	if current_enemy_count >= max_enemies:
 		return
@@ -80,25 +88,26 @@ func spawn_enemies_by_time():
 	var count_to_spawn = get_spawn_count()
 
 	for i in range(count_to_spawn):
+		# kontrola max limitu
 		if get_tree().get_nodes_in_group("enemy").size() >= max_enemies:
 			break
 		spawn_one_enemy()
 
 func spawn_one_enemy():
 	if enemy_scenes.is_empty():
-		print("No enemy scenes assigned!")
 		return
 
+	# nahodny vyber nepratele
 	var enemy_scene = enemy_scenes.pick_random()
-	print("SPAWNUJU SCENU:", enemy_scene.resource_path)
 
 	var enemy = enemy_scene.instantiate()
-	print("SPAWNUL SE ENEMY:", enemy.name, "| script:", enemy.get_script())
 
+	# nahodna pozice kolem hrace
 	var angle = randf() * TAU
 	var distance = randf_range(enemy_spawn_radius_min, enemy_spawn_radius_max)
 	var offset = Vector2(cos(angle), sin(angle)) * distance
 
+	# nastaveni pozice nepratele
 	enemy.global_position = player.global_position + offset
 	$Content.add_child(enemy)
 
@@ -112,7 +121,6 @@ func game_over() -> void:
 
 func spawn_objects():
 	if object_scenes.is_empty():
-		print("No object scenes assigned!")
 		return
 
 	var objects_node = $Content/Object_Rocks
@@ -128,6 +136,7 @@ func spawn_objects():
 				randf_range(spawn_area_position.y, spawn_area_position.y + spawn_area_size.y)
 			)
 
+			# nahodny typ objektu
 			var random_scene = object_scenes.pick_random()
 			var scene_index = object_scenes.find(random_scene)
 
@@ -149,7 +158,3 @@ func spawn_objects():
 				break
 
 			attempts += 1
-			
-
-			
-			
